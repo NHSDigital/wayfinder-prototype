@@ -1,0 +1,129 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "/pages/your-health/view-or-manage-appointment" %}
+
+{% set pageHeading = "Mental health service appointment" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {% include "components/provider-banner/include.html" %}
+
+      <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Wednesday 1 May 2024"
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:40am"
+          }
+        },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "Croydon University Hospital, The Willows, Croydon, RJ6"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              text: "Dr Donald Glover"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="nhsuk-u-margin-bottom-7"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
+
+      <hr>
+
+      <!-- FIELDSET COMPONENTS -->
+    <div >
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            How a request works
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">The booking team will process your request to reschedule. 
+                This process will take approximately 48 hours.</h3>
+            <h3 class="nhsuk-fieldset__legend">The original appointment may remain visible during that time</h3>
+        </legend>
+    </fieldset>
+        {{ button({
+          text: "Start",
+          classes: "nhsapp-button"
+        }) }}
+    </div>  
+
+      <!-- FIELDSET COMPONENTS -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with this task
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+        </legend>
+      </fieldset>
+    </div>
+
+      <!-- FOOTER COMPONENT-->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  {% endblock %}
