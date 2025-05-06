@@ -5,7 +5,8 @@
 {% set backLink = true %}
 {% set backLinkURL = "/pages/your-health/view-or-manage-appointment" %}
 
-{% set pageHeading = "Reschedule review" %}
+<!-- PAGE HEADING COMPONENT -->
+{% set pageHeading = "Review your request" %}
 
 {% block content %}
 
@@ -21,6 +22,11 @@
         title: pageHeading,
         titleSecondary: true
       })}}
+
+        <!-- SECTION HEADING COMPONENT -->
+        <div class="nhsapp-section-heading">
+          <h2 class="nhsuk-heading-s">Your old appointment</h2>
+        </div>
 
       {{ summaryList({
         classes: "nhsuk-u-margin-bottom-4",
