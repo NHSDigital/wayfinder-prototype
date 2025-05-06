@@ -1,0 +1,121 @@
+{% extends 'layout-app.html' %} {% set hub = "Your health" %} {% set backLink =
+    true %} {% set backLinkURL = "/pages/your-health/view-or-manage-appointment" %}
+    {% set pageHeading = "Reschedule review" %} {% block content %}
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        {% include "components/provider-banner/include.html" %}
+    
+        <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
+    
+        <!-- PANEL COMPONENT -->
+        <div class="nhsapp-panel">
+          <h1 class="nhsapp-panel__title">
+            Your request to cancel has been submitted
+          </h1>
+        </div>
+    
+        <!-- SUMMARY LIST COMPONENT -->
+        {{ summaryList({ classes: "nhsuk-u-margin-bottom-4", rows: [ { key: { text:
+        "Date" }, value: { html: "Friday 7 June 2024" } }, { key: { text: "Time" },
+        value: { html: "10:30am" } }, { key: { text: "Appointment type" }, value: {
+        html: "Mental health service appointment" } }, { key: { text: "Location" },
+        value: { html: "Room 1, King Street GP Practice, New Street, Sheffield, S1
+        1XX" } }, { key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } } ] })
+        }}
+    
+        <!-- SECTION HEADING COMPONENT -->
+        <div class="nhsapp-section-heading">
+          <h2 class="nhsuk-heading-s">What happens now</h2>
+        </div>
+    
+        <!-- TEXT -->
+        <p>
+          You do not need to do anything else while the booking team is processing
+          your request to cancel.
+        </p>
+        <p>
+          Cancelling your appointment will take approximately 48 hours. The
+          cancelled appointment will remain visible during that time.
+        </p>
+    
+        <!-- SECONDARY BUTTON COMPONENT -->
+        <button
+          class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+          data-module="nhsuk-button"
+          type="submit"
+        >
+          View this appointment
+        </button>
+    
+        <!-- LINK COMPONENT -->
+        <a href="" `style="text-align: center">View all appointments</a>
+    
+        <!-- NON-URGENT CARE CARD COMPONENT -->
+        <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+            <div class="nhsuk-card--care__heading-container">
+              <h2 class="nhsuk-card--care__heading"> <span role="text"><span class="nhsuk-u-visually-hidden"></span>Contact your care providers if:</span> </h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+            </div>
+            <div class="nhsuk-card__content">
+              <ul>
+                <li>Your condition has changed</li>
+                <li>You think you have a different condition</li>
+                <li>You change your mind and need care</li>
+
+              </ul>
+            </div>
+          </div>
+    
+        <!-- FIELDSET COMPONENTS -->
+        <div>
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h6 class="nhsuk-fieldset__heading">
+                Get help with this appointment
+              </h6>
+            </legend>
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h3 class="nhsuk-fieldset__legend">
+                Contact the booking team on <a href="">0XXXX XXX XXX</a>
+              </h3>
+            </legend>
+          </fieldset>
+        </div>
+    
+        <!-- FOOTER COMPONENT-->
+        <footer role="contentinfo">
+          <div class="nhsuk-footer-container">
+            <div class="nhsuk-width-container">
+              <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+              <div class="nhsuk-footer">
+                <ul class="nhsuk-footer__list">
+                  <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#"
+                      >Terms of use</a
+                    >
+                  </li>
+                  <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#"
+                      >Privacy policy</a
+                    >
+                  </li>
+                  <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#"
+                      >Cookie policy</a
+                    >
+                  </li>
+                  <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#"
+                      >Accessibility statement</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    
+    {% endblock %}
+    
