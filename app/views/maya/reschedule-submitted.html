@@ -1,5 +1,7 @@
-{% extends 'layout-app.html' %} {% set hub = "Your health" %} {% set backLink =
-true %} {% set backLinkURL = "/pages/your-health/view-or-manage-appointment" %}
+{% extends 'layout-app.html' %} 
+{% set hub = "Your health" %} 
+{% set backLink = true %} 
+{% set backLinkURL = "/maya/reschedule-review" %}
 {% set pageHeading = "Reschedule review" %} {% block content %}
 
 <div class="nhsuk-grid-row">
@@ -45,16 +47,12 @@ true %} {% set backLinkURL = "/pages/your-health/view-or-manage-appointment" %}
     </p>
 
     <!-- SECONDARY BUTTON COMPONENT -->
-    <button
-      class="nhsuk-button nhsapp-button--secondary nhsapp-button"
-      data-module="nhsuk-button"
-      type="submit"
-    >
+    <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="/maya/aggregator-with-pending">
       View this appointment
-    </button>
+    </a>
 
     <!-- LINK COMPONENT -->
-    <a href="" `style="text-align: center">View all appointments</a>
+    <p style="text-align: center"><a href="/maya/hospital-appointments">View all appointments</a></p>
 
     <!-- NON-URGENT CARE CARD COMPONENT -->
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
