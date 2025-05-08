@@ -3,7 +3,7 @@
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/pages/your-health/view-or-manage-appointment" %}
+{% set backLinkURL = "/maya/appointment-overview-with-button" %}
 
 {% set pageHeading = "Mental health service appointment" %}
 
@@ -80,7 +80,8 @@
     </fieldset>
         {{ button({
           text: "Start",
-          classes: "nhsapp-button"
+          classes: "nhsapp-button",
+          href: "/maya/request-new-date-and-time"
         }) }}
     </div>  
 
