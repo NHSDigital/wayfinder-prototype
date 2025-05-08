@@ -29,11 +29,14 @@
 
             <p class="nhsuk-u-margin-bottom-5">{{ pageDescription }}</p>
 
-            {{ button({
-              text: "Continue",
-              classes: "nhsuk-button--reverse nhsapp-button",
-              href: "/pages/your-health/appointment"
-            }) }}
+            <!-- BUTTON COMPONENT -->
+            <button
+            class="nhsuk-button nhsuk-button--reverse nhsapp-button"
+            data-module="nhsuk-button"
+            type="submit"
+          >
+            Continue
+          </button>
 
             <p class="nhsuk-u-margin-bottom-0"><a class="nhsuk-link" href="#">Find out more about personal health record services</a></p>
       
