@@ -3,7 +3,7 @@
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/pages/your-health/view-or-manage-appointment" %}
+{% set backLinkURL = "/maya/request-to-cancel" %}
 
 <!-- PAGE HEADING COMPONENT -->
 {% set pageHeading = "Review your request" %}
@@ -146,9 +146,9 @@
 
     <!-- BUTTON COMPONENT -->
     <div style="padding-top: 20px">
-        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/maya/cancellation-submitted">
             Request cancellation
-        </button>
+        </a>
     </div>
 
       <!-- FIELDSET COMPONENTS -->
