@@ -3,10 +3,9 @@
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/maya/aggregator-with-pending" %}
+{% set backLinkURL = "/mental-health/appointment-overview-with-button" %}
 
-<!-- PAGE HEADING COMPONENT -->
-{% set pageHeading = "Mental health service appointment" %}
+{% set pageHeading = "Ask to cancel your appointment" %}
 
 {% block content %}
 
@@ -16,13 +15,6 @@
       {% include "components/provider-banner/include.html" %}
 
       <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
-
-      <!-- TAG COMPONENT --> 
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell">
-            <span class="nhsapp-tag nhsapp-tag--yellow">Reschedule in review</span>
-        </td>
-      </tr>
 
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
@@ -38,31 +30,31 @@
             text: "Date"
           },
           value: {
-            html: "Friday 7 June 2024"
-          }
-        },
-        {
-          key: {
-            text: "Time"
-          },
-          value: {
-            html: "10:30am"
+            html: "Wednesday 1 May 2024"
           }
         },
         {
             key: {
-              text: "Appointment type"
+              text: "Appointment type:"
             },
             value: {
               html: "Mental health service appointment"
             }
           },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:40am"
+          }
+        },
           {
             key: {
               text: "Location"
             },
             value: {
-              html: "Room 1, King Street GP Practice, New Street, Sheffield, S1 1XX"
+              html: "Croydon University Hospital, The Willows, Croydon, RJ6"
             }
           },
           {
@@ -70,33 +62,55 @@
               text: "Clinician"
             },
             value: {
-              text: "Ahmet Kaya"
+              text: "Dr Donald Glover"
             }
           }
         ]
       }) }}
 
-      <!-- RED CARE CARD COMPONENT -->
-      <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
-        <div class="nhsuk-card--care__heading-container">
-          <h2 class="nhsuk-card--care__heading"> <span role="text"><span class="nhsuk-u-visually-hidden">Urgent advice: </span>If you need help now</span> </h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
-        </div>
-        <div class="nhsuk-card__content">
-          <ul>
-            <li>If you are in danger, call <a href="">999</a> or go to A&E now</li>
-            <li>If you need urgent help for your mental health, <a href="">get help from NHS 111 online or call 111</a></li>
-          </ul>
-          <p>Your mental health is as important as your physical health. You will not be wasting anyone's time.</p>
-        </div>
+      <p class="nhsuk-u-margin-bottom-7"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
+
+      <hr>
+
+    <!-- WARNING CALLOUT COMPONENT -->
+    <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label"> <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important </span>
+            Important
+          </span> </h3>
+        <p>Cancelling this appointment may remove you from the waiting list for care.</p>
+        <p>You should attend your mental health appointments if you can.</p>
+        <p>If you cannot attend this appointment but still need this care you can <a href="#">change it instead</a>.</p>
       </div>
+
+      <!-- FIELDSET COMPONENTS -->
+    <div >
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            How a request works
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Your request to cancel will be reviewed by your care provider who might contact you to talk about it.</h3>
+            <h3 class="nhsuk-fieldset__legend">Your request will then be processed by the booking team. This will take approximately 48 hours.</h3>
+            <h3 class="nhsuk-fieldset__legend">The cancelled appointment will remain visible during that time.</h3>
+        </legend>
+    </fieldset>
+        {{ button({
+          text: "Start",
+          classes: "nhsapp-button",
+          href: "/mental-health/cancellation-review"
+        }) }}
+    </div>  
 
       <!-- FIELDSET COMPONENTS -->
     <div>
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h6 class="nhsuk-fieldset__heading">
-            Get help with this appointment
-          </h6>
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with this task
+          </h1>
         </legend>
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>

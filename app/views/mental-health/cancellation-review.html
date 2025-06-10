@@ -3,7 +3,7 @@
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/maya/request-new-date-and-time" %}
+{% set backLinkURL = "/mental-health/request-to-cancel" %}
 
 <!-- PAGE HEADING COMPONENT -->
 {% set pageHeading = "Review your request" %}
@@ -22,12 +22,6 @@
         title: pageHeading,
         titleSecondary: true
       })}}
-
-        <!-- SECTION HEADING COMPONENT -->
-        <div class="nhsapp-section-heading">
-          <h2 class="nhsuk-heading-s">Your old appointment</h2>
-        </div>
-
       {{ summaryList({
         classes: "nhsuk-u-margin-bottom-4",
         rows: [
@@ -145,15 +139,15 @@
             <div class="nhsuk-checkboxes__item">
               <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
               <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                I understand that I am asking to reschedule my appointment
+                I understand that I am asking to cancel my appointment
               </label>
             </div>
     </div>
 
     <!-- BUTTON COMPONENT -->
     <div style="padding-top: 20px">
-        <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/maya/reschedule-submitted">
-            Request New Appointment
+        <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/mental-health/cancellation-submitted">
+            Request cancellation
         </a>
     </div>
 
