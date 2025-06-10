@@ -3,21 +3,23 @@
 {% set hub = "Your health" %}
 
 {% set backLink = true %} 
-{% set backLinkURL = "/clch/review-your-request"%} 
+{% set backLinkURL = "/community-health/hospital-appointments"%} 
 
 {% set pageHeading = "Hospital and specialist appointments" %}
 {% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
 
 {% block content %}
-    
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-        <span class="nhsapp-tag nhsapp-tag--yellow">Change in Review</span>
-        <div style="padding-top: 15px;" class="nhsapp-section-heading">
-          <title>Change in review</title>
-          <h1 class="nhsuk-heading-l">Community Medicine</h1>
-        </div>
-        
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsapp-section-heading">
+      <h1 class="nhsuk-heading-l">Community Medicine</h1>
+    </div>
+
+
+    <h2 class="nhsuk-heading-s">Appointment Overview</h2>
+
+
     <!-- Summary list component - Appointment Info. -->
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
@@ -26,7 +28,7 @@
       </div>
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Time</dt>
-        <dd class="nhsuk-summary-list__value">3:00pm</dd>
+        <dd class="nhsuk-summary-list__value">10:15am</dd>
       </div>
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Appointment type</dt>
@@ -50,23 +52,50 @@
         </dd>
       </div>
     </dl>
-        
-        <!-- Get help with appointment -->
-        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Get help with this appointment</h3>
-        <p class="nhsuk-u-margin-bottom-5">Contact the booking team on <a style="text-decoration: underline;">07931 124533</a></p>
 
-        <!-- BUTTON COMPONENT -->
-          <button
-          class="nhsuk-button nhsapp-button"
+    <!-- BUTTONS COMPONENTS -->
+    <div style="display: flex; justify-content: space-between">
+      <div>
+        <a
+          class="nhsuk-button nhsapp-button--secondary nhsapp-button"
           data-module="nhsuk-button"
           type="submit"
-          style="padding-top: 20px;"
-          href="/clch/home-screen"
+          href="/community-health/request-to-reschedule"
         >
-         Home
-        </button>
+          Ask to reschedule appointment
+      </a>
+      </div>
 
+      <div style="margin-left: 40px; margin-top: 20px;">
+        <a style="text-decoration: underline;" href="/community-health/request-to-cancel">Ask to cancel appointment</a>
       </div>
     </div>
-    {% endblock %}
-    
+
+    <!-- BLUE CARE CARD COMPONENT -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+            Contact your care providers if:
+          </span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>your condition has changed</li>
+          <li>you think you have a different condition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GET HELP TEXT -->
+    <h2>Get help with this appointment</h2>
+    <p>
+      Contact the booking team on
+      <a style="text-decoration: underline">07931 124533</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

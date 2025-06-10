@@ -3,7 +3,7 @@
 {% set hub = "Your health" %}
 
 {% set backLink = true %} 
-{% set backLinkURL = "/clch/home-screen"%} 
+{% set backLinkURL = "/community-health/reschedule-submitted"%} 
 
 {% set pageHeading = "Hospital and specialist appointments" %}
 {% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
@@ -12,6 +12,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
+
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         title: pageHeading,
@@ -27,7 +28,7 @@
       <!-- SECTION -->
       {{ nhsappSectionHeading({
         headingText: "Upcoming appointments",
-        subheadingText: "2 upcoming appointments"
+        subheadingText: "6 upcoming appointments"
       })}}
 
       <!-- CARDS -->
@@ -40,7 +41,10 @@
                 <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
               </div> -->
               {% endif %}
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/clch/consent-screen-to-view-only-app" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+              <!-- Tag component -->
+              <div>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/community-health/consent-screen-to-view-only-app" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
                 Community Medicine appointment
               </a>
               <div class="nhsapp-card__below">
@@ -51,6 +55,8 @@
             {{ nhsappIcon('chevronRight') }}
           </div>
         </li>
+
+        
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
@@ -59,7 +65,10 @@
                 <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
               </div> -->
               {% endif %}
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/clch/consent-screen-to-reschedule-and-cancel-app" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+              <div>
+                <span class="nhsapp-tag nhsapp-tag--yellow">Reschedule in Review</span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/community-health/consent-screen-to-reschedule-and-cancel-app" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
                 Community Medicine appointment
               </a>
               <div class="nhsapp-card__below">
