@@ -1,0 +1,126 @@
+{% extends "epic-layout.html" %} {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- TITLE -->
+    <div style="display: flex; align-items: left; gap: 15px">
+      <h1 class="blue-text">Appointment Details</h1>
+      <button
+        style="
+          border: none;
+          background: none;
+          cursor: pointer;
+          margin-top: -30px;
+        "
+      >
+        <img
+          src="https://icons.iconarchive.com/icons/custom-icon-design/mono-business-2/128/printer-icon.png"
+          alt="Print page"
+          width="30"
+          height="30"
+        />
+      </button>
+    </div>
+
+    <!-- SUMMARY LIST COMPONENT -->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key blue-text">Wednesday 1 May 2024</dt>
+        <dd class="nhsuk-summary-list__value">Arrive by 9:40am</dd>
+        <dd class="nhsuk-summary-list__actions teal-text">
+          <a class="teal-text" href="#"> Add to calendar </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key blue-text">
+          Croydon University Hospital
+        </dt>
+        <dd class="nhsuk-summary-list__key blue-text">Cardiology</dd>
+        <dd class="nhsuk-summary-list__value">
+          Croydon University Hospital, The Willows, Croydon, RJ6
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="teal-text" href="#"> [Phone number] </a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key blue-text">
+          Directions for Croydon University Hospital, Cardiology
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Please report to the Reception in the Cardiology Department, Ground
+          Floor, Yellow Route on arrival. The nearest car park is in front of
+          the Outpatient building which is on the opposite side of the road to
+          the hospital. You must enter by the Outpatient entrance (Entrance 5)
+          and walk through the outpatient area onto the Hospital corridor and
+          the Cardiology department is on your right
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key blue-text">View instructions</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>
+            Please have Nothing to EAT OR DRINK for 6 horus prior to your
+            appointment, you may have a small glass of water if requried. If you
+            are a diabetic please contact the department via the number at the
+            top of this letter to discuss.
+          </p>
+          <p>
+            Please be aware that your scan can be performed by a male or female
+            practitioner.
+          </p>
+          <p>
+            If you are unable to attend please let us know as soon as possible
+            so that can offer an
+          </p>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <!-- EXPANDER COMPONENT -->
+          <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary teal-text">
+              <span class="nhsuk-details__summary-text teal-text">
+                View full instructions
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>Full instructions:</p>
+              <p>
+                alternative date and allocate your appointment to another
+                patient. Please ring the telephone number at the top of this
+                letter.
+              </p>
+              <p></p>
+              <p>
+                Further information about having an Ultrasound scan can be found
+                at
+                <a href="#">http://www.nhs.uk/conditions/ultrasound-scan</a>
+              </p>
+            </div>
+          </details>
+        </dd>
+      </div>
+    </dl>
+
+    <!-- FIELDSET COMPONENTS -->
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h3 class="nhsuk-fieldset__legend">
+          This appointment cannot be cancelled online. To cancel, please call
+          <a href="#">0161 XXXX XXX</a>.
+        </h3>
+      </legend>
+    </fieldset>
+
+    <!-- BUTTON COMPONENT -->
+    <div>
+      <a
+        class="nhsuk-button nhsapp-button--primary nhsapp-button mychart-white-button"
+        href="/epic/appointments-and-visits"
+        >Back to Appointments and Visits</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'clch-app-layout.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %} 
+{% set backLinkURL = "/clch/request-new-time"%} 
+
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+          <title>Review your request</title>
+          <h1 class="nhsuk-heading-l">Review your request</h1>
+        </div>
+
+        <h3 class="nhsuk-u-margin-bottom-4">Your old appointment</h3>
+        <!-- Summary list component - Appointment Info. -->
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Date</dt>
+            <dd class="nhsuk-summary-list__value">Monday 07 April 2025</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Time</dt>
+            <dd class="nhsuk-summary-list__value">10:15am</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Appointment type</dt>
+            <dd class="nhsuk-summary-list__value">Community Medicine</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Location</dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Wembley Centre for Health and Care</p>
+              <p>116 Chaplin Road, Wembley, HA0 4UZ</p>
+            </dd>
+          </div>
+        </dl>
+
+
+        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-4">Your requested appointment</h3>
+        <!-- Summary list component - Appointment Info. -->
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Date</dt>
+            <dd class="nhsuk-summary-list__value">Monday 07 April 2025</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Time</dt>
+            <dd class="nhsuk-summary-list__value">3:00pm</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Appointment type</dt>
+            <dd class="nhsuk-summary-list__value">Community Medicine</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Location</dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Wembley Centre for Health and Care</p>
+              <p>116 Chaplin Road, Wembley, HA0 4UZ</p>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Reason</dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>I am getting treatment privately</p>
+            </dd>
+          </div>
+        </dl>
+
+        <!-- Confirmation Checkbox -->
+        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-3">Confirm</h3>
+        <div class="nhsuk-checkboxes__item">
+            <input
+              class="nhsuk-checkboxes__input"
+              id="contact"
+              name="contact"
+              type="checkbox"
+              value="email"
+            />
+            <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+              I understand that I am asking to reschedule my appointment.
+            </label>
+          </div>
+
+        <!-- BUTTON COMPONENT -->
+        <a
+          class="nhsuk-button nhsapp-button"
+          data-module="nhsuk-button"
+          type="submit"
+          href="/clch/reschedule-submitted"
+          style="margin-top: 25px;"
+        >
+          Submit request
+        </a>
+
+      </div>
+    </div>
+    {% endblock %}
+    

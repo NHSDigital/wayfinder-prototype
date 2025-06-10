@@ -1,0 +1,56 @@
+{% extends 'clch-app-layout.html' %} 
+{% set hub = "Your health" %} 
+{% set
+backLink = true %} 
+{% set backLinkURL = "/clch/appointment-overview-reschedule-and-cancel"%} 
+{% set pageHeading = "Mental health service appointment" %} 
+{% block content%}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsapp-section-heading">
+      <title>Review your request</title>
+      <h1 class="nhsuk-heading-l">Ask to cancel your appointment</h1>
+    </div>
+
+    <!-- Summary list component - Appointment Info. -->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date</dt>
+        <dd class="nhsuk-summary-list__value">Monday 07 April 2025</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Time</dt>
+        <dd class="nhsuk-summary-list__value">11:00am</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Appointment type</dt>
+        <dd class="nhsuk-summary-list__value">Community Medicine</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Wembley Centre for Health and Care</p>
+          <p>116 Chaplin Road, Wembley, HA0 4UZ</p>
+        </dd>
+      </div>
+    </dl>
+
+    <!-- Warning callout -->
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+        <span role="text">Important</span>
+      </h3>
+      <p>You are requesting to cancel your appointment permanently.</p>
+      <p>Cancelling this appointment may remove you from the waiting list for care.</p>
+      <p>Review your details and make sure everything is correct.</p>
+    </div>
+
+    <!-- Button component -->
+    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/clch/reason-for-cancel">
+      Start
+    </a>
+  </div>
+</div>
+
+{% endblock %}

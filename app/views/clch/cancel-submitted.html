@@ -1,0 +1,54 @@
+{% extends 'clch-app-layout.html' %} {% set hub = "Your health" %} {% set
+    backLink = true %} {% set backLinkURL = "/clch/reason-for-cancel"
+    %} {% set pageHeading = "Mental health service appointment" %} {% block content
+    %}
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+          <title>Cancel Submitted</title>
+        </div>
+
+        <!-- Green panel component -->
+        <div class="nhsapp-panel">
+            <h1 class="nhsapp-panel__title">
+              Your request to cancel has been submitted
+            </h1>
+          </div>
+
+        <!-- Summary list component - Appointment Info. -->
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Date</dt>
+            <dd class="nhsuk-summary-list__value">Monday 07 April 2025</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Time</dt>
+            <dd class="nhsuk-summary-list__value">11:00am</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Appointment type</dt>
+            <dd class="nhsuk-summary-list__value">Community Medicine</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Location</dt>
+            <dd class="nhsuk-summary-list__value">
+                <p>Wembley Centre for Health and Care</p>
+                <p>116 Chaplin Road, Wembley, HA0 4UZ</p>
+            </dd>
+            </div>
+        </dl>
+
+        <!-- What happens now section -->
+        <h2>What happens now</h2>
+        <p>You should receive a notification of your cancellation by SMS or email.</p>
+    
+        <!-- Button component -->
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="/clch/change-in-review">
+          View this appointment
+        </a>
+      </div>
+    </div>
+    
+{% endblock %}
+    

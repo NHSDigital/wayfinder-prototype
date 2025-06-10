@@ -1,0 +1,173 @@
+{% extends 'clch-app-layout.html' %}
+{% set hub = "Your health" %} 
+{% set
+backLink = true %} 
+{% set backLinkURL = "/clch/request-to-cancel"%} 
+{% set pageHeading = "Mental health service appointment" %} 
+{% block content%}
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+          <title>Request to cancel</title>
+        </div>
+    
+         <!-- Checkbox component -->
+        <form>
+            <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">Why do you need to cancel?</h1>
+                </legend>
+                <div class="nhsuk-checkboxes">
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-1"
+                    name="example"
+                    type="checkbox"
+                    value="email"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-1"
+                    >
+                    I am getting treatment elsewhere
+                    </label>
+                </div>
+    
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-2"
+                    name="example"
+                    type="checkbox"
+                    value="phone"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-2"
+                    >
+                    I am on holiday
+                    </label>
+                </div>
+    
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-3"
+                    name="example"
+                    type="checkbox"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-3"
+                    >
+                    I am unwell
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-3"
+                    name="example"
+                    type="checkbox"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-3"
+                    >
+                    I no longer need treatment
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-3"
+                    name="example"
+                    type="checkbox"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-3"
+                    >
+                    I am getting treatment privately
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-3"
+                    name="example"
+                    type="checkbox"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-3"
+                    >
+                    I now have caring responsibilties
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-3"
+                    name="example"
+                    type="checkbox"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-3"
+                    >
+                    I am not available
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-3"
+                    name="example"
+                    type="checkbox"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-3"
+                    >
+                    I would like a new time and date
+                    </label>
+                </div>
+                <div class="nhsuk-checkboxes__item">
+                    <input
+                    class="nhsuk-checkboxes__input"
+                    id="example-3"
+                    name="example"
+                    type="checkbox"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-checkboxes__label"
+                    for="example-3"
+                    >
+                    Other
+                    </label>
+                </div>
+                </div>
+            </fieldset>
+            </div>
+        </form>
+    
+        <!-- Button component -->
+        <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/clch/cancel-submitted">
+          Start
+        </a>
+      </div>
+    </div>
+    
+{% endblock %}
+    
