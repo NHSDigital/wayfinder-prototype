@@ -55,18 +55,10 @@
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/acute/view-upcoming-appointment/hospital-and-specialist-appointments.html">
                 Hospital appointments
               </a>
             </div>
-            <!-- Notification banner -->
-            {% if data['appointment-letter'] != "read" %}
-            <p class="nhsapp-badge" aria-hidden="true">
-              <span class="nhsuk-u-visually-hidden">You have</span>
-              2
-              <span class="nhsuk-u-visually-hidden">notifications</span> 
-            </p>
-            {% endif %}
             {{ nhsappIcon('chevronRight') }}
           </div>
         </li>
