@@ -1,0 +1,92 @@
+{% extends 'acute/acute-layout.html' %}
+
+{% set hub = "Your health" %}
+
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+
+<div class="app-provider-banner app-u-full-width-desktop">
+  <div class="nhsuk-width-container">
+    <p class="nhsuk-body-s nhsuk-u-margin-bottom-0">Your hospital provides this service</p>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsapp-section-heading">
+      <h1 class="nhsuk-heading-l">Asthma appointment</h1>
+    </div>
+
+
+    <!-- <h2 class="nhsuk-heading-s">Appointment Overview</h2> -->
+
+
+    <!-- Summary list component - Appointment Info. -->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date</dt>
+        <dd class="nhsuk-summary-list__value">Friday 4 July 2025</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Time</dt>
+        <dd class="nhsuk-summary-list__value">10:30am</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">Northern General Hospital, Entrance G, Sheffield, S5 7AU</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Clinician</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Ahmet Kaya</p>
+        </dd>
+      </div>
+    </dl>
+
+    <!-- Map and directions link -->
+     <a style="text-decoration: underline;">Map and directions</a>
+
+    <!-- BUTTONS COMPONENTS -->
+        <a
+          class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+          data-module="nhsuk-button"
+          type="submit"
+          href="#"
+          style="margin-top: 40px;"
+        >
+          Ask to reschedule appointment
+      </a>
+
+        <a style="text-decoration: underline; display: flex; justify-content: center;" href="#">Ask to cancel appointment</a>
+
+
+    <!-- BLUE CARE CARD COMPONENT -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+            Contact your care providers if:
+          </span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>your condition has changed</li>
+          <li>you think you have a different condition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GET HELP TEXT -->
+    <h2>Get help with this appointment</h2>
+    <p>
+      Contact the booking team on
+      <a style="text-decoration: underline">07931 124533</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
