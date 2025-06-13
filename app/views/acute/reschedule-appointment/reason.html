@@ -1,0 +1,79 @@
+{% extends 'acute/acute-layout.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Why do you need to reschedule?" %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {% include "components/provider-banner/include.html" %}
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      
+    <div class="nhsuk-form-group nhsuk-u-padding-bottom-4">
+    <fieldset class="nhsuk-fieldset">
+
+        <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                I cannot attend at the scheduled time
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                I have a new condition
+                </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                This was booked by mistake
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Other
+                </label>
+            </div>
+
+        </div>
+    </fieldset>
+    </div>
+
+
+    <a href="/wayfinder/reschedule-appointment/review-request.html" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Continue
+    </a>
+
+    <div>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Get help with this task
+            </h1>
+          </legend>
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+          </legend>
+        </fieldset>
+    </div>
+    
+    </div>
+</div>
+
+{% endblock %}

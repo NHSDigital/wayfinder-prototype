@@ -8,38 +8,32 @@
 
 {% block content %}
 
-  <div class="nhsuk-grid-row">
+<div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
+        {% include "components/provider-banner/include.html" %}
 
-      {% include "components/provider-banner/include.html" %}
-
-      <!-- DYNAMIC PAGE TITLE -->
-      {{ dynamicPageTitle({
-        title: pageHeading,
-        titleSecondary: true
-      })}}
+        <!-- DYNAMIC PAGE TITLE -->
+        {{ dynamicPageTitle({
+            title: pageHeading,
+            titleSecondary: true
+        })}}
 
       
-    <form>
+        <form>
 
-        <div class="nhsuk-form-group">
-      
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-              <h2 class="nhsuk-fieldset__heading">
-                Monday 7 July 2025
-              </h2>
-            </legend>
-      
-        
-      
-            <div class="nhsuk-checkboxes">
-      
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                  Any time this day
-                </label>
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                        <h2 class="nhsuk-fieldset__heading">
+                            Monday 7 July 2025
+                        </h2>
+                    </legend>
+                <div class="nhsuk-checkboxes">
+                    <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                        Any time this day
+                        </label>
               </div>
       
               <div class="nhsuk-checkboxes__item">
@@ -73,74 +67,78 @@
             </div>
           </fieldset>
       
-        </div>
-      
-    </form>
+            </div>
+        </form>
 
-    <form>
-      <div class="nhsuk-form-group">
-      
-        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-            <h2 class="nhsuk-fieldset__heading">
-              Tuesday 8 July 2025
-            </h2>
-          </legend>
+        <form>
+            <div class="nhsuk-form-group">
+            
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                    <h2 class="nhsuk-fieldset__heading">
+                    Tuesday 8 July 2025
+                    </h2>
+                </legend>
     
       
     
-          <div class="nhsuk-checkboxes">
-    
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
-                Any time this day
-              </label>
-            </div>
-    
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
-                12:00pm
-              </label>
-            </div>
-    
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                12:30pm
-              </label>
-            </div>
+                <div class="nhsuk-checkboxes">
+            
+                    <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="email">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                        Any time this day
+                    </label>
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-2" name="example" type="checkbox" value="phone">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                        12:00pm
+                    </label>
+                    </div>
+            
+                    <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        12:30pm
+                    </label>
+                    </div>
 
-            <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
-                  1:30pm
-                </label>
-              </div>
-    
-          </div>
-        </fieldset>
-      </div>
-    </form>
+                    <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input" id="example-3" name="example" type="checkbox" value="text message">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="example-3">
+                        1:30pm
+                        </label>
+                    </div>
+            
+                    </div>
+                </fieldset>
+            </div>
+        </form>
     
     <div class="nhsuk-u-padding-bottom-6">
         <a href="#" class="nhsuk-link">Load more</a>
     </div>
 
     <div class="nhsuk-u-padding-bottom-4">
-        <a href="/wayfinder/reschedule-appointment/reason.html" class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</a>
+        <a href="/acute/reschedule-appointment/reason.html" class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</a>
     </div> 
     
+            <div>
+                <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                    Get help with this task
+                    </h1>
+                </legend>
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+                </legend>
+                </fieldset>
+            </div>
+        </div>
     </div>
 
-    <div class="nhsuk-u-padding-bottom-6">
-      <!-- SECTION -->
-      {{ nhsappSectionHeading({
-        headingText: "Get help with this task",
-        subheadingText: "Contact the booking team on 01234 567 891"
-      }) }}
-    </div>
-  </div>
 
 {% endblock %}
