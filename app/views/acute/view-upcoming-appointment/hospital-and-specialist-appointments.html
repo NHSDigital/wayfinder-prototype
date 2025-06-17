@@ -57,8 +57,37 @@
       <!-- SECTION -->
       {{ nhsappSectionHeading({
         headingText: "Past appointments",
-        subheadingText: "None"
+        subheadingText: "Showing 1 of 6"
       })}}
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <!-- {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
+              </div> -->
+              {% endif %}
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Asthma appointment">
+                Dermatology appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Thursday 29 August 2023 <br>10:30am</p>
+                <p class="nhsuk-u-margin-bottom-3">Northern General Hospital, Entrance G, Sheffield, S5 7AU</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+      <!-- Card -->
+      {{ nhsappCard({
+        title: 'View more past appointments',
+        href: '#'
+      }) }}
 
     </div>
   </div>

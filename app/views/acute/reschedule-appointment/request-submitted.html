@@ -1,0 +1,71 @@
+{% extends 'acute/acute-layout.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+          <title>Review your request</title>
+        </div>
+
+        <!-- Green panel component -->
+        <div class="nhsapp-panel">
+          <h1 class="nhsapp-panel__title">
+            Your request to reschedule has been submitted
+          </h1>
+        </div>
+
+        <h3 class="nhsuk-heading-l nhsuk-u-margin-bottom-4">Your requested appointment details</h3>
+        <!-- Summary list component - Appointment Info. -->
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Monday 7 July 2025</dt>
+            <dd class="nhsuk-summary-list__value">Any time this day</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Tuesday 8 July 2025</dt>
+            <dd class="nhsuk-summary-list__value">Any time this day</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Appointment type</dt>
+            <dd class="nhsuk-summary-list__value">Asthma</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Location</dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Northern General Hospital, Entrance G,</p>
+              <p>Sheffield, S5 7AU</p>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Clinician</dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Ahmet Kaya</p>
+            </dd>
+          </div>
+        </dl>
+
+
+        <!-- BUTTON COMPONENT -->
+        <a
+        class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+        data-module="nhsuk-button"
+        type="submit"
+        href="#"
+      >
+        View this appointment
+      </a>
+
+      <p style="text-align: center;"><a style="text-decoration: underline;">View all appointments</a></p>
+
+      </div>
+    </div>
+    {% endblock %}
+    
