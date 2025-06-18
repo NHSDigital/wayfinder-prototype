@@ -1,4 +1,4 @@
-{% extends 'clch-app-layout.html' %}
+{% extends "../community-health/layout/clch-app-layout.html" %}
 
 {% set hub = "Home" %}
 
@@ -59,7 +59,7 @@
           },
           {
             title: "Upcoming and past appointments",
-            href: "/community-health/upcoming-and-past-appointments"
+            href: "appointments/upcoming-and-past-appointments.html"
           }
         ]
       }) }}
@@ -77,7 +77,7 @@
           cards: [
             {
               title: 'View your messages',
-              href: '/community-health/messages',
+              href: '/community-health/messages/messages.html',
               prefixIcon: 'messagesUnread',
               linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
               badgeLarge: {

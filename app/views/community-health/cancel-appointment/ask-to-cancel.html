@@ -1,9 +1,9 @@
-{% extends 'clch-app-layout.html' %} 
+{% extends "../layout/clch-app-layout.html" %}
+
 {% set hub = "Your health" %} 
-{% set
-backLink = true %} 
-{% set backLinkURL = "/community-health/appointment-overview-reschedule-and-cancel"%} 
-{% set pageHeading = "Mental health service appointment" %} 
+{% set backLink = true %} 
+
+{% set pageHeading = "Community health service appointment" %} 
 {% block content%}
 
 <div class="nhsuk-grid-row">
@@ -47,7 +47,7 @@ backLink = true %}
     </div>
 
     <!-- Button component -->
-    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="/community-health/reason-for-cancel">
+    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="reason.html">
       Start
     </a>
   </div>

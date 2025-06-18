@@ -1,9 +1,8 @@
-{% extends 'clch-app-layout.html' %}
+{% extends "../layout/clch-app-layout.html" %}
 
 {% set hub = "Your health" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "/community-health/hospital-appointments" %}
 
 {% set pageHeading = "Request to reschedule" %}
 
@@ -46,7 +45,7 @@
               text: "Location"
             },
             value: {
-              html: "Croydon University Hospital, The Willows, Croydon, RJ6"
+              html: "Wembley Centre for Health and Care, 116 Chaplin Road, Wembley, HA0 4UZ"
             }
           },
           {
@@ -75,7 +74,7 @@
         {{ button({
           text: "Start",
           classes: "nhsapp-button",
-          href: "/community-health/request-new-time"
+          href: "new-date-time.html"
         }) }}
     </div>  
 

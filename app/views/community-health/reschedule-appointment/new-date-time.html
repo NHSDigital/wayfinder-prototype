@@ -1,0 +1,190 @@
+{% extends "../layout/clch-app-layout.html" %}
+
+{% set hub = "Your health" %} 
+
+{% set backLink = true %}
+
+{% set pageHeading = "Request all dates and times that you can attend" %} 
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    {% include "components/provider-banner/include.html" %}
+
+    <form
+      id="form"
+      method="post"
+      action="#"
+      novalidate="novalidate"
+    >
+      <div class="nhsuk-form-group">
+        <!-- HEADING -->
+        <fieldset
+          class="nhsuk-fieldset"
+          aria-describedby="select-medicines-hint"
+        >
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+            <h1 class="nhsuk-fieldset__heading">
+              Request all dates and times that you can attend
+            </h1>
+          </legend>
+
+          <!-- SUB HEADING -->
+          <div>
+            <h6>Tuesday 24 September 2024</h6>
+          </div>
+
+          <!-- CHECKBOXES -->
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="select-medicines-1"
+              name="select-medicines" type="checkbox" value="select-medicines-1"
+              {{ checked('select-medicines','select-medicines-1') }}>
+              <label
+                class="nhsuk-label nhsuk-checkboxes__label"
+                for="select-medicines-1"
+              >
+                Any time this day
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="select-medicines-2"
+              name="select-medicines" type="checkbox" value="select-medicines-2"
+              {{ checked('select-medicines','select-medicines-2') }}>
+              <label
+                class="nhsuk-label nhsuk-checkboxes__label"
+                for="select-medicines-2"
+              >
+                12:00pm
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="select-medicines-3"
+              name="select-medicines" type="checkbox" value="select-medicines-3"
+              {{ checked('select-medicines','select-medicines-3') }}>
+              <label
+                class="nhsuk-label nhsuk-checkboxes__label"
+                for="select-medicines-3"
+              >
+                12:30pm
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="select-medicines-4"
+              name="select-medicines" type="checkbox" value="select-medicines-4"
+              {{ checked('select-medicines','select-medicines-4') }}>
+              <label
+                class="nhsuk-label nhsuk-checkboxes__label"
+                for="select-medicines-4"
+              >
+                1:00pm
+              </label>
+            </div>
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="select-medicines-5"
+              name="select-medicines" type="checkbox" value="select-medicines-5"
+              {{ checked('select-medicines','select-medicines-5') }}>
+              <label
+                class="nhsuk-label nhsuk-checkboxes__label"
+                for="select-medicines-5"
+              >
+                1:30pm
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div>
+        <!-- SUB HEADING -->
+        <div>
+          <h6>Thursday 26 September 2024</h6>
+        </div>
+
+        <!-- CHECKBOXES -->
+        <div class="nhsuk-checkboxes">
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="select-medicines-1"
+            name="select-medicines" type="checkbox" value="select-medicines-1"
+            {{ checked('select-medicines','select-medicines-1') }}>
+            <label
+              class="nhsuk-label nhsuk-checkboxes__label"
+              for="select-medicines-1"
+            >
+              Any time this day
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="select-medicines-2"
+            name="select-medicines" type="checkbox" value="select-medicines-2"
+            {{ checked('select-medicines','select-medicines-2') }}>
+            <label
+              class="nhsuk-label nhsuk-checkboxes__label"
+              for="select-medicines-2"
+            >
+              12:00pm
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="select-medicines-3"
+            name="select-medicines" type="checkbox" value="select-medicines-3"
+            {{ checked('select-medicines','select-medicines-3') }}>
+            <label
+              class="nhsuk-label nhsuk-checkboxes__label"
+              for="select-medicines-3"
+            >
+              12:30pm
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="select-medicines-4"
+            name="select-medicines" type="checkbox" value="select-medicines-4"
+            {{ checked('select-medicines','select-medicines-4') }}>
+            <label
+              class="nhsuk-label nhsuk-checkboxes__label"
+              for="select-medicines-4"
+            >
+              1:00pm
+            </label>
+          </div>
+
+          <div class="nhsuk-checkboxes__item">
+            <input class="nhsuk-checkboxes__input" id="select-medicines-5"
+            name="select-medicines" type="checkbox" value="select-medicines-5"
+            {{ checked('select-medicines','select-medicines-5') }}>
+            <label
+              class="nhsuk-label nhsuk-checkboxes__label"
+              for="select-medicines-5"
+            >
+              1:30pm
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUTTON COMPONENT -->
+      <div style="padding-top: 20px">
+        <a class="nhsuk-button nhsapp-button nhsapp-button" data-module="nhsuk-button" type="submit" href="review-request.html">
+          Continue
+        </a>
+      </div>
+    </form>
+
+    <!-- PAGINATION LINK COMPONENT -->
+    <div style="padding-bottom: 15px">
+      <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
+        <span class="nhsuk-pagination__page">Load More</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

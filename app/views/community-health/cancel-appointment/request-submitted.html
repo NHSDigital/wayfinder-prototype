@@ -1,10 +1,12 @@
-{% extends 'clch-app-layout.html' %} 
+{% extends "../layout/clch-app-layout.html" %}
+
 {% set hub = "Your health" %} 
-{% setbackLink = true %} 
-{% set backLinkURL = "/community-health/reason-for-cancel"%} 
-{% set pageHeading = "Mental health service appointment" %} 
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Community health service appointment" %} 
+
 {% block content%}
-    
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <div class="nhsapp-section-heading">
@@ -46,7 +48,7 @@
         <p>You should receive a notification of your cancellation by SMS or email.</p>
     
         <!-- Button component -->
-        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="/community-health/change-in-review">
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="change-in-review.html">
           View this appointment
         </a>
       </div>

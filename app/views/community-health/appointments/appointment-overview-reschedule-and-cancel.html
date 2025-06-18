@@ -1,9 +1,12 @@
-{% extends 'clch-app-layout.html' %} 
-{% set hub = "Messages" %} 
-{% set backLink = true %} 
-{% set backLinkURL = "/community-health/consent-screen-to-view-only-app"%} 
+{% extends "../layout/clch-app-layout.html" %}
 
-{% set pageDescription = "Appointment" %} 
+{% set hub = "Your health" %}
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
 {% block content %}
 
 <div class="nhsuk-grid-row">
@@ -11,6 +14,8 @@
     <div class="nhsapp-section-heading">
       <h1 class="nhsuk-heading-l">Community Medicine</h1>
     </div>
+
+
     <h2 class="nhsuk-heading-s">Appointment Overview</h2>
 
 
@@ -46,6 +51,19 @@
         </dd>
       </div>
     </dl>
+
+    <!-- BUTTONS COMPONENTS -->
+    <a
+      class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+      data-module="nhsuk-button"
+      type="submit"
+      href="/community-health/reschedule-appointment/ask-to-reschedule.html"
+    >
+      Ask to reschedule appointment
+    </a>
+
+    <p style="text-align: center" ><a href="/community-health/cancel-appointment/ask-to-cancel.html">Ask to cancel appointment</a></p>
+
 
     <!-- BLUE CARE CARD COMPONENT -->
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
