@@ -1,0 +1,45 @@
+{% extends 'acute/acute-layout.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Messages" %}
+{% set pageDescription = "Message" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+            <title>Messsage: Northern General Hospital</title>
+            <h1 class="nhsuk-heading-l">Northern General Hospital</h1>
+          </div>
+          <p class="nhsuk-u-margin-bottom-5 nhsuk-secondary-text-color" style="color: gray;">Sent 9 June at 9:40am</p>
+
+          <p class="nhsuk-u-margin-bottom-5">You have a new asthma appointment. </p>
+
+          <p class="nhsuk-u-margin-bottom-0">Tuesday 8 July 2025</p>
+          <p class="nhsuk-u-margin-bottom-5">10:30am</p>
+
+          <p class="nhsuk-u-margin-bottom-0" >Dr Ahmet Kaya</p>
+          <p class="nhsuk-u-margin-bottom-5" >Northern General Hospital</p>
+
+          <p class="nhsuk-u-margin-bottom-5" >Dr. Kaya will send you a letter with information about your appointment</p>
+
+          <p class="nhsuk-u-margin-bottom-5" >The letter tells you how to prepare for and attend the appointment</p>
+
+          <p class="nhsuk-u-margin-bottom-0" style="text-decoration: underline;">
+            <a href="view-upcoming-appointment/view-upcoming-appointment/consent-screen.html">View your asthma appointment</a>
+          </p>
+
+          <hr>
+          
+          <p class="nhsuk-u-margin-bottom-0" style="text-decoration: underline;">
+            <a href="#">Flag message</a>
+          </p>
+
+
+    </div>
+  </div>
+{% endblock %}
