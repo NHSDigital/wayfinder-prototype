@@ -1,0 +1,98 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+<!-- PAGE HEADING COMPONENT -->
+{% set pageHeading = "What to do in the meantime" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {% include "components/provider-banner/include.html" %}
+
+      <h1>What to do in the meantime</h1>
+
+      <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+        <div class="nhsuk-card--care__heading-container">
+          <h2 class="nhsuk-card--care__heading"> 
+            <span role="text">
+                <span class="nhsuk-u-visually-hidden">
+                    Non-urgent advice: </span>
+                    Advice / Support</span> 
+                </h2> 
+                <span class="nhsuk-card--care__arrow" aria-hidden="true">
+                </span>
+        </div>
+        <div class="nhsuk-card__content">
+          <ul>
+            <li>Advice 1</li>
+            <li>Advice 2</li>
+            <li>Advice 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+        <div class="nhsuk-card--care__heading-container">
+          <h2 class="nhsuk-card--care__heading"> 
+            <span role="text">
+                <span class="nhsuk-u-visually-hidden">
+                    Non-urgent advice: </span>
+                    Pathway described</span> 
+                </h2> 
+                <span class="nhsuk-card--care__arrow" aria-hidden="true">
+                </span>
+        </div>
+        <div class="nhsuk-card__content">
+          <ul>
+            <li>Point 1</li>
+            <li>Point 2</li>
+            <li>Point 3</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BUTTON COMPONENT -->
+      <div>
+        <a
+        class="nhsuk-button nhsapp-button--primary nhsapp-button"
+        data-module="nhsuk-button"
+        type="submit"
+        href="notifications-page.html"
+        >
+            Go to notifications page
+        </a>
+    </div>
+
+        <!-- FOOTER COMPONENT-->
+        <footer role="contentinfo">
+            <div class="nhsuk-footer-container">
+            <div class="nhsuk-width-container">
+                <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+                <div class="nhsuk-footer">
+                <ul class="nhsuk-footer__list">
+                    <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                    <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </footer>
+
+    </div>
+  </div>
+
+  {% endblock %}
