@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends "../community-health/layout/clch-app-layout.html" %}
 
 {% set hub = "Home" %}
 
@@ -20,7 +20,7 @@
       {{ nhsappSectionHeading({
         headingText: "Services",
         linkText: "View all",
-        linkUrl: "/pages/services-p9",
+        linkUrl: "#",
         linkAriaLabel: "View all services"
       }) }}
 
@@ -29,7 +29,7 @@
         cards: [
           {
             title: "Request repeat medicines",
-            href: "/pages/your-health/repeat-prescription/select-medicines"
+            href: "#"
           },
           {
             title: "Check if you need urgent medical help using 111 online",
@@ -42,7 +42,7 @@
       {{ nhsappSectionHeading({
         headingText: "Your health",
         linkText: "View all",
-        linkUrl: "/pages/your-health-p9",
+        linkUrl: "#",
         linkAriaLabel: "View all your health"
       }) }}
 
@@ -55,11 +55,15 @@
           },
           {
             title: "View and manage prescriptions",
-            href: "/pages/your-health/prescriptions-p9"
+            href: "#"
           },
           {
             title: "Upcoming and past appointments",
-            href: "/mental-health/upcoming-and-past-appointments"
+            href: "#"
+          },
+          {
+            title: "Something has changed",
+            href: "symptom-entry.html"
           }
         ]
       }) }}
@@ -69,13 +73,15 @@
         headingText: "Messages"
       }) }}
 
+      {% set data = { 'messages': 2 } %} <!-- Set the message count to 2 -->
+
       {% if data['messages'] > 0 %}
         {{ nhsappCardGroup({
           stacked: true,
           cards: [
             {
               title: 'View your messages',
-              href: '/pages/messages-p9',
+              href: '/community-health/messages/messages.html',
               prefixIcon: 'messagesUnread',
               linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
               badgeLarge: {
@@ -92,7 +98,7 @@
           cards: [
             {
               title: 'View your messages',
-              href: '/pages/messages-p9',
+              href: '#',
               prefixIcon: 'messages'
             }
           ]
@@ -106,7 +112,7 @@
 
       {{ nhsappCard({
         title: 'Switch profiles',
-        href: '/pages/account-and-settings/linked-profiles',
+        href: '#',
         prefixIcon: 'switchProfile'
       }) }}
 
