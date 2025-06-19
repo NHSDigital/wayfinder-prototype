@@ -1,0 +1,138 @@
+{% extends "outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %} 
+
+{% set pageHeading = "GP appointments" %}
+{% set pageDescription = "View and manage your upcoming and past GP appointments." %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsapp-section-heading">
+      <h1 class="nhsuk-heading-l">GP appointment</h1>
+    </div>
+
+
+    <h2 class="nhsuk-heading-s">Appointment Overview</h2>
+
+
+    <!-- Summary list component - Appointment Info. -->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date</dt>
+        <dd class="nhsuk-summary-list__value">Thursday 3 July 2025</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Time</dt>
+        <dd class="nhsuk-summary-list__value">1:00pm</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Appointment type</dt>
+        <dd class="nhsuk-summary-list__value">GP appointment</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>GP practice</p>
+          <!-- GOOGLE MAP ELEMENT -->
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.9845233318147!2d-0.3058748!3d51.550182799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487612362203c749%3A0x3a8b348f55031c58!2s116%20Chaplin%20Rd%2C%20Wembley%20HA0%204UZ!5e0!3m2!1sen!2suk!4v1749214828189!5m2!1sen!2suk"
+            width="375"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </dd>
+      </div>
+    </dl>
+
+    <!-- Things to do section -->
+
+    <h2>Things to do</h2>
+    <!-- CARDS -->
+    <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+            <div class="nhsapp-card__container">
+              <div class="nhsapp-card__content">
+                <!-- {% if data['appointment-letter'] != "read" %}
+                <div class="nhsapp-card__above">
+                  <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
+                </div> -->
+                {% endif %}
+                <div class="nhsuk-u-margin-bottom-4">
+                  <span class="nhsapp-tag nhsapp-tag--red">To do</span>
+                </div>
+                <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="results-summary.html" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+                  See test result
+                </a>
+              </div>
+              {{ nhsappIcon('chevronRight') }}
+            </div>
+          </li>
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <!-- {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
+              </div> -->
+              {% endif %}
+              <div class="nhsuk-u-margin-bottom-4">
+                <span class="nhsapp-tag nhsapp-tag--green">Done</span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" 
+              aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+                Book a test
+              </a>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+    <!-- BUTTONS COMPONENTS -->
+    <a
+      class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+      data-module="nhsuk-button"
+      type="submit"
+      href="#"
+    >
+      Ask to reschedule appointment
+    </a>
+
+    <p style="text-align: center" ><a href="#">Ask to cancel appointment</a></p>
+
+
+    <!-- BLUE CARE CARD COMPONENT -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+            Contact your care providers if:
+          </span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>your condition has changed</li>
+          <li>you think you have a different condition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GET HELP TEXT -->
+    <h2>Get help with this appointment</h2>
+    <p>
+      Contact the booking team on
+      <a style="text-decoration: underline">07931 124533</a>
+    </p>
+  </div>
+</div>
+{% endblock %}
