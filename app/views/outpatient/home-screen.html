@@ -1,4 +1,4 @@
-{% extends "../community-health/layout/clch-app-layout.html" %}
+{% extends "outpatient/app-layout.html" %}
 
 {% set hub = "Home" %}
 
@@ -81,7 +81,7 @@
           cards: [
             {
               title: 'View your messages',
-              href: '/community-health/messages/messages.html',
+              href: 'notifications-page.html',
               prefixIcon: 'messagesUnread',
               linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
               badgeLarge: {
