@@ -5,7 +5,7 @@
 {% set backLink = true %}
 
 <!-- PAGE HEADING COMPONENT -->
-{% set pageHeading = "Triage suggestion" %}
+{% set pageHeading = "GP Appointment Options" %}
 
 {% block content %}
 
@@ -13,19 +13,18 @@
     <div class="nhsuk-grid-column-full">
 
       {% include "components/provider-banner/include.html" %}
-      <h1>Triage suggestion</h1>
-        <p>Triage suggests that you book an appointment.</p>
+      <h1>GP Appointment Options</h1>
 
-        <h2>Book an appointment with...</h2>
+        <h2>Options:</h2>
         <!-- BUTTON COMPONENT -->
         <div>
             <a
             class="nhsuk-button nhsapp-button--secondary nhsapp-button"
             data-module="nhsuk-button"
             type="submit"
-            href="gp-appointment-options.html"
+            href="#"
             >
-                GP
+                Face to Face
             </a>
         </div>
 
@@ -36,7 +35,7 @@
             type="submit"
             href="#"
             >
-                Self-referral
+                Telephone
             </a>
         </div>
 
@@ -47,18 +46,7 @@
             type="submit"
             href="#"
             >
-                Pharmacy
-            </a>
-        </div>
-
-        <div>
-            <a
-            class="nhsuk-button nhsapp-button--secondary nhsapp-button"
-            data-module="nhsuk-button"
-            type="submit"
-            href="#"
-            >
-                A&E
+                Virtual
             </a>
         </div>
 
