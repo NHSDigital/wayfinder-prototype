@@ -5,7 +5,7 @@
 {% set backLink = true %}
 
 <!-- PAGE HEADING COMPONENT -->
-{% set pageHeading = "Review your request" %}
+{% set pageHeading = "Review your GP appointment" %}
 
 {% block content %}
 
@@ -22,11 +22,6 @@
         titleSecondary: true
       })}}
 
-
-      <!-- SECTION HEADING COMPONENT -->
-      <div class="nhsapp-section-heading">
-        <h2 class="nhsuk-heading-s">Your Appointment</h2>
-      </div>
 
       <!-- SUMMARY LIST COMPONENT -->
       {{ summaryList({
@@ -53,7 +48,7 @@
             text: "Type"
           },
           value: {
-            html: "GP appointment"
+            html: "In person appointment"
           }
         },
           {

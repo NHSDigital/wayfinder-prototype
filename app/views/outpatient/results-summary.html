@@ -5,7 +5,7 @@
 {% set backLink = true %}
 
 <!-- PAGE HEADING COMPONENT -->
-{% set pageHeading = "GP Appointment Options" %}
+{% set pageHeading = "Test results summary" %}
 
 {% block content %}
 
@@ -13,10 +13,10 @@
     <div class="nhsuk-grid-column-full">
 
       {% include "components/provider-banner/include.html" %}
-      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Results summary</h1>
-    
-      <div class="nhsuk-panel nhsuk-panel--confirmation">
-        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-4">You need to see an expert in the hospital</h2>
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Test results summary</h1>
+
+      <div class="nhsuk-inset-text">
+        <p>You need to see an expert in the hospital</p>
       </div>
 
       <p>Based on your test results, your GP consulted a specialist who has recommended you book a hospital appointment.</p>
@@ -38,7 +38,7 @@
 
       <div class="nhsuk-u-margin-top-7">
         <a href="gp-advice-request.html" class="nhsuk-button nhsuk-button--primary" data-module="nhsuk-button" type="submit">
-          Continue
+          Book hospital appointment
         </a>
       </div>
     
