@@ -1,0 +1,42 @@
+{% extends "outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+<!-- PAGE HEADING COMPONENT -->
+{% set pageHeading = "Post treatment plan" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {% include "components/provider-banner/include.html" %}
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Post treatment plan</h1>
+
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Lifestyle changes</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-4">
+        <li>Step 1</li>
+        <li>Step 2</li>
+        <li>Step 3</li>
+      </ul>
+
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Medicines </h3>
+      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-4">
+        <li>Step 1</li>
+        <li>Step 2</li>
+        <li>Step 3</li>
+      </ul>
+
+
+      <div class="nhsuk-u-margin-top-7">
+        <a href="home-screen.html" class="nhsuk-button nhsuk-button--primary" data-module="nhsuk-button" type="submit">
+          Home
+        </a>
+      </div>
+    
+      </div>
+  </div>
+
+  {% endblock %}
