@@ -10,42 +10,32 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-
       {% include "components/provider-banner/include.html" %}
-
-      <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
-
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         title: pageHeading,
         titleSecondary: true
       })}}
-      
-      <form>
 
+      <div class="nhsuk-character-count" data-module="nhsuk-character-count" data-maxlength="200">
         <div class="nhsuk-form-group">
-      
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
-              <h2 class="nhsuk-fieldset__heading">
-                Enter symptoms you've had in the past 24 hours: 
-              </h2>
-            </legend>
-
-            <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="example">
-                  Symptoms:
-                </label> <input class="nhsuk-input" id="example" name="example" type="text">
-              </div>
-          </fieldset>
-
-          
+          <h1 class="nhsuk-label-wrapper"><label class="nhsuk-label nhsuk-label--l" for="more-detail">
+            Enter symptoms you've had in the past 24 hours: 
+            </label></h1>
+          <textarea class="nhsuk-textarea nhsuk-js-character-count" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
         </div>
-        <a href="triage-suggestion.html" class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Continue
-        </a>
+      
+        <div class="nhsuk-hint nhsuk-character-count__message" id="more-detail-info">
+          You can enter up to 200 characters
+        </div>
+      </div>
+      
+     
 
-        </form>
+          <a href="triage-suggestion.html" class="nhsuk-button" data-module="nhsuk-button" type="submit">
+          Continue
+          </a>
+
 
         <!-- SECTION -->
         {{ nhsappSectionHeading({
