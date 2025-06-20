@@ -41,17 +41,30 @@
       </div>
     </dl>
 
-    <!-- BUTTONS COMPONENTS -->
-    <a
-      class="nhsuk-button nhsapp-button--secondary nhsapp-button"
-      data-module="nhsuk-button"
-      type="submit"
-      href="#"
-    >
-      Ask to reschedule appointment
-    </a>
+    <!-- Things to do section -->
 
-    <p style="text-align: center" ><a href="#">Ask to cancel appointment</a></p>
+    <h2>Things to do</h2>
+    <!-- CARDS -->
+    <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <!-- {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
+              </div> -->
+              {% endif %}
+              <div class="nhsuk-u-margin-bottom-4">
+                <span class="nhsapp-tag nhsapp-tag--red">To do</span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="test-booking-options.html" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+                Book a test
+              </a>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
 
 
     <!-- BLUE CARE CARD COMPONENT -->

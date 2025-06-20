@@ -27,33 +27,11 @@
       <!-- SECTION -->
       {{ nhsappSectionHeading({
         headingText: "Upcoming appointments",
-        subheadingText: "2 upcoming appointments"
+        subheadingText: "1 upcoming appointment"
       })}}
 
       <!-- CARDS -->
       <ul class="nhsapp-cards">
-        <li class="nhsapp-card">
-          <div class="nhsapp-card__container">
-            <div class="nhsapp-card__content">
-              <!-- {% if data['appointment-letter'] != "read" %}
-              <div class="nhsapp-card__above">
-                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
-              </div> -->
-              {% endif %}
-              <div>
-                <span class="nhsapp-tag nhsapp-tag--green">Booked</span>
-              </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
-                GP appointment
-              </a>
-              <div class="nhsapp-card__below">
-                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Tuesday 3 July 2025 <br> 1:00pm</p>
-                <p class="nhsuk-u-margin-bottom-3">GP practice</p>
-              </div>
-            </div>
-            {{ nhsappIcon('chevronRight') }}
-          </div>
-        </li>
         <li class="nhsapp-card">
             <div class="nhsapp-card__container">
               <div class="nhsapp-card__content">
@@ -80,8 +58,29 @@
       <!-- SECTION -->
       {{ nhsappSectionHeading({
         headingText: "Past appointments",
-        subheadingText: "None"
+        subheadingText: "Showing 1 of 1"
       })}}
+
+      <ul class="nhsapp-cards">
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <div>
+              <span class="nhsapp-tag nhsapp-tag--red">To do</span>
+            </div>
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="appointment-overview-past.html" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+              GP appointment
+            </a>
+            <div class="nhsapp-card__below">
+              <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Tuesday 3 July 2025 <br> 1:00pm</p>
+              <p class="nhsuk-u-margin-bottom-3">GP practice</p>
+            </div>
+          </div>
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </li>
+    </ul>
+
 
     </div>
   </div>

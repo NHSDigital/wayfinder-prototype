@@ -18,13 +18,10 @@
         >
           <div class="nhsuk-form-group">
             <!-- HEADING -->
-            <fieldset
-              class="nhsuk-fieldset"
-              aria-describedby="select-medicines-hint"
-            >
+            <fieldset class="nhsuk-fieldset" aria-describedby="select-medicines-hint">
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
-                  Select all dates and times that you are available
+                  Choose a date and time for your appointment
                 </h1>
               </legend>
     
@@ -34,63 +31,39 @@
               </div>
     
               <!-- CHECKBOXES -->
-              <div class="nhsuk-checkboxes">
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-1"
-                  name="select-medicines" type="checkbox" value="select-medicines-1"
-                  {{ checked('select-medicines','select-medicines-1') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-1"
-                  >
-                    Any time this day
-                  </label>
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                      Any time this day
+                    </label>
                 </div>
     
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-2"
-                  name="select-medicines" type="checkbox" value="select-medicines-2"
-                  {{ checked('select-medicines','select-medicines-2') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-2"
-                  >
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                     12:00pm
                   </label>
-                </div>
+                  </div>
     
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-3"
-                  name="select-medicines" type="checkbox" value="select-medicines-3"
-                  {{ checked('select-medicines','select-medicines-3') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-3"
-                  >
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                     12:30pm
                   </label>
                 </div>
     
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-4"
-                  name="select-medicines" type="checkbox" value="select-medicines-4"
-                  {{ checked('select-medicines','select-medicines-4') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-4"
-                  >
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-4" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                     1:00pm
                   </label>
                 </div>
     
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-5"
-                  name="select-medicines" type="checkbox" value="select-medicines-5"
-                  {{ checked('select-medicines','select-medicines-5') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-5"
-                  >
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-5" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                     1:30pm
                   </label>
                 </div>
@@ -106,67 +79,50 @@
     
             <!-- CHECKBOXES -->
             <div class="nhsuk-checkboxes">
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-1"
-                name="select-medicines" type="checkbox" value="select-medicines-1"
-                {{ checked('select-medicines','select-medicines-1') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-1"
-                >
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-6" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                   Any time this day
                 </label>
               </div>
     
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-2"
-                name="select-medicines" type="checkbox" value="select-medicines-2"
-                {{ checked('select-medicines','select-medicines-2') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-2"
-                >
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-7" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                   12:00pm
                 </label>
               </div>
     
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-3"
-                name="select-medicines" type="checkbox" value="select-medicines-3"
-                {{ checked('select-medicines','select-medicines-3') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-3"
-                >
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-8" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                   12:30pm
                 </label>
               </div>
     
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-4"
-                name="select-medicines" type="checkbox" value="select-medicines-4"
-                {{ checked('select-medicines','select-medicines-4') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-4"
-                >
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-9" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                   1:00pm
                 </label>
               </div>
     
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-5"
-                name="select-medicines" type="checkbox" value="select-medicines-5"
-                {{ checked('select-medicines','select-medicines-5') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-5"
-                >
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-10" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                   1:30pm
                 </label>
               </div>
             </div>
           </div>
+    
+          <!-- PAGINATION LINK COMPONENT -->
+          <div style="padding-bottom: 15px; margin-top: 20px;">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
+              <span class="nhsuk-pagination__page">Load More</span>
+            </a>
+          </div>
+
     
           <!-- BUTTON COMPONENT -->
           <div style="padding-top: 20px">
@@ -177,13 +133,6 @@
             </a>
           </div>
         </form>
-    
-        <!-- PAGINATION LINK COMPONENT -->
-        <div style="padding-bottom: 15px">
-          <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
-            <span class="nhsuk-pagination__page">Load More</span>
-          </a>
-        </div>
     
         <div>
         </div>
