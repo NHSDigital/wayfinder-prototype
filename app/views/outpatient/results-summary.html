@@ -13,16 +13,33 @@
     <div class="nhsuk-grid-column-full">
 
       {% include "components/provider-banner/include.html" %}
-      <h1>Results summary</h1>
+      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Results summary</h1>
     
-      <h2>You need to see an expert in the hospital</h2>
+      <div class="nhsuk-panel nhsuk-panel--confirmation">
+        <h2 class="nhsuk-heading-l nhsuk-u-margin-bottom-4">You need to see an expert in the hospital</h2>
+      </div>
 
-      <a href="gp-advice-request.html" class="nhsuk-button" data-module="nhsuk-button" type="submit">
-        Continue
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">GP's questions to the consultant:</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-4">
+        <li>Question 1</li>
+        <li>Question 2</li>
+        <li>Question 3</li>
+      </ul>
+
+      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Consultant's answers:</h3>
+      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-4">
+        <li>Answer 1</li>
+        <li>Answer 2</li>
+        <li>Answer 3</li>
+      </ul>
+
+
+      <div class="nhsuk-u-margin-top-7">
+        <a href="gp-advice-request.html" class="nhsuk-button nhsuk-button--primary" data-module="nhsuk-button" type="submit">
+          Continue
         </a>
+      </div>
     
-
-        
       </div>
   </div>
 
