@@ -1,0 +1,84 @@
+{% extends "../layout/clch-app-layout.html" %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Hospital and specialist appointments" %}
+
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {{ insetText({
+        HTML: "<p>Some of your appointment information may not be visible in the app. Find out more by selecting the help section at the top of the screen.</p>",
+        classes: "nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5"
+      }) }}
+
+      <!-- SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Upcoming appointments",
+        subheadingText: "2 upcoming appointments"
+      })}}
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <!-- {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Action needed</strong>
+              </div> -->
+              {% endif %}
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/community-health/appointments/consent-screen-to-view-only-app.html" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+                Community Medicine appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Monday 7 April 2025 <br> 10:15am</p>
+                <p class="nhsuk-u-margin-bottom-3">CENTRAL LONDON COMMUNITY HEALTHCARE NHS TRUST</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <div>
+                <span class="nhsapp-tag nhsapp-tag--yellow">Change in Review</span>
+              </div>
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="app-in-review.html" aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+                Community Medicine appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Monday 7 April 2025 <br> 11:00am</p>
+                <p class="nhsuk-u-margin-bottom-3">CENTRAL LONDON COMMUNITY HEALTHCARE NHS TRUST</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break--l">
+
+      <!-- SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Past appointments",
+        subheadingText: "None"
+      })}}
+
+    </div>
+  </div>
+
+  {% endblock %}
