@@ -1,0 +1,67 @@
+{% extends "outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %} 
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Test service appointment" %} 
+
+{% block content%}
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+          <title>Your test kit has been ordered</title>
+        </div>
+
+        <!-- Green panel component -->
+        <div class="nhsapp-panel">
+            <h1 class="nhsapp-panel__title">
+              Your test kit has been ordered
+            </h1>
+          </div>
+
+          <p>We will post a test kit and a pre-paid return label to your home address. 
+            It will arrive in 3-5 working days via Royal Mail.
+          </p>
+
+          <hr>
+        <!-- Summary list component - Appointment Info.
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Date</dt>
+            <dd class="nhsuk-summary-list__value">Thursday 10 July 2025</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Time</dt>
+            <dd class="nhsuk-summary-list__value">1:00pm</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Appointment type</dt>
+            <dd class="nhsuk-summary-list__value">Test</dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Location</dt>
+            <dd class="nhsuk-summary-list__value">
+                <p>Address</p>
+            </dd>
+            </div>
+        </dl> -->
+
+        <!-- What happens now section -->
+        <h2>What happens now</h2>
+        <p>You do not need to do anything while the booking team is processing your request.</p>
+    
+        <!-- Button component -->
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="appointment-overview-2.html">
+          Back to appointment
+        </a>
+
+        <p style="text-align: center;"><a style="text-decoration: underline;" href="appointments-2.html">
+          View all appointments
+        </a></p>
+
+      </div>
+    </div>
+    
+{% endblock %}
+    
