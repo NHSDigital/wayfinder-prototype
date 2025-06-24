@@ -1,48 +1,31 @@
 {% extends "outpatient/app-layout.html" %}
 
-{% set hub = "Your health" %}
+{% set hub = "Messages" %}
 
-{% set backLink = true %}
+{% set backLink = true %} 
 
-<!-- PAGE HEADING COMPONENT -->
-{% set pageHeading = "Test results summary" %}
+{% set pageHeading = "Messages" %}
+{% set pageDescription = "Message" %}
 
 {% block content %}
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+            <title>Blood results</title>
+            <h1 class="nhsuk-heading-l">Blood test results</h1>
+          </div>
+          <p class="nhsuk-u-margin-bottom-5 nhsuk-secondary-text-color" style="color: gray;">Sent 3 May at 12:05pm</p>
 
-      {% include "components/provider-banner/include.html" %}
-      <h1 class="nhsuk-heading-xl nhsuk-u-margin-bottom-4">Test results summary</h1>
+          <p class="nhsuk-u-margin-bottom-5">A GP has reviewed your blood test results and would 
+            like to consult a specialist </p>
 
-      <div class="nhsuk-inset-text">
-        <p>You need to see an expert in the hospital</p>
-      </div>
+          <p><a style="text-decoration: underline;" href="blood-test-results-2.html">See blood test results</a></p>
 
-      <p>Based on your test results, your GP consulted a specialist who has recommended you book a hospital appointment.</p>
+          <hr>
+          
+          <p><a style="text-decoration: underline;">Flag message</a></p>
 
-      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">GP's questions to the consultant:</h3>
-      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-4">
-        <li>Question 1</li>
-        <li>Question 2</li>
-        <li>Question 3</li>
-      </ul>
-
-      <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">Consultant's answers:</h3>
-      <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-4">
-        <li>Answer 1</li>
-        <li>Answer 2</li>
-        <li>Answer 3</li>
-      </ul>
-
-
-      <div class="nhsuk-u-margin-top-7">
-        <a href="gp-advice-request.html" class="nhsuk-button nhsuk-button--primary" data-module="nhsuk-button" type="submit">
-          Book hospital appointment
-        </a>
-      </div>
-    
-      </div>
+    </div>
   </div>
-
-  {% endblock %}
+{% endblock %}
