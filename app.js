@@ -150,6 +150,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
 app.use('/nhsapp-frontend', express.static(path.join(__dirname, 'node_modules/nhsapp-frontend/dist/nhsapp')));
+app.use('/images', express.static(path.join(__dirname, 'app/views/outpatient/images')));
+
 
 // Check if the app is documentation only
 if (onlyDocumentation === 'true') {

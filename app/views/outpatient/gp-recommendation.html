@@ -11,16 +11,20 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-      <h1>What happens next?</h1>
+      <h1>GP recommendation</h1>
         <div class="nhsuk-inset-text">
-                <p>You do not need to do anything else right now.</p>
+                <p>A GP has recommended that you book a blood test</p>
         </div>
 
-        <p>A GP is reviewing your symptons. You will recieve a notificatio when the GP has advised on wht you should do next.</p>
+        <h2>GP notes</h2>
+        <p>I have reveiwed the symptoms that you sent and think that the best course of actio is for you
+            to book a blood test to check for X, Y, and Z.
+        </p>
 
         <h2>Progress</h2>
         <!-- Timeline component -->
         <ol class="nhsapp-timeline">
+            <!-- Item 1 -->
             <li class="nhsapp-timeline__item nhsapp-timeline__item--past">
               <svg
                 class="nhsapp-timeline__badge"
@@ -41,6 +45,7 @@
             </div>
             </li>
             
+            <!-- Item 2 -->
             <li class="nhsapp-timeline__item">
             <svg
             class="nhsapp-timeline__badge"
@@ -62,6 +67,7 @@
             </div>
             </li>
 
+            <!-- Item 3 -->
             <li class="nhsapp-timeline__item">
             <svg
             class="nhsapp-timeline__badge nhsapp-timeline__badge--small"
@@ -86,19 +92,45 @@
             <p class="nhsapp-timeline__description">Recommended action</p> 
             </div> 
         </li> 
+
+        <!-- Item 4 -->
+        <li class="nhsapp-timeline__item">
+            <svg
+            class="nhsapp-timeline__badge nhsapp-timeline__badge--small"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            >
+            <circle
+            cx="7"
+            cy="7"
+            r="6"
+            fill="white"
+            stroke="#AEB7BD"
+            stroke-width="2"
+            />
+            </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header"><a href="lockscreen-1.html">Future step</a></h3>
+            <p class="nhsapp-timeline__description">GP review</p> 
+            </div> 
+        </li> 
     </ol>
 
-        <!-- BUTTON COMPONENT
+        <!-- BUTTON COMPONENT -->
         <div style="margin-top: 20px;">
             <a
             class="nhsuk-button nhsapp-button--primary nhsapp-button"
             data-module="nhsuk-button"
             type="submit"
-            href="gp-appointment-options.html"
+            href="test-booking-options.html"
             >
-                Book a GP appointment
+                Book blood test
             </a>
-        </div> -->
+        </div>
 
     </div>
   </div>
