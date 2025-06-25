@@ -1,0 +1,155 @@
+{% extends "outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+<!-- PAGE HEADING COMPONENT -->
+{% set pageHeading = "Additional information request" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1>Additional information request</h1>
+        <div class="nhsuk-inset-text">
+                <p>Complete a short questionnaire to provide more information to the specialist</p>
+        </div>
+
+        <!-- Blue care card -->
+        <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+            <div class="nhsuk-card--care__heading-container">
+              <h2 class="nhsuk-card--care__heading"> <span role="text"><span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>Conversation so far</span> </h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+            </div>
+            <div class="nhsuk-card__content">
+              <p>GP Questions:</p>
+              <p>Specialist answers:</p>
+            </div>
+          </div>
+
+        <!-- BUTTON COMPONENT -->
+        <div >
+            <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="additional-info-request-3.html">
+                Start questionnaire
+            </a>
+        </div>
+
+        <h2>Progress</h2>
+        <!-- Timeline component -->
+        <ol class="nhsapp-timeline">
+            <!-- Item 1 -->
+            <li class="nhsapp-timeline__item nhsapp-timeline__item--past">
+              <svg
+                class="nhsapp-timeline__badge"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+              >
+                <circle cx="14" cy="14" r="13" fill="#005EB8" />
+              </svg>
+          
+          
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header">Completed</h3>
+
+            <p class="nhsapp-timeline__description">Submit your symptoms</p>
+            </div>
+            </li>
+
+               <!-- Item 2 -->
+            <li class="nhsapp-timeline__item nhsapp-timeline__item--past">
+                <svg
+                  class="nhsapp-timeline__badge"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                >
+                  <circle cx="14" cy="14" r="13" fill="#005EB8" />
+                </svg>
+            
+            
+              <div class="nhsapp-timeline__content">
+              <h3 class="nhsapp-timeline__header">Completed</h3>
+  
+              <p class="nhsapp-timeline__description"><a href="gp-recommendation.html">Recommended action</a></p>
+              </div>
+              </li>
+
+               <!-- Item 3 -->
+            <li class="nhsapp-timeline__item nhsapp-timeline__item--past">
+                <svg
+                  class="nhsapp-timeline__badge"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                >
+                  <circle cx="14" cy="14" r="13" fill="#005EB8" />
+                </svg>
+            
+            
+              <div class="nhsapp-timeline__content">
+              <h3 class="nhsapp-timeline__header">Completed</h3>
+  
+              <p class="nhsapp-timeline__description">Test results</p>
+              </div>
+              </li>
+            
+            <!-- Item 4 -->
+            <li class="nhsapp-timeline__item">
+            <svg
+            class="nhsapp-timeline__badge"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            >
+            <circle cx="14" cy="14" r="13" fill="#005EB8" />
+            </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header  nhsuk-u-font-weight-bold">
+            Current status
+            </h3>
+    
+            <p class="nhsapp-timeline__description">Additional information request</p>
+            </div>
+            </li>
+
+            <!-- Item 9 -->
+            <li class="nhsapp-timeline__item">
+            <svg
+            class="nhsapp-timeline__badge nhsapp-timeline__badge--small"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            >
+            <circle
+            cx="7"
+            cy="7"
+            r="6"
+            fill="white"
+            stroke="#AEB7BD"
+            stroke-width="2"
+            />
+            </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header">Specialist review</h3>
+            <p class="nhsapp-timeline__description">You should recieve a response in 48 hours</p> 
+            </div> 
+        </li> 
+    </ol>
+
+    </div>
+  </div>
+
+  {% endblock %}
