@@ -19,15 +19,38 @@
               Your perscription has been ordered
             </h1>
           </div>
-
-          <h2>Perscription</h2>
-          <p>Medication details</p>
-    
-          <h2>Pharmacy</h2>
-          <p>Name, address and phone number</p>
-    
-          <h2>Availability</h2>
-          <p>Available to collect in 1 hour</p>
+        
+        <!-- Summary list component-->
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Perscription
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Medication details</p>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Pharmacy
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Name, address and phone number
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Availability
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Available to collect in 1 hour
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
 
         <!-- What happens now section -->
         <h2>What happens now</h2>
@@ -111,7 +134,7 @@
                 <div class="nhsapp-timeline__content">
                 <h3 class="nhsapp-timeline__header">Completed</h3>
     
-                <p class="nhsapp-timeline__description">Test results</p>
+                <p class="nhsapp-timeline__description"><a href="test-results-2.html">Test results</a></p>
                 </div>
                 </li>
   
@@ -131,7 +154,7 @@
               
               <div class="nhsapp-timeline__content">
               <h3 class="nhsapp-timeline__header">Completed step</h3>
-              <p class="nhsapp-timeline__description">Specialist review</p> 
+              <p class="nhsapp-timeline__description">Submitted additional information</p> 
               </div> 
           </li> 
   
@@ -171,26 +194,6 @@
             <h3 class="nhsapp-timeline__header">Order perscription</h3>
             <p class="nhsapp-timeline__description">Final step in treatment plan</p> 
             </div> 
-            
-            <!-- Item 9 -->
-            <li class="nhsapp-timeline__item">
-              <svg
-              class="nhsapp-timeline__badge"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="28"
-              height="28"
-              viewBox="0 0 28 28"
-              >
-              <circle cx="14" cy="14" r="13" fill="#005EB8" />
-              </svg>
-              
-            
-            <div class="nhsapp-timeline__content">
-            <h3 class="nhsapp-timeline__header">Completed step</h3>
-            <p class="nhsapp-timeline__description">Ordered perscription</p> 
-            </div> 
-          </li> 
         </li> 
       </ol>
 
