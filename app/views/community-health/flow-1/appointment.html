@@ -6,7 +6,7 @@
 
 {% set pageHeading = "Hospital and specialist appointments" %}
 
-{% set pageDescription = "Appointment." %}
+{% set pageDescription = "Appointment" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
@@ -14,14 +14,12 @@
     <div class="nhsapp-section-heading">
       <h1 class="nhsuk-heading-l">Community Medicine</h1>
     </div>
-    <h2 class="nhsuk-heading-s">Appointment Overview</h2>
-
 
     <!-- Summary list component - Appointment Info. -->
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Date</dt>
-        <dd class="nhsuk-summary-list__value">Monday 07 April 2025</dd>
+        <dd class="nhsuk-summary-list__value">Monday 7 April 2025</dd>
       </div>
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Time</dt>
@@ -35,6 +33,8 @@
         <dt class="nhsuk-summary-list__key">Location</dt>
         <dd class="nhsuk-summary-list__value">
             <p>Willesden Centre for Health and Care</p>
+            <p>116 Chaplin Road, Wembley, HA0 4UZ</p>
+
             <!-- Map and directions detail component -->
             <details class="nhsuk-details">
                 <summary class="nhsuk-details__summary">
@@ -82,8 +82,34 @@
     <h2>Get help with this appointment</h2>
     <p>
       Contact the booking team on
-      <a style="text-decoration: underline">07931 124533</a>
+      <a style="text-decoration: underline">0XXXX XXXXXX</a>
     </p>
+
+    <!-- FOOTER COMPONENT-->
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
   </div>
 </div>
 {% endblock %}
