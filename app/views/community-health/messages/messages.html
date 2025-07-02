@@ -1,142 +1,117 @@
 {% extends "../layout/clch-app-layout.html" %}
 
 {% set hub = "Messages" %}
-{% set backLink = true %} 
-
+{% set backLink = true %}
 {% set pageHeading = "Messages" %}
 {% set pageDescription = "You have 2 unread messages" %}
 
 {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
 
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
+    {{ dynamicPageTitle({
+      title: pageHeading,
+      titleSecondary: true,
+      description: pageDescription
+    }) }}
 
-      <!-- DYNAMIC PAGE TITLE -->
-      {{ dynamicPageTitle({
-        title: pageHeading,
-        titleSecondary: true,
-        description: pageDescription
-      })}}
+    {% if data['messages'] > 0 %}
+      {% set badge %}
+        {{ nhsappBadgeLarge({
+          count: data['messages'],
+          label: 'notifications',
+          classes: "nhsuk-u-margin-bottom-3"
+        }) }}
+      {% endset %}
+    {% endif %}
 
-      {% if data['messages'] > 0 %}
-        {% set badge %}
-          {{ nhsappBadgeLarge({
-            count: data['messages'],
-            label: 'notifications',
-            classes: "nhsuk-u-margin-bottom-3"
-          }) }}
-        {% endset %}
-      {% else %}
-      {% endif %}
-
-      <!-- Filter icon -->
-      <div style="display:flex; align-items: center;">
-        <div>
-        <svg class="nhsapp-icon nhsapp-icon__filter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" height="2rem" width="2rem" viewBox="0 0 24 24">
-          <path d="M3.507 7.258c-.081.047-.094.14-.094.688 0 .595.008.64.119.718.106.074.997.083 8.468.083s8.362-.009 8.468-.083c.111-.078.119-.124.119-.69 0-.48-.018-.624-.084-.69-.076-.076-.918-.084-8.493-.082-5.613.001-8.441.019-8.503.056m2.628 4.098c-.03.057-.055.347-.055.644 0 .297.025.587.055.644.054.101.176.103 5.865.103s5.811-.002 5.865-.103c.03-.057.055-.347.055-.644 0-.297-.025-.587-.055-.644-.054-.101-.176-.103-5.865-.103s-5.811.002-5.865.103m2.641 4.016c-.061.087-.083.253-.083.628s.022.541.083.628l.083.119h3.169c3.078 0 3.17-.003 3.223-.103.031-.057.056-.356.056-.663 0-.438-.019-.578-.084-.644-.074-.074-.441-.084-3.224-.084h-3.14l-.083.119" />
-        </svg>
-        </div>
-        <div>
-          <a style="margin-left: 10px; text-decoration: underline;">Filter</a>
-        </div>
-      </div>
-
-      <!-- CARD COMPONENT 1 -->
-      <div>
-        <ul class="nhsapp-cards nhsapp-cards--stacked">
-          <li class="nhsapp-card">
-
-            <div class="nhsapp-card__container nhsuk-u-margin-left-6">
-              <div class="nhsapp-card__content">
-
-                <div class="nhsapp-card__above">
-                  <p
-                    aria-hidden="true"
-                    class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0"
-                  >
-                    Friday
-                  </p>
-                </div>
-
-                <a href="message-1.html" class="nhsapp-card__link nhsuk-link--no-visited-state">
-                  <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
-                    <span
-                      class="nhsapp-badge-small__indicator"
-                      style="background-color: red;"
-                      aria-hidden="true"
-                    ></span>
-                    <span class="nhsuk-u-visually-hidden">Unread message</span> </span
-                  >CENTRAL LONDON COMMUNITY HEALTHCARE NHS TRUST
-                  <span class="nhsuk-u-visually-hidden">received today at 1:02pm</span>
-                </a>
-
-                <div class="nhsapp-card__below">
-                  <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines">
-                    You have a new Orthoptics appointment. This is an in-person appointment.
-                    From: CLCH To: S-DrDr Viola Monday 7 April 2025 10:15am Wembley Centre
-                    for Health and Care View your Orthopti...
-                  </p>
-                </div>
-
-              </div>
-              
-              <svg
-                class="nhsapp-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                height="2rem"
-                width="2rem"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
-                />
-              </svg>
-
-            </div>
-          </li>
-          <!-- Card 2 -->
-          <li class="nhsapp-card">
-            <div class="nhsapp-card__container nhsuk-u-margin-left-6">
-              <div class="nhsapp-card__content">
-                <div class="nhsapp-card__above">
-                  <p aria-hidden="true" class="nhsuk-u-margin-bottom-0 nhsuk-u-font-weight-bold">Friday</p>
-                </div>
-                <a href="message-2.html" class="nhsapp-card__link nhsuk-link--no-visited-state">
-                  <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
-                    <span
-                      class="nhsapp-badge-small__indicator"
-                      style="background-color: red;"
-                      aria-hidden="true"></span>
-                    <span class="nhsuk-u-visually-hidden">Unread message</span> </span
-                  >CENTRAL LONDON COMMUNITY HEALTHCARE NHS TRUST
-                  <span class="nhsuk-u-visually-hidden">received today at 1:02pm</span>
-                </a>
-                <div class="nhsapp-card__below">
-                  <p
-                    class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color"
-                  >
-                  You have a new Brent Diabetes appointment. This is an in-person appointment.
-                  From: CLCH To: S-DrDr Viola Tuesday 8 April 2025 12:30pm Wembley Centre
-                  for Health and Care View your ...
-                  </p>
-                </div>
-              </div>
-              <svg
-                class="nhsapp-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                height="2rem"
-                width="2rem"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M8.82 19.11a.97.97 0 0 1-.72-.31.996.996 0 0 1 .03-1.41l5.61-5.38-5.6-5.25c-.4-.38-.42-1.01-.05-1.41.38-.4 1.01-.42 1.41-.05l6.37 5.97c.2.19.31.45.32.72s-.11.54-.31.73l-6.37 6.11c-.19.19-.44.28-.69.28Z"
-                />
-              </svg>
-            </div>
-          </li>
-        </ul>
+    <!-- Filter -->
+    <div style="display: flex; align-items: center;">
+      <svg class="nhsapp-icon nhsapp-icon__filter" xmlns="http://www.w3.org/2000/svg"
+           height="2rem" width="2rem" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="...filter icon path..." />
+      </svg>
+      <a style="margin-left: 10px; text-decoration: underline;">Filter</a>
     </div>
-    </div>
+
+    <!-- Messages -->
+    <ul class="nhsapp-cards nhsapp-cards--stacked">
+
+      <!-- Message Card 1 -->
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container nhsuk-u-margin-left-6">
+          <div class="nhsapp-card__content">
+            <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">Friday</p>
+            <a href="message-1.html" class="nhsapp-card__link nhsuk-link--no-visited-state">
+              <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
+                <span class="nhsapp-badge-small__indicator" style="background-color: red;" aria-hidden="true"></span>
+                <span class="nhsuk-u-visually-hidden">Unread message</span>
+              </span>
+              CENTRAL LONDON COMMUNITY HEALTHCARE NHS TRUST
+              <span class="nhsuk-u-visually-hidden">received today at 1:02pm</span>
+            </a>
+            <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines">
+              You have a new Brent Diabetes appointment. This is an in-person appointment. From: CLCH To: S-DrDr Viola
+              Monday 7 April 2025 10:15am Wembley Centre for Health and Care View your Brent...
+            </p>
+          </div>
+          <svg class="nhsapp-icon" xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" viewBox="0 0 24 24">
+            <path d="...arrow path..." />
+          </svg>
+        </div>
+      </li>
+
+      <!-- Message Card 2 -->
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container nhsuk-u-margin-left-6">
+          <div class="nhsapp-card__content">
+            <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">Friday</p>
+            <a href="message-2.html" class="nhsapp-card__link nhsuk-link--no-visited-state">
+              <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
+                <span class="nhsapp-badge-small__indicator" style="background-color: red;" aria-hidden="true"></span>
+                <span class="nhsuk-u-visually-hidden">Unread message</span>
+              </span>
+              CENTRAL LONDON COMMUNITY HEALTHCARE NHS TRUST
+              <span class="nhsuk-u-visually-hidden">received today at 1:02pm</span>
+            </a>
+            <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+              You have a new appointment. This is an in-person appointment. From: CLCH To: S-DrDr Viola Brent
+              Diabetes Tuesday 8 April 2025 12:30pm Wembley Centre for Health and Care View your...
+            </p>
+          </div>
+          <svg class="nhsapp-icon" xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" viewBox="0 0 24 24">
+            <path d="...arrow path..." />
+          </svg>
+        </div>
+      </li>
+
+      <!-- Message Card 3 -->
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container nhsuk-u-margin-left-6">
+          <div class="nhsapp-card__content">
+            <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-0">Friday</p>
+            <a href="message-2.html" class="nhsapp-card__link nhsuk-link--no-visited-state">
+              <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
+                <span class="nhsapp-badge-small__indicator" style="background-color: red;" aria-hidden="true"></span>
+                <span class="nhsuk-u-visually-hidden">Unread message</span>
+              </span>
+              CENTRAL LONDON COMMUNITY HEALTHCARE NHS TRUST
+              <span class="nhsuk-u-visually-hidden">received today at 1:02pm</span>
+            </a>
+            <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines nhsuk-u-secondary-text-color">
+              You have a new Community Medicine appointment. This is an in-person appointment. From: CLCH To: S-DrDr 
+              Viola Brent Diabetes Friday 11 April 2025 9:00am Wembley Centre for Health and Care...
+            </p>
+          </div>
+          <svg class="nhsapp-icon" xmlns="http://www.w3.org/2000/svg" height="2rem" width="2rem" viewBox="0 0 24 24">
+            <path d="...arrow path..." />
+          </svg>
+        </div>
+      </li>
+
+      <!-- Add more cards as needed -->
+
+    </ul>
   </div>
-
+</div>
 {% endblock %}
