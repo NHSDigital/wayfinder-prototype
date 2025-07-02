@@ -1,0 +1,85 @@
+{% extends "../layout/clch-app-layout.html" %}
+
+{% set hub = "Your health" %} 
+{% set backLink = true %} 
+
+{% set pageHeading = "Community health service appointment" %} 
+{% block content%}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsapp-section-heading">
+      <title>Review your request</title>
+      {% include "components/provider-banner/include.html" %}
+
+      <h1 class="nhsuk-heading-l">Ask to cancel your appointment</h1>
+    </div>
+
+    <!-- Summary list component - Appointment Info. -->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date</dt>
+        <dd class="nhsuk-summary-list__value">Monday 07 April 2025</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Time</dt>
+        <dd class="nhsuk-summary-list__value">11:00am</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Appointment type</dt>
+        <dd class="nhsuk-summary-list__value">Community Medicine</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Wembley Centre for Health and Care</p>
+          <p>116 Chaplin Road, Wembley, HA0 4UZ</p>
+        </dd>
+      </div>
+    </dl>
+
+    <h2>How a request works</h2>
+    <p>The booking team wil review and process your request in approximately 48 hours.</p>
+    <p class="nhsuk-u-margin-bottom-5">The cancelled appointment will remain visible until the date has passed.</p>
+
+    <!-- Button component -->
+    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="reason.html">
+      Start
+    </a>
+
+    <!-- GET HELP TEXT -->
+    <h2>Get help with this task</h2>
+    <p>
+      Contact the booking team on
+      <a style="text-decoration: underline">0XXXX XXXXXX</a>
+    </p>
+
+    <!-- FOOTER COMPONENT-->
+    <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+  </div>
+</div>
+
+{% endblock %}

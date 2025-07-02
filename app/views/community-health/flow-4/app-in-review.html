@@ -1,0 +1,75 @@
+{% extends 'clch-app-layout.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+    
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <span class="nhsapp-tag nhsapp-tag--yellow">Reschedule in Review</span>
+        <div style="padding-top: 15px;" class="nhsapp-section-heading">
+          <title>Change in review</title>
+          <h1 class="nhsuk-heading-l">Community Medicine</h1>
+        </div>
+        
+    <!-- Summary list component - Appointment Info. -->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date</dt>
+        <dd class="nhsuk-summary-list__value">Monday 07 April 2025</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Time</dt>
+        <dd class="nhsuk-summary-list__value">1:30pm</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Appointment type</dt>
+        <dd class="nhsuk-summary-list__value">Community Medicine</dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Wembley Centre for Health and Care</p>
+          <p>116 Chaplin Road, Wembley, HA0 4UZ</p>
+        </dd>
+      </div>
+    </dl>
+        
+        <!-- Get help with appointment -->
+        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Get help with this appointment</h3>
+        <p class="nhsuk-u-margin-bottom-5">Contact the booking team on <a style="text-decoration: underline;">07931 124533</a></p>
+
+        <!-- FOOTER COMPONENT-->
+    <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      </div>
+    </div>
+    {% endblock %}
+    

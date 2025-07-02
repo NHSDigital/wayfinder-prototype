@@ -1,0 +1,161 @@
+{% extends "../layout/clch-app-layout.html" %}
+
+{% set hub = "Your health" %} 
+
+{% set backLink = true %} 
+
+{% set pageHeading = "Community health service appointment" %} 
+
+{% block content%}
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+          <title>Request to cancel</title>
+          {% include "components/provider-banner/include.html" %}
+
+        </div>
+    
+         <!-- radio component -->
+        <form>
+            <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">Why do you need to cancel?</h1>
+                </legend>
+                <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                    <input
+                    class="nhsuk-radios__input"
+                    id="example-1"
+                    name="example"
+                    type="radio"
+                    value="email"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-radios__label"
+                    for="example-1"
+                    >
+                    I cannot attend the scheduled time
+                    </label>
+                </div>
+    
+                <div class="nhsuk-radios__item">
+                    <input
+                    class="nhsuk-radios__input"
+                    id="example-2"
+                    name="example"
+                    type="radio"
+                    value="phone"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-radios__label"
+                    for="example-2"
+                    >
+                    I have already used this service
+                    </label>
+                </div>
+    
+                <div class="nhsuk-radios__item">
+                    <input
+                    class="nhsuk-radios__input"
+                    id="example-3"
+                    name="example"
+                    type="radio"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-radios__label"
+                    for="example-3"
+                    >
+                    I need a different service
+                    </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                    <input
+                    class="nhsuk-radios__input"
+                    id="example-3"
+                    name="example"
+                    type="radio"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-radios__label"
+                    for="example-3"
+                    >
+                    I do not need care anymore
+                    </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                    <input
+                    class="nhsuk-radios__input"
+                    id="example-3"
+                    name="example"
+                    type="radio"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-radios__label"
+                    for="example-3"
+                    >
+                    This was booked by mistake
+                    </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                    <input
+                    class="nhsuk-radios__input"
+                    id="example-3"
+                    name="example"
+                    type="radio"
+                    value="text message"
+                    />
+                    <label
+                    class="nhsuk-label nhsuk-radios__label"
+                    for="example-3"
+                    >
+                    Other
+                    </label>
+                </div>
+                </div>
+            </fieldset>
+            </div>
+        </form>
+    
+        <!-- Button component -->
+        <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="review-request.html">
+          Continue
+        </a>
+
+        <!-- Get help with appointment -->
+        <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Get help with this task</h3>
+        <p class="nhsuk-u-margin-bottom-5">Contact the booking team on <a style="text-decoration: underline;">0XXXX XXXXXX</a></p>
+
+        <!-- FOOTER COMPONENT-->
+    <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+       
+      </div>
+    </div>
+    
+{% endblock %}
+    
