@@ -1,20 +1,20 @@
 {% extends 'layout-app.html' %}
-
 {% set hub = "Your health" %}
-
 {% set backLink = true %}
-{% set backLinkURL = "/mental-health/upcoming-and-past-appointments" %}
-
 {% set pageHeading = "Mental health service appointment" %}
 
 {% block content %}
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-
       {% include "components/provider-banner/include.html" %}
 
-      <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
+      <!-- TAG COMPONENT -->
+      <tr class="nhsuk-table__row">
+        <td class="nhsuk-table__cell">
+            <span class="nhsapp-tag nhsapp-tag--yellow">Cancellation in review</span>
+        </td>
+      </tr>
 
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
@@ -60,10 +60,6 @@
         ]
       }) }}
 
-      <p class="nhsuk-u-margin-bottom-7"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
-
-      <hr>
-
       <!-- RED CARE CARD COMPONENT -->
       <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
         <div class="nhsuk-card--care__heading-container">
@@ -78,12 +74,6 @@
         </div>
       </div>
 
-      <!-- BUTTON COMPONENT -->
-       <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="/mental-health/request-to-reschedule">Ask to reschedule appointment</a>
-
-      <!-- LINK COMPONENT -->
-      <p style="text-align: center"><a href="/mental-health/request-to-cancel">Ask to cancel appointment</a></p>
-
       <!-- FIELDSET COMPONENTS -->
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -94,7 +84,7 @@
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
         </legend>
-      </fieldset>
+    </fieldset>
 
       <!-- FOOTER COMPONENT-->
       <footer role="contentinfo">

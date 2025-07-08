@@ -1,13 +1,13 @@
-{% extends 'layout-app.html' %} {% set hub = "Your health" %} {% set backLink =
-    true %} {% set backLinkURL = "/mental-health/cancellation-review" %}
-    {% set pageHeading = "Reschedule review" %} {% block content %}
-    
+{% extends 'layout-app.html' %} 
+{% set hub = "Your health" %} 
+{% set backLink =true %}
+{% set pageHeading = "Reschedule review" %} 
+
+{% block content %}
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         {% include "components/provider-banner/include.html" %}
-    
-        <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
-    
+        
         <!-- PANEL COMPONENT -->
         <div class="nhsapp-panel">
           <h1 class="nhsapp-panel__title">
@@ -51,12 +51,12 @@
         </p>
     
         <!-- SECONDARY BUTTON COMPONENT -->
-        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="/mental-health/aggregator-with-pending-cancel">
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="aggregator-with-pending-cancel.html">
           View this appointment
         </a>
     
         <!-- LINK COMPONENT -->
-        <p style="text-align: center"><a href="/mental-health/aggregator-with-pending-cancel" style="text-align: center">View all appointments</a></p>
+        <p style="text-align: center"><a href="aggregator-with-pending-cancel.html" style="text-align: center">View all appointments</a></p>
     
         <!-- NON-URGENT CARE CARD COMPONENT -->
         <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
