@@ -1,10 +1,7 @@
-{% extends 'epic2-layout.html' %}
+{% extends 'prototypes/epic/epic-layout.html' %}
 
 {% set hub = "Your health" %}
-
 {% set backLink = true %}
-{% set backLinkURL = "/epic/appointment-overview" %}
-
 {% set pageHeading = "Manage your appointment" %}
 
 {% block content %}
@@ -35,7 +32,7 @@
    
     <!-- BUTTON COMPONENT -->
    <div>
-    <a class="nhsuk-button nhsapp-button--primary nhsapp-button" href="/epic/mychart">Continue to MyChart</a>
+    <a class="nhsuk-button nhsapp-button--primary nhsapp-button" href="mychart.html">Continue to MyChart</a>
    </div> 
 
     <!-- LINK COMPONENT -->

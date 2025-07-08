@@ -1,15 +1,12 @@
-{% extends 'epic2-layout.html' %}
+<!DOCTYPE html>
+{% extends 'prototypes/epic/epic-layout.html' %}
 
 {% set hub = "Your health" %}
-
 {% set backLink = true %}
-{% set backLinkURL = "/epic/home-screen" %}
-
 {% set pageHeading = "Upcoming and past appointments" %}
 {% set pageDescription = "View or manage upcoming and past appointments, referrals, waiting lists and patient initiated follow-ups" %}
 
 {% block content %}
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
@@ -44,7 +41,7 @@
       <li class="nhsapp-card">
         <div class="nhsapp-card__container">
           <div class="nhsapp-card__content">
-            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/epic/hospital-appointments">
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="hospital-appointments.html">
               Hospital appointments
             </a>
           </div>

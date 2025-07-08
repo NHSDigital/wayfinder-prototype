@@ -1,4 +1,9 @@
-{% extends "epic-layout.html" %} {% block content %}
+<!DOCTYPE html>
+{% extends "prototypes/epic/epic-layout.html" %} 
+
+{% set backLink = true %}
+
+{% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
     <!-- TITLE -->
@@ -117,7 +122,7 @@
     <div>
       <a
         class="nhsuk-button nhsapp-button--primary nhsapp-button mychart-white-button"
-        href="/epic/appointments-and-visits"
+        href="appointments-and-visits.html"
         >Back to Appointments and Visits</a
       >
     </div>

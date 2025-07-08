@@ -1,14 +1,10 @@
-{% extends 'epic2-layout.html' %}
+{% extends 'prototypes/epic/epic-layout.html' %}
 
 {% set hub = "Your health" %}
-
 {% set backLink = true %}
-{% set backLinkURL = "/epic/upcoming-and-past-appointments" %}
-
 {% set pageHeading = "Cardiology appointment" %}
 
 {% block content %}
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
       <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
@@ -62,7 +58,7 @@
       <hr>
 
     <!-- BUTTON COMPONENT -->
-      <a class="nhsuk-button nhsapp-button--primary nhsapp-button" href="/epic/manage-your-appointment">Manage your appointment</a>
+      <a class="nhsuk-button nhsapp-button--primary nhsapp-button" href="manage-your-appointment.html">Manage your appointment</a>
       
     <!-- BLUE CARE CARD -->
       <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">

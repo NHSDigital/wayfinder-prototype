@@ -1,11 +1,12 @@
-{% extends 'epic2-layout.html' %}
+<!DOCTYPE html>
+
+{% extends 'prototypes/epic/epic-layout.html' %}
 
 {% set hub = "Home" %}
-
+{% set backLink = true %}
 {% set pageHeading = "Home" %}
 
 {% block content %}
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
@@ -59,7 +60,7 @@
           },
           {
             title: "Upcoming and past appointments",
-            href: "/epic/upcoming-and-past-appointments"
+            href: "upcoming-and-past-appointments.html"
           }
         ]
       }) }}
