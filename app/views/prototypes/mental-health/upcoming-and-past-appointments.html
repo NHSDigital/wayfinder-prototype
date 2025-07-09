@@ -25,13 +25,6 @@
                 GP surgery appointments
               </a>
             </div>
-            {% if data['appointment-letter'] != "read" %}
-            <p class="nhsapp-badge" aria-hidden="true">
-              <span class="nhsuk-u-visually-hidden">You have</span>
-              1
-              <span class="nhsuk-u-visually-hidden">notifications</span> 
-            </p>
-            {% endif %}
             {{ nhsappIcon('chevronRight') }}
           </div>
         </li>
@@ -42,13 +35,6 @@
                 Referrals
               </a>
             </div>
-            {% if data['appointment-letter'] != "read" %}
-            <p class="nhsapp-badge" aria-hidden="true">
-              <span class="nhsuk-u-visually-hidden">You have</span>
-              1
-              <span class="nhsuk-u-visually-hidden">notifications</span> 
-            </p>
-            {% endif %}
             {{ nhsappIcon('chevronRight') }}
           </div>
         </li>
