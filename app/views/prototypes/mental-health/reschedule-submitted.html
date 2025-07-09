@@ -1,10 +1,6 @@
-{% extends 'prototypes/mental-health/mental-health-layout.html' %}
-
-{% set hub = "Your health" %} 
-{% set backLink = true %} 
-{% set pageHeading = "Reschedule review" %} 
-
-{% block content %}
+{% extends 'prototypes/mental-health/mental-health-layout.html' %} {% set hub =
+"Your health" %} {% set backLink = true %} {% set pageHeading = "Reschedule
+review" %} {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
     {% include "components/provider-banner/include.html" %}
@@ -48,25 +44,38 @@
     </p>
 
     <!-- SECONDARY BUTTON COMPONENT -->
-    <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="aggregator-with-pending.html">
+    <a
+      class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+      data-module="nhsuk-button"
+      type="submit"
+      href="aggregator-with-pending.html"
+    >
       View this appointment
     </a>
 
     <!-- LINK COMPONENT -->
-    <p style="text-align: center"><a href="hospital-appointments.html">View all appointments</a></p>
+    <p style="text-align: center">
+      <a href="hospital-appointments.html">View all appointments</a>
+    </p>
 
     <!-- NON-URGENT CARE CARD COMPONENT -->
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
-        <div class="nhsuk-card--care__heading-container">
-          <h2 class="nhsuk-card--care__heading"> <span role="text"><span class="nhsuk-u-visually-hidden"></span>Contact your care providers if:</span> </h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
-        </div>
-        <div class="nhsuk-card__content">
-          <ul>
-            <li>Your condition has changed</li>
-            <li>You think you have a different condition</li>
-          </ul>
-        </div>
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text"
+            ><span class="nhsuk-u-visually-hidden"></span>Contact your care
+            providers if:</span
+          >
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
       </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>Your condition has changed</li>
+          <li>You think you have a different condition</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- FIELDSET COMPONENTS -->
     <div>
