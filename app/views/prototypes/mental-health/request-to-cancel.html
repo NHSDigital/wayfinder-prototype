@@ -1,19 +1,15 @@
-{% extends 'layout-app.html' %}
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
 
 {% set hub = "Your health" %}
-
 {% set backLink = true %}
-
 {% set pageHeading = "Ask to cancel your appointment" %}
 
 {% block content %}
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-
       {% include "components/provider-banner/include.html" %}
 
-      <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
 
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({

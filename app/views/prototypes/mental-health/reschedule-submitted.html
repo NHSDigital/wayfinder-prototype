@@ -1,9 +1,10 @@
-{% extends 'layout-app.html' %} 
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
 {% set hub = "Your health" %} 
 {% set backLink = true %} 
-{% set backLinkURL = "/mental-health/reschedule-review" %}
-{% set pageHeading = "Reschedule review" %} {% block content %}
+{% set pageHeading = "Reschedule review" %} 
 
+{% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
     {% include "components/provider-banner/include.html" %}

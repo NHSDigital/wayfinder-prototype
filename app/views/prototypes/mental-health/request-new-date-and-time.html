@@ -1,11 +1,11 @@
-{% extends 'layout-app.html' %} 
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
 {% set hub = "Services" %}
 {% set backLink =true %} 
-{% set backLinkURL = "/mental-health/request-to-reschedule" %}
-
 {% set pageHeading = "Request new date and time" %}
+
 {% block content %}
-    
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         {% include "components/provider-banner/include.html" %}
