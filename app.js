@@ -147,6 +147,7 @@ documentationApp.set('view engine', 'html');
 
 // Middleware to serve static assets
 app.use(express.static(path.join(__dirname, 'public')));
+app.use( express.static( "public" ) ); // added this in so that images would render in outpatient prototype
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
 app.use('/nhsapp-frontend', express.static(path.join(__dirname, 'node_modules/nhsapp-frontend/dist/nhsapp')));
