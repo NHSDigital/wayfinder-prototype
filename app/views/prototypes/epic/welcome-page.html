@@ -1,0 +1,119 @@
+{% extends 'prototypes/epic/epic-layout.html' %} 
+
+{% set hub = "Your health" %} 
+{% set pageHeading = "Appointment details" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <!-- TITLE -->
+    <div style="display: flex; align-items: left; gap: 15px; justify-content: space-between;">
+      <h1 class="blue-text">Welcome, Mary!</h1>
+      <button
+        style="
+          border: none;
+          background: none;
+          cursor: pointer;
+          margin-top: -30px;
+        "
+      >
+        <img
+          src="https://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/256/settings-icon.png"
+          alt="printer"
+          width="30"
+          height="30"
+        />
+      </button>
+    </div>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+        <!-- Card 1 -->
+        <li class="nhsuk-card-group__item" style="list-style: none; height: 150px;">
+          <div class="nhsuk-card nhsuk-card--clickable" style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link teal-text" href="#">Messages</a>
+              </h5>
+            </div>
+          </div>
+        </li>
+      
+        <!-- Card 2 -->
+        <li class="nhsuk-card-group__item" style="list-style: none; height: 150px;">
+          <div class="nhsuk-card nhsuk-card--clickable" style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link teal-text" href="/epic/appointments-and-visits">Visits</a>
+              </h5>
+            </div>
+          </div>
+        </li>
+      
+        <!-- Card 3 -->
+        <li class="nhsuk-card-group__item" style="list-style: none; height: 150px;">
+          <div class="nhsuk-card nhsuk-card--clickable" style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link teal-text" href="#">Test results</a>
+              </h5>
+            </div>
+          </div>
+        </li>
+      
+        <!-- Card 4 -->
+        <li class="nhsuk-card-group__item" style="list-style: none; height: 150px;">
+          <div class="nhsuk-card nhsuk-card--clickable" style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link teal-text" href="#">Medication</a>
+              </h5>
+            </div>
+          </div>
+        </li>
+      
+        <!-- Card 5 -->
+        <li class="nhsuk-card-group__item" style="list-style: none; height: 150px;">
+          <div class="nhsuk-card nhsuk-card--clickable" style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link teal-text" href="#">Letters</a>
+              </h5>
+            </div>
+          </div>
+        </li>
+      
+        <!-- Card 6 -->
+        <li class="nhsuk-card-group__item" style="list-style: none; height: 150px;">
+          <div class="nhsuk-card nhsuk-card--clickable" style="height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                <a class="nhsuk-card__link teal-text" href="#">Questionnaires</a>
+              </h5>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    <!-- BLUE CARE CARD -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">Cardiology appointment</h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <h3>Wednesday 1 May 2024</h3>
+        <p>Arrive by 9:40am</p>
+        <p>Croydon University Hospital</p>
+        <p>Cardiology</p>
+        <button
+          class="nhsuk-button nhsapp-button--primary nhsapp-button mychart-blue-button"
+          href="/epic/welcome-page"
+        >
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

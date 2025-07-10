@@ -1,0 +1,98 @@
+{% extends "prototypes/outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "What happens next?" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+     <!-- Green panel component -->
+     <div class="nhsapp-panel">
+        <h1 class="nhsapp-panel__title">
+          Your symptoms have been sent to your GP
+        </h1>
+      </div>
+
+        <div class="nhsuk-inset-text">
+                <p>You do not need to do anything else right now.</p>
+        </div>
+
+        <p>A GP is reviewing your symptoms. You will receive a notification when the GP has advised on what you should do next.</p>
+
+        <h2>Progress</h2>
+        <!-- Timeline component -->
+        <ol class="nhsapp-timeline">
+            <li class="nhsapp-timeline__item nhsapp-timeline__item--past">
+              <svg
+                class="nhsapp-timeline__badge"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+              >
+                <circle cx="14" cy="14" r="13" fill="#005EB8" />
+              </svg>
+          
+          
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header">Completed</h3>
+
+            <p class="nhsapp-timeline__description">Submit your symptoms</p>
+            </div>
+            </li>
+            
+            <li class="nhsapp-timeline__item">
+            <svg
+            class="nhsapp-timeline__badge"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            >
+            <circle cx="14" cy="14" r="13" fill="#005EB8" />
+            </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header nhsuk-u-font-weight-bold">
+            Current status
+            </h3>
+    
+            <p class="nhsapp-timeline__description">GP review</p>
+            </div>
+            </li>
+
+            <li class="nhsapp-timeline__item">
+            <svg
+            class="nhsapp-timeline__badge nhsapp-timeline__badge--small"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            >
+            <circle
+            cx="7"
+            cy="7"
+            r="6"
+            fill="white"
+            stroke="#AEB7BD"
+            stroke-width="2"
+            />
+            </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header"><a href="lockscreen-1.html">Recommended action</a></h3>
+            <p class="nhsapp-timeline__description">You should get a response in 48 hours</p> 
+            </div> 
+        </li> 
+    </ol>
+
+
+    </div>
+  </div>
+
+  {% endblock %}

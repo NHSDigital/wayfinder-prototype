@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends "prototypes/outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Blood test location" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1>Choose blood test location</h1>
+
+      <!-- BUTTON COMPONENT -->
+        <div>
+            <a
+            class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+            data-module="nhsuk-button"
+            type="submit"
+            href="review-request-test-kit.html"
+            >
+                Postal (3-5 days)
+            </a>
+        </div>
+
+        <div>
+            <a
+            class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+            data-module="nhsuk-button"
+            type="submit"
+            href="test-date-time.html"
+            >
+                Community diagnostic centre (1 week)
+            </a>
+        </div>
+
+        <div>
+            <a
+            class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+            data-module="nhsuk-button"
+            type="submit"
+            href="test-date-time.html"
+            >
+                Hospital (6 weeks)
+            </a>
+        </div>
+
+        
+    </div>
+  </div>
+
+  {% endblock %}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% extends "prototypes/outpatient/app-layout.html" %}
+
+{% set hub = "Services" %}
+{% set backLink =true %} 
+{% set pageHeading = "Request new date and time" %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        {% include "components/provider-banner/include.html" %}
+    
+        <form
+          id="form"
+          method="post"
+          action="#"
+          novalidate="novalidate"
+        >
+          <div class="nhsuk-form-group">
+            <!-- HEADING -->
+            <fieldset class="nhsuk-fieldset" aria-describedby="select-medicines-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                  Choose a date and time for your appointment
+                </h1>
+              </legend>
+    
+              <!-- SUB HEADING -->
+              <div>
+                <h6>Thursday 10 July 2024</h6>
+              </div>
+    
+              <!-- CHECKBOXES -->
+              <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                      Any time this day
+                    </label>
+                </div>
+    
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    12:00pm
+                  </label>
+                  </div>
+    
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    12:30pm
+                  </label>
+                </div>
+    
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-4" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    1:00pm
+                  </label>
+                </div>
+    
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="example-5" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    1:30pm
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+    
+          <div>
+            <!-- SUB HEADING -->
+            <div>
+              <h6>Friday 11 July 2025</h6>
+            </div>
+    
+            <!-- CHECKBOXES -->
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-6" name="example" type="radio" value="yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Any time this day
+                </label>
+              </div>
+    
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-7" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  12:00pm
+                </label>
+              </div>
+    
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-8" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  12:30pm
+                </label>
+              </div>
+    
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-9" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  1:00pm
+                </label>
+              </div>
+    
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-10" name="example" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  1:30pm
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <!-- PAGINATION LINK COMPONENT -->
+          <div style="padding-bottom: 15px; margin-top: 20px;">
+            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
+              <span class="nhsuk-pagination__page">Load More</span>
+            </a>
+          </div>
+    
+          <!-- BUTTON COMPONENT -->
+          <div style="padding-top: 20px">
+            <a class="nhsuk-button nhsapp-button nhsapp-button" 
+            data-module="nhsuk-button" type="submit" 
+            href="review-request-2.html">
+              Continue
+            </a>
+          </div>
+        </form>
+    
+        <div>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %}
+    

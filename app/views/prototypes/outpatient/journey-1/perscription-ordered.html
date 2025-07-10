@@ -1,0 +1,103 @@
+{% extends "prototypes/outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %} 
+{% set backLink = true %} 
+{% set pageHeading = "Prescription ordered" %} 
+
+{% block content%}
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+          <title>Prescription ordered</title>
+        </div>
+
+        <!-- Green panel component -->
+        <div class="nhsapp-panel">
+            <h1 class="nhsapp-panel__title">
+              Your prescription has been ordered
+            </h1>
+          </div>
+        
+        <!-- Summary list component-->
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Prescription
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>Medication details</p>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Pharmacy
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Name, address and phone number
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Availability
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Available to collect in 1 hour
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+            </dd>
+          </div>
+        </dl>
+
+        <!-- What happens now section -->
+        <h2>What happens now</h2>
+        <p>Once you have completed your course of medication, your treatment plan is finished.</p>
+        
+        <!-- Blue care card -->
+        <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+            <div class="nhsuk-card--care__heading-container">
+              <h2 class="nhsuk-card--care__heading"> <span role="text"><span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+                Check your symptoms again if:</span> </h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+            </div>
+            <div class="nhsuk-card__content">
+              <ul>
+                <li>you experience new symptoms</li>
+                <li>Your current symptoms worsen</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <!-- Progress section -->
+           <h2>Progress</h2>
+
+           <p>Your treatment plan for your current symptoms is complete. Review key information:</p>
+
+          <!-- Contents list component -->
+          <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+            <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+            <ol class="nhsuk-contents-list__list">
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="#">Submitted symptoms</a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="gp-recommendation.html">GP recommended action</a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="test-results-2.html">Test results</a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="#">Submitted additional information</a>
+              </li>
+              <li class="nhsuk-contents-list__item">
+                <a class="nhsuk-contents-list__link" href="perscription-issued.html">Prescription issued</a>
+              </li>
+            </ol>
+          </nav>
+
+      </div>
+    </div>
+    
+{% endblock %}
+    

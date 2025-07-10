@@ -1,0 +1,27 @@
+{% extends "prototypes/outpatient/app-layout.html" %}
+
+{% set hub = "Messages" %}
+{% set backLink = true %} 
+{% set pageHeading = "Messages" %}
+{% set pageDescription = "Message" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsapp-section-heading">
+            <title>Messsage</title>
+            <h1 class="nhsuk-heading-l">Recommended action</h1>
+          </div>
+          <p class="nhsuk-u-margin-bottom-5 nhsuk-secondary-text-color" style="color: gray;">Sent 3 May at 12:05pm</p>
+
+          <p class="nhsuk-u-margin-bottom-5">A specialist has reviewed your information and has issued a prescription for treatment. </p>
+
+          <p><a style="text-decoration: underline;" href="specialist-recommendation.html">See recommendation and order prescription</a></p>
+
+          <hr>
+          
+          <p><a style="text-decoration: underline;">Flag message</a></p>
+
+    </div>
+  </div>
+{% endblock %}

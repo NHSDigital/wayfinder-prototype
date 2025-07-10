@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% extends "prototypes/outpatient/app-layout.html" %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "What happens next?" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <h1>GP recommendation</h1>
+        <div class="nhsuk-inset-text">
+                <p>A GP has recommended that you book a blood test</p>
+        </div>
+
+        <h2>GP notes</h2>
+        <p>I have reveiwed the symptoms that you sent and think that the best course of action is for you
+            to book a blood test to check for X, Y and Z.
+        </p>
+
+         <!-- BUTTON COMPONENT -->
+         <div style="margin-top: 20px;">
+          <a
+          class="nhsuk-button nhsapp-button--primary nhsapp-button"
+          data-module="nhsuk-button"
+          type="submit"
+          href="test-booking-options.html"
+          >
+              Book blood test
+          </a>
+      </div>
+
+        <h2>Progress</h2>
+        <!-- Timeline component -->
+        <ol class="nhsapp-timeline">
+            <!-- Item 1 -->
+            <li class="nhsapp-timeline__item nhsapp-timeline__item--past">
+              <svg
+                class="nhsapp-timeline__badge"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+              >
+                <circle cx="14" cy="14" r="13" fill="#005EB8" />
+              </svg>
+          
+          
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header">Completed</h3>
+
+            <p class="nhsapp-timeline__description">Submit your symptoms</p>
+            </div>
+            </li>
+            
+            <!-- Item 2 -->
+            <li class="nhsapp-timeline__item nhsapp-timeline__item--past">
+            <svg
+            class="nhsapp-timeline__badge"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            >
+            <circle cx="14" cy="14" r="13" fill="#005EB8" />
+            </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header">
+            Completed
+            </h3>
+    
+            <p class="nhsapp-timeline__description">GP review</p>
+            </div>
+            </li>
+
+            <!-- Item 3 -->
+            <li class="nhsapp-timeline__item">
+              <svg
+              class="nhsapp-timeline__badge"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              >
+              <circle cx="14" cy="14" r="13" fill="#005EB8" />
+              </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header nhsuk-u-font-weight-bold">Current status</h3>
+            <p class="nhsapp-timeline__description">Recommended action</p> 
+            </div> 
+        </li> 
+
+        <!-- Item 4 -->
+        <li class="nhsapp-timeline__item">
+            <svg
+            class="nhsapp-timeline__badge nhsapp-timeline__badge--small"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            >
+            <circle
+            cx="7"
+            cy="7"
+            r="6"
+            fill="white"
+            stroke="#AEB7BD"
+            stroke-width="2"
+            />
+            </svg>
+            
+            <div class="nhsapp-timeline__content">
+            <h3 class="nhsapp-timeline__header">Future step</h3>
+            <p class="nhsapp-timeline__description">GP review</p> 
+            </div> 
+        </li> 
+    </ol>
+
+    </div>
+  </div>
+
+  {% endblock %}

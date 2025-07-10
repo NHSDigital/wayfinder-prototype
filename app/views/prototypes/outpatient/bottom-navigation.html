@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <nav class="app-bottom-navigation" id="bottomNav" style="display:block">
     <div class="nhsuk-width-container">
       <div class="nhsuk-grid-row">
         <ul class="app-bottom-navigation__list">
           <li class="app-bottom-navigation__item">
-            <a class="app-bottom-navigation__link" href="/prototypes/community-health/home-screen">
+            <a class="app-bottom-navigation__link" href="/prototypes/outpatient/home-screen.html">
               {% if hub === "Home" %}
                 {{ nhsappIcon('homeFilled') }}
               {% else %}
@@ -33,7 +34,7 @@
             </a>
           </li>
           <li class="app-bottom-navigation__item">
-            <a class="app-bottom-navigation__link" href="prototypes/community-health/messagesmessages.html">
+            <a class="app-bottom-navigation__link" href="#">
               {% if hub === "Messages" %}
                 {% if data['messages'] > 0 %}
                   {{ nhsappIcon('messagesUnreadFilled') }}

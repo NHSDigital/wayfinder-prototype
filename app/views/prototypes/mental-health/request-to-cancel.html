@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Ask to cancel your appointment" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {% include "components/provider-banner/include.html" %}
+
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Wednesday 1 May 2024"
+          }
+        },
+        {
+            key: {
+              text: "Appointment type:"
+            },
+            value: {
+              html: "Mental health service appointment"
+            }
+          },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:40am"
+          }
+        },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "Croydon University Hospital, The Willows, Croydon, RJ6"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              text: "Dr Donald Glover"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="nhsuk-u-margin-bottom-4"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
+
+      <hr>
+
+    <!-- WARNING CALLOUT COMPONENT -->
+    <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label"> <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important </span>
+            Important
+          </span> </h3>
+        <p>Cancelling this appointment may remove you from the waiting list for care.</p>
+        <p>You should attend your mental health appointments if you can.</p>
+        <p>If you cannot attend this appointment but still need this care you can <a href="#">change it instead</a>.</p>
+      </div>
+
+      <!-- FIELDSET COMPONENTS -->
+    <div >
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            How a request works
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Your request to cancel will be reviewed by your care provider who might contact you to talk about it.</h3>
+            <h3 class="nhsuk-fieldset__legend">Your request will then be processed by the booking team. This will take approximately 48 hours.</h3>
+            <h3 class="nhsuk-fieldset__legend">The cancelled appointment will remain visible during that time.</h3>
+        </legend>
+    </fieldset>
+        {{ button({
+          text: "Start",
+          classes: "nhsapp-button",
+          href: "cancellation-review.html"
+        }) }}
+    </div>  
+
+      <!-- FIELDSET COMPONENTS -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with this task
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+        </legend>
+      </fieldset>
+    </div>
+
+      <!-- FOOTER COMPONENT-->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  {% endblock %}
