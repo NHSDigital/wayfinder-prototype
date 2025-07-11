@@ -7,7 +7,6 @@
 {% set pageDescription = "View or manage upcoming and past appointments, referrals and waiting lists" %}
 
 {% block content %}
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
@@ -18,7 +17,6 @@
         description: pageDescription
       })}}
 
-      {# Cards section #}
       <ul class="nhsapp-cards nhsapp-cards--stacked">
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
@@ -49,7 +47,6 @@
             </div>
             {% if data['appointment-letter'] != "read" %}
             <p class="nhsapp-badge" aria-hidden="true">
-              {# Badge component #}
               <span class="nhsuk-u-visually-hidden">You have</span>
               1
               <span class="nhsuk-u-visually-hidden">notifications</span> 
