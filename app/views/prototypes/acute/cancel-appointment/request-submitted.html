@@ -1,0 +1,109 @@
+{# Use base layout shared across acute flows #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Page-level configuration: section, navigation and heading #}
+{% set hub = "Your health" %}                            {# Breadcrumb label or category #}
+{% set backLink = true %}                                {# Enables default back link #}
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+
+<!-- GRID WRAPPER -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- PAGE HEADING AREA -->
+    <div class="nhsapp-section-heading">
+
+      {# Misplaced <title> tag inside body – should be removed #}
+      <title>Review your request</title>
+
+      {# Optional branding, trust info, or service indicator banner #}
+      {% include "components/provider-banner/include.html" %}
+    </div>
+
+    <!-- SUCCESS PANEL -->
+    <div class="nhsapp-panel">
+      <h1 class="nhsapp-panel__title">
+        Your request to cancel has been submitted
+      </h1>
+    </div>
+
+    <!-- SECTION: Requested appointment summary -->
+    <div class="nhsapp-section-heading">
+      <h2 class="nhsuk-heading-s">Your requested appointment details</h2>
+    </div>
+
+    {# Summary list of fixed appointment details (not user input) #}
+    {{ summaryList({
+      classes: "nhsuk-u-margin-bottom-4",
+      rows: [
+        { key: { text: "Date" }, value: { html: "Friday 4 July 2025" } },
+        { key: { text: "Time" }, value: { html: "10:30am" } },
+        { key: { text: "Appointment type" }, value: { text: "Asthma" } },
+        { key: { text: "Location" }, value: { text: "Northern General Hospital, Entrance G, Sheffield, S5 7AU" } },
+        { key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } }
+      ]
+    }) }}
+
+    <!-- NEXT STEPS EXPLANATION -->
+    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-4">What happens now</h3>
+    <p>You do not need to do anything while the booking team is processing your request to reschedule</p>
+    <p class="nhsuk-u-margin-bottom-5">
+      Rescheduling your appointment will take approximately 48 hours. The original appointment may remain visible during that time.
+    </p>
+
+    <!-- VIEW APPOINTMENT BUTTON -->
+    <a class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+       data-module="nhsuk-button"
+       href="app-in-review.html">
+      View this appointment
+    </a>
+
+    <!-- VIEW ALL LINK -->
+    <p>
+      <a style="text-decoration: underline;" href="aggregator-pending.html">
+        View all appointments
+      </a>
+    </p>
+
+    <!-- SUPPORT SECTION -->
+    <div class="nhsuk-u-margin-top-6">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">Get help with this task</h2>
+        </legend>
+        <div class="nhsuk-body">
+          <p>Contact the booking team on <a href="">0XXXX XXX XXX</a></p>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- FOOTER LINKS -->
+    <footer role="contentinfo" class="nhsuk-footer">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <ul class="nhsuk-footer__list">
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+            </li>
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+            </li>
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+            </li>
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+{% endblock %}

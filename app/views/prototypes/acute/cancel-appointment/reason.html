@@ -21,18 +21,20 @@
 
         {# RADIO BUTTON COMPONENT FOR REASON OPTIONS #}
         {{ radios({
-          idPrefix: "question-3",                    
-          name: "question-3",                          
+          idPrefix: "reason-question",                    
+          name: "reason-question",                          
           fieldset: {
             legend: {
-              text: "Why do you need to reschedule?",  
+              text: "Why do you need to cancel?",  
               classes: "nhsuk-fieldset__legend--l",
               isPageHeading: true                       
             }
           },
           items: [
             { value: "I cannot attend at the scheduled time", text: "I cannot attend at the scheduled time" },
-            { value: "I have a new condition", text: "I have a new condition" },
+            { value: "I have already used this service", text: "I have already used this service" },
+            { value: "I need a different service", text: "I need a different service" },
+            { value: "I do not need care anymore", text: "I do not need care anymore" },
             { value: "This was booked by mistake", text: "This was booked by mistake" },
             { value: "Other", text: "Other" }
           ]
