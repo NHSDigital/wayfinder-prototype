@@ -1,126 +1,108 @@
+{# Extend the shared acute layout used throughout the prototype #}
 {% extends "prototypes/acute/acute-layout.html" %}
 
-{% set hub = "Your health" %} 
-{% set backLink = true %}
-{% set pageHeading = "Request all dates and times that you can attend" %} 
+{# Define page-level metadata passed to components/layout #}
+{% set hub = "Your health" %}                        {# Top-level breadcrumb or category #}
+{% set backLink = true %}                            {# Enable back link component #}
+{% set pageHeading = "Request all dates and times that you can attend" %}  {# Main heading for dynamic title #}
 
-{% block content %}
+{% block content %}                                   {# Begin page content block #}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
+    {# Include a provider banner (e.g., hospital branding or care info) #}
     {% include "components/provider-banner/include.html" %}
 
-    {# Checkbox component #}
-    <form method="post" action="reason" novalidate>
+    <!-- MAIN FORM WRAPPING ALL CHECKBOX INPUTS -->
+    <form method="post" action="reason" novalidate>   {# Form posts to next page; triggers autoStoreData if enabled #}
+
+      {# MONDAY CHECKBOX GROUP #}
       {{ checkboxes({
-        idPrefix: "question-0",
-        name: "mary-monday",
+        idPrefix: "question-0",                        
+        name: "mary-monday",                          
         fieldset: {
           legend: {
-            text: "Request all dates and times that you can attend",
+            text: "Request all dates and times that you can attend", 
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         },
         hint: {
-          text: "Monday 7 July 2025"
+          text: "Monday 7 July 2025"                  
         },
         items: [
-          {
-            value: "Anytime this day",
-            text: "Anytime this day"
-          },
-          {
-            value: "12:30pm",
-            text:  "12:30pm"
-          },
-          {
-            value: "1:00pm",
-            text:  "1:00pm"
-          },
-          {
-            value: "1:30pm",
-            text:  "1:30pm"
-          }
+          { value: "Anytime this day", text: "Anytime this day" },
+          { value: "12:30pm", text: "12:30pm" },
+          { value: "1:00pm", text: "1:00pm" },
+          { value: "1:30pm", text: "1:30pm" }
         ]
       }) }}
 
-      {# Checkbox component #}
+      {# TUESDAY CHECKBOX GROUP #}
       {{ checkboxes({
         idPrefix: "question-1",
-        name: "mary-tuesday",
+        name: "mary-tuesday",                         
         hint: {
           text: "Tuesday 8 July 2025"
         },
         items: [
-          {
-            value: "Anytime this day",
-            text: "Anytime this day"
-          },
-          {
-            value: "12:30pm",
-            text:  "12:30pm"
-          },
-          {
-            value: "1:00pm",
-            text:  "1:00pm"
-          },
-          {
-            value: "1:30pm",
-            text:  "1:30pm"
-          }
+          { value: "Anytime this day", text: "Anytime this day" },
+          { value: "12:30pm", text: "12:30pm" },
+          { value: "1:00pm", text: "1:00pm" },
+          { value: "1:30pm", text: "1:30pm" }
         ]
       }) }}
 
-      <!-- PAGINATION LINK COMPONENT -->
+      <!-- PAGINATION LINK (OPTIONAL FUNCTIONALITY) -->
       <div style="padding-bottom: 15px">
         <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
           <span class="nhsuk-pagination__page">Load More</span>
         </a>
       </div>
 
-      <!-- BUTTON COMPONENT -->
-          {{ button({
-          text: "Continue",
-          attributes: { type: "submit" },
-          classes: "nhsapp-button"
-          }) }}
+      <!-- SUBMIT BUTTON TO POST SELECTED DATES -->
+      {{ button({
+        text: "Continue",
+        attributes: { type: "submit" },                 
+        classes: "nhsapp-button"
+      }) }}
 
-      </form>
+    </form>
 
-    <!-- GET HELP TEXT -->
+    <!-- SUPPORT TEXT SECTION -->
     <h2>Get help with this task</h2>
     <p>
       Contact the booking team on
       <a style="text-decoration: underline">0XXXX XXXXXX</a>
     </p>
 
-    <!-- FOOTER COMPONENT-->
+    <!-- FOOTER LINKS -->
     <footer role="contentinfo">
-        <div class="nhsuk-footer-container">
-          <div class="nhsuk-width-container">
-            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-            <div class="nhsuk-footer">
-              <ul class="nhsuk-footer__list">
-                <li class="nhsuk-footer__list-item">
-                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
-                </li>
-                <li class="nhsuk-footer__list-item">
-                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
-                </li>
-                <li class="nhsuk-footer__list-item">
-                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
-                </li>
-                <li class="nhsuk-footer__list-item">
-                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
-                </li>
-              </ul>
-            </div>
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
 
   </div>
 </div>
+
 {% endblock %}

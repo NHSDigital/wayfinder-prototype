@@ -1,125 +1,110 @@
+{# Use base layout from acute prototype #}
 {% extends "prototypes/acute/acute-layout.html" %}
 
+{# Configure page-level metadata #}
 {% set hub = "Your health" %}
 {% set backLink = true %}
 {% set pageHeading = "Review your request" %}
 
 {% block content %}
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
 
+    {# Provider banner (e.g. hospital or service branding) #}
     {% include "components/provider-banner/include.html" %}
 
-    <!-- PAGE TITLE -->
+    <!-- PAGE TITLE COMPONENT -->
+    {# Renders pageHeading and optional subheading #}
     {{ dynamicPageTitle({
       title: pageHeading,
       titleSecondary: true
     }) }}
 
-    <!-- OLD APPOINTMENT SECTION -->
+    <!-- SECTION: Old appointment details -->
     <div class="nhsapp-section-heading">
       <h2 class="nhsuk-heading-s">Your old appointment</h2>
     </div>
 
+    {# Summary list of fixed appointment details (not user input) #}
     {{ summaryList({
       classes: "nhsuk-u-margin-bottom-4",
       rows: [
-        {
-          key: { text: "Date" },
-          value: { html: "Friday 4 July 2025" }
-        },
-        {
-          key: { text: "Time" },
-          value: { html: "10:30am" }
-        },
-        {
-          key: { text: "Appointment type" },
-          value: { text: "Asthma" }
-        },
-        {
-          key: { text: "Location" },
-          value: { text: "Northern General Hospital, Entrance G, Sheffield, S5 7AU" }
-        },
-        {
-          key: { text: "Clinician" },
-          value: { text: "Ahmet Kaya" }
-        }
+        { key: { text: "Date" }, value: { html: "Friday 4 July 2025" } },
+        { key: { text: "Time" }, value: { html: "10:30am" } },
+        { key: { text: "Appointment type" }, value: { text: "Asthma" } },
+        { key: { text: "Location" }, value: { text: "Northern General Hospital, Entrance G, Sheffield, S5 7AU" } },
+        { key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } }
       ]
     }) }}
 
-    <!-- REQUESTED APPOINTMENT SECTION -->
+    <!-- SECTION: Requested appointment dates -->
     <div class="nhsapp-section-heading">
       <h2 class="nhsuk-heading-s">Your requested appointment</h2>
     </div>
+
+    <!-- Summary list: User-selected times for Monday and Tuesday -->
     <dl class="nhsuk-summary-list">
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Monday 7 July 2025</dt>
-            <dd class="nhsuk-summary-list__value">
-            {% if data['mary-monday'] %}
-                {% if data['mary-monday'] | length > 1 %}
-                {{ data['mary-monday'] | join(', ') }}
-                {% else %}
-                {{ data['mary-monday'] }}
-                {% endif %}
+
+      <!-- Monday -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Monday 7 July 2025</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['mary-monday'] %}
+            {% if data['mary-monday'] | length > 1 %}
+              {{ data['mary-monday'] | join(', ') }}   {# Multiple selections joined #}
             {% else %}
-                No time selected for Monday
+              {{ data['mary-monday'] }}                 {# Single selection #}
             {% endif %}
-            </dd>
-        </div>
+          {% else %}
+            No time selected for Monday                {# Fallback message #}
+          {% endif %}
+        </dd>
+      </div>
 
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Tuesday 8 July 2025</dt>
-            <dd class="nhsuk-summary-list__value">
-            {% if data['mary-tuesday'] %}
-                {% if data['mary-tuesday'] | length > 1 %}
-                {{ data['mary-tuesday'] | join(', ') }}
-                {% else %}
-                {{ data['mary-tuesday'] }}
-                {% endif %}
+      <!-- Tuesday -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Tuesday 8 July 2025</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['mary-tuesday'] %}
+            {% if data['mary-tuesday'] | length > 1 %}
+              {{ data['mary-tuesday'] | join(', ') }}
             {% else %}
-                No time selected for Tuesday
+              {{ data['mary-tuesday'] }}
             {% endif %}
-            </dd>
-        </div>
+          {% else %}
+            No time selected for Tuesday
+          {% endif %}
+        </dd>
+      </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Appointment type
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Asthma
-          </dd>
-        </div>
+      <!-- Static fields shown again for clarity -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Appointment type</dt>
+        <dd class="nhsuk-summary-list__value">Asthma</dd>
+      </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Location
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Northern General Hospital, Entrance G, Sheffield, S5 7AU
-          </dd>
-        </div>
-        
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Clinician
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            Ahmet Kaya
-          </dd>
-        </div>
-      </dl>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          Northern General Hospital, Entrance G, Sheffield, S5 7AU
+        </dd>
+      </div>
 
-      <h2>Reason</h2>
-      {% if data['question-3'] %}
-        <p class="nhsuk-u-margin-bottom-6">{{ data['question-3'] }}</p>
-      {% else %}
-        <p class="nhsuk-u-margin-bottom-6">No reason provided.</p>
-      {% endif %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Clinician</dt>
+        <dd class="nhsuk-summary-list__value">Ahmet Kaya</dd>
+      </div>
+    </dl>
 
+    <!-- SECTION: Reason for rescheduling -->
+    <h2>Reason</h2>
+    {% if data['question-3'] %}
+      <p class="nhsuk-u-margin-bottom-6">{{ data['question-3'] }}</p>   {# Show selected reason #}
+    {% else %}
+      <p class="nhsuk-u-margin-bottom-6">No reason provided.</p>
+    {% endif %}
 
-    <!-- CONFIRMATION CHECKBOX -->
+    <!-- SECTION: Confirmation checkbox (non-functional placeholder) -->
     <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -136,22 +121,25 @@
       </fieldset>
     </div>
 
-    <!-- SUBMIT BUTTON -->
+    <!-- SUBMIT LINK (currently not a form submit) -->
     <div>
-      <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="request-submitted.html">
-        Request new appointment
+      <a class="nhsuk-button"
+         data-module="nhsuk-button"
+         type="submit"
+         href="request-submitted.html">
+         Request new appointment
       </a>
     </div>
 
     <!-- SUPPORT SECTION -->
-      <fieldset class="nhsuk-fieldset">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h2 class="nhsuk-fieldset__heading">Get help with this task</h2>
-        </legend>
-        <div class="nhsuk-body">
-          <p class="nhsuk-u-margin-bottom-4">Contact the booking team on <a href="">0XXXX XXX XXX</a></p>
-        </div>
-      </fieldset>
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h2 class="nhsuk-fieldset__heading">Get help with this task</h2>
+      </legend>
+      <div class="nhsuk-body">
+        <p class="nhsuk-u-margin-bottom-4">Contact the booking team on <a href="">0XXXX XXX XXX</a></p>
+      </div>
+    </fieldset>
 
     <!-- FOOTER -->
     <footer role="contentinfo" class="nhsuk-footer">

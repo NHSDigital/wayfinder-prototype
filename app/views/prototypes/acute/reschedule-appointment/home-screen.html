@@ -1,24 +1,26 @@
-<!DOCTYPE html>
+{# Extend the main layout for acute journeys #}
 {% extends "prototypes/acute/acute-layout.html" %}
 
-{% set hub = "Home" %}
-{% set backLink = true %}
-{% set backLinkURL = "/prototypes/acute/home-screen.html" %}
-{% set pageHeading = "Home" %}
+{# Set navigation and heading info used in layout components #}
+{% set hub = "Home" %}                          {# Breadcrumb label or nav context #}
+{% set backLink = true %}                       {# Enables back button #}
+{% set backLinkURL = "/prototypes/acute/home-screen.html" %}  {# Back button target #}
+{% set pageHeading = "Home" %}                  {# Main page heading for title block #}
 
 {% block content %}
-
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <!-- DYNAMIC PAGE TITLE -->
+      <!-- DYNAMIC TITLE SECTION -->
+      {# Displays title block with user details and NHS number #}
       {{ dynamicPageTitle({
         logo: data['web'] !== "yes",
         greetingName: data['userFirstName'] + " " + data['userLastName'],
         nhsNumber: data['nhsNumber']
       })}}
 
-      <!-- SECTION - SERVICES -->
+      <!-- SECTION: Services -->
+      {# Header for service cards with optional "View all" link #}
       {{ nhsappSectionHeading({
         headingText: "Services",
         linkText: "View all",
@@ -26,21 +28,16 @@
         linkAriaLabel: "View all services"
       }) }}
 
+      {# Cards for accessing specific service flows #}
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
-          {
-            title: "Request repeat medicines",
-            href: "#"
-          },
-          {
-            title: "Check if you need urgent medical help using 111 online",
-            href: "#"
-          }
+          { title: "Request repeat medicines", href: "#" },
+          { title: "Check if you need urgent medical help using 111 online", href: "#" }
         ]
       }) }}
 
-      <!-- SECTION - YOUR HEALTH -->
+      <!-- SECTION: Your Health -->
       {{ nhsappSectionHeading({
         headingText: "Your health",
         linkText: "View all",
@@ -48,31 +45,23 @@
         linkAriaLabel: "View all your health"
       }) }}
 
+      {# Cards for patient records, prescriptions, and appointments #}
       {{ nhsappCardGroup({
         stacked: true,
         cards: [
-          {
-            title: "GP health record",
-            href: "#"
-          },
-          {
-            title: "View and manage prescriptions",
-            href: "#"
-          },
-          {
-            title: "Upcoming and past appointments",
-            href: "upcoming-and-past-appointments.html"
-          }
+          { title: "GP health record", href: "#" },
+          { title: "View and manage prescriptions", href: "#" },
+          { title: "Upcoming and past appointments", href: "upcoming-and-past-appointments.html" }
         ]
       }) }}
 
-      <!-- SECTION - MESSAGES -->
-      {{ nhsappSectionHeading({
-        headingText: "Messages"
-      }) }}
+      <!-- SECTION: Messages -->
+      {{ nhsappSectionHeading({ headingText: "Messages" }) }}
 
-      {% set data = { 'messages': 4 } %} <!-- Set the message count to 2 -->
+      {# Simulated message count; in a real prototype this would come from user data #}
+      {% set data = { 'messages': 4 } %} {# Show 4 unread messages #}
 
+      {# If there are messages, show a card with badge and unread icon #}
       {% if data['messages'] > 0 %}
         {{ nhsappCardGroup({
           stacked: true,
@@ -91,6 +80,7 @@
           ]
         }) }}
       {% else %}
+        {# Fallback for zero messages #}
         {{ nhsappCardGroup({
           stacked: true,
           cards: [
@@ -103,28 +93,31 @@
         }) }}
       {% endif %}
 
-      <!-- SECTION - SWITCH PROFILES -->
-      {{ nhsappSectionHeading({
-        headingText: "Manage services for another person"
-      }) }}
+      <!-- SECTION: Switch Profiles -->
+      {{ nhsappSectionHeading({ headingText: "Manage services for another person" }) }}
 
+      {# Card for switching NHS App profiles (e.g. proxy access) #}
       {{ nhsappCard({
         title: 'Switch profiles',
         href: '#',
         prefixIcon: 'switchProfile'
       }) }}
 
-      <!-- FLU CAMPAIGN CARD -->
+      <!-- FLU CAMPAIGN PROMO CARD -->
+      {# Highlighted card for seasonal flu vaccine promotion #}
       <div class="nhsuk-card app-card--blue">
         <div class="nhsuk-card__content app-card__content">
-          <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-padding-top-2">Book a free flu vaccine</h2>
-          <p class="nhsuk-card__description">Check if you are eligible and book an appointment</p>
+          <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-padding-top-2">
+            Book a free flu vaccine
+          </h2>
+          <p class="nhsuk-card__description">
+            Check if you are eligible and book an appointment
+          </p>
           <a class="nhsuk-button nhsuk-button--reverse nhsapp-button" href="#">Find out more</a>
         </div>
       </div>
 
-
-      <!-- ICON WITH LINK -->
+      <!-- SUPPORT LINK -->
       <div>
         <p>
           <a href="#" class="app-link--with-icon nhsuk-link--no-visited-state">
@@ -136,5 +129,4 @@
 
     </div>
   </div>
-
 {% endblock %}
