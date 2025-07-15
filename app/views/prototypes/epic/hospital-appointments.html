@@ -39,7 +39,7 @@
             <path d="M15.0397 15.24H8.96973C8.83166 15.24 8.71973 15.3519 8.71973 15.49V16.51C8.71973 16.6481 8.83166 16.76 8.96973 16.76H15.0397C15.1778 16.76 15.2897 16.6481 15.2897 16.51V15.49C15.2897 15.3519 15.1778 15.24 15.0397 15.24Z" />
           </svg>
           <span class="app-u-gap-0">
-            Filter <span class="nhsuk-u-visually-hidden"> messages </span>
+            Filters (1) <span class="nhsuk-u-visually-hidden"> messages </span>
             {% if data['message-sender'] == "" and data['message-status'] == "" %}
             {% else %}
               ({{ data['message-sender'] | length + data['message-status'] | length }})
@@ -54,8 +54,14 @@
           </span>
         </a>
         
+        {# Sort by Icon #}
 
         </div>
+
+      <!-- SECTION -->
+      {{ nhsappSectionHeading({
+        subheadingText: "Showing 1 of 2 appointment(s)"
+      })}}
 
       <!-- CARDS -->
       <ul class="nhsapp-cards">
@@ -82,30 +88,11 @@
 
       <!-- SECTION -->
       {{ nhsappSectionHeading({
-        headingText: "Past appointments",
-        subheadingText: "Showing 1 of 6"
+        headingText: "Past appointments"
       })}}
 
       <!-- CARDS -->
       <ul class="nhsapp-cards">
-        <li class="nhsapp-card">
-          <div class="nhsapp-card__container">
-            <div class="nhsapp-card__content">
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Rheumatology appointment on Tuesday 18 February 2024 at 3:20pm">
-                Rheumatology appointment
-              </a>
-              <div class="nhsapp-card__below">
-                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Tuesday 03 January 2024 <br>3:00pm</p>
-                <p class="nhsuk-u-margin-bottom-3">The Willows, Croydon University Hospital</p>
-                <p class="nhsuk-body-s nhsuk-u-secondary-text-color">
-                  Document(s) and questionnaire(s) attached
-                </p>
-              </div>
-            </div>
-            {{ nhsappIcon('chevronRight') }}
-          </div>
-        </li>
-
         <li class="nhsapp-card">
           <div class="nhsapp-card__container">
             <div class="nhsapp-card__content">
