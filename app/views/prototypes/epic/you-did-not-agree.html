@@ -1,0 +1,55 @@
+{% extends 'prototypes/epic/epic-layout.html' %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "You did not agree to share your NHS login information" %}
+{% set pageDescription = "You may not be able to use <b>'MyFrimleyHealth'</b> as they need your NHS login to verify your identity" %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+
+        <!-- DYNAMIC PAGE TITLE -->
+        {{ dynamicPageTitle({
+            title: pageHeading,
+            titleSecondary: true,
+            description: pageDescription
+        })}}
+
+        {# Radios #}
+ {{ radios({
+          idPrefix: "what-to-do",
+          name: "what-to-do",
+          fieldset: {
+            legend: {
+              text: "What do you want to do?",
+              classes: "nhsuk-fieldset__legend--l"
+            }
+          },
+          "items": [
+            {
+              value: "Go back and agree to share your NHS login information",
+              text: "Go back and agree to share your NHS login information",
+              checked: checked("what-to-do", "Go back and agree to share your NHS login information")
+            },
+            {
+              value: "Go to MyFrimleyHealth",
+              html: "Go to <b>'MyFrimleyHealth'</b> without sharing your NHS login information",
+              checked: checked("what-to-do", "Go to MyFrimleyHealth")
+            }
+          ]
+        }) }}
+       
+        {# Button #}
+        {{ button({
+        text: "Continue",
+        href: "",
+        classes: "nhsapp-button"
+        }) }}
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
