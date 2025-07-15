@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frimley Screenshot Prototype</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      background-color: #f0f2f5;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+      color: #0077cc;
+      background-color: #ffffff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      background-color: #f0f0f0;
+    }
+
+    .screenshot-wrapper {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .screenshot-wrapper img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .caption {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <a href="agree-to-share-info.html" class="back-link">← Back</a>
+  <div class="screenshot-wrapper">
+    <img src="/images/my-frimley-login.png" alt="Frimley Login Screenshot">
+    <div class="caption">Prototype preview of MyFrimleyHealth login page</div>
+  </div>
+</body>
+</html>
