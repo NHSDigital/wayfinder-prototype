@@ -24,7 +24,7 @@
             text: "Date"
           },
           value: {
-            html: "Monday 16 September 2024"
+            html: "Wednesday 1 May 2024"
           }
         },
         {
@@ -32,7 +32,7 @@
             text: "Time"
           },
           value: {
-            html: "10:30am"
+            html: "9:40am"
           }
         },
           {
@@ -40,7 +40,7 @@
               text: "Location"
             },
             value: {
-              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
+              html: "Croydon University Hospital, The Willows, Croydon, RJ7"
             }
           },
           {
@@ -48,7 +48,7 @@
               text: "Clinician"
             },
             value: {
-              html: "Amet Kaya <br> Counsellor"
+              html: "Dr Donald Glover"
             }
           }
         ]
@@ -72,60 +72,6 @@
         </div>
       </div>
 
-      {# Things to do section #}
-      {{ nhsappSectionHeading({
-        headingText: "Things to do"
-      }) }}
-
-      {# Cards #}
-      <ul class="nhsapp-cards">
-
-        <li class="nhsapp-card">
-          <div class="nhsapp-card__container">   
-            <div class="nhsapp-card__content">
-              <div class="nhsapp-card__above">
-                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-3">To read</strong>
-              </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/your-health/your-prescription">
-                Appointment confirmation letter
-              </a>
-              <div class="nhsapp-card__below">
-                <p class="nhsuk-u-secondary-text-color nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-3">Received 6 September 2024</p>
-                </span>
-              </div>
-            </div>
-            {{ nhsappIcon('chevronRight') }}
-          </div>
-        </li>
-
-        <li class="nhsapp-card">
-          <div class="nhsapp-card__container">   
-            <div class="nhsapp-card__content">
-              <div class="nhsapp-card__above">
-                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-3">To complete</strong>
-              </div>
-              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="/pages/your-health/your-prescription">
-                Pre-appointment questionnaire
-              </a>
-              <div class="nhsapp-card__below">
-                <p class="nhsuk-u-secondary-text-color nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-3">
-                  Your answers will help your care provider 
-                  understand your condition before your appointment.
-                </p>
-                <p class="nhsuk-u-secondary-text-color nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-3">
-                  Recieved 1 September 2024
-                </p>
-                <p class="nhsuk-u-secondary-text-color nhsuk-u-margin-top-3 nhsuk-u-margin-bottom-3">
-                  Complete by 16 September 2024
-                </p>
-                </span>
-              </div>
-            </div>
-            {{ nhsappIcon('chevronRight') }}
-          </div>
-        </li>
-
-      </ul>
 
       {# Buttons #}
       <div style="display: flex; flex-direction: column; align-items: center;">
@@ -141,18 +87,6 @@
       </div>
 
       <hr>
-
-      {# Blue care card #}
-      {{ card({
-        type: "non-urgent",
-        heading: "Cpntact your care providers if:",
-        descriptionHtml: "
-        <ul>
-          <li>you need help before your appointment</li>
-          <li>your condition has changed</li>
-          <li>you think you have a different condition</li>
-        </ul> "
-      }) }}
 
       <!-- FIELDSET COMPONENTS -->
       <fieldset class="nhsuk-fieldset">
