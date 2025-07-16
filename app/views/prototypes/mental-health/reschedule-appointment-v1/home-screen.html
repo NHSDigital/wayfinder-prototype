@@ -3,7 +3,7 @@
 
 {% set hub = "Home" %}
 {% set backLink = true %}
-{% set backLinkURL = "/prototypes/" %}
+{% set backLinkURL = "/prototypes/mental-health/home-screen" %}
 {% set pageHeading = "Home" %}
 
 {% block content %}
@@ -44,7 +44,7 @@
       {{ nhsappSectionHeading({
         headingText: "Your health",
         linkText: "View all",
-        linkUrl: "/pages/your-health-p9",
+        linkUrl: "#",
         linkAriaLabel: "View all your health"
       }) }}
 
@@ -131,20 +131,6 @@
           </a>
         </p>
       </div>
-
-      {{ nhsappCardGroup({
-        stacked: true,
-        cards: [
-          {
-            title: "Flow - reschedule appointment with new screens (v1)",
-            href: "reschedule-appointment-v1/home-screen.html"
-          },
-           {
-            title: "Flow - reschedule appointment with new screens (v2)",
-            href: "reschedule-appointment-v2/home-screen.html"
-          }
-        ]
-      }) }}
 
     </div>
   </div>

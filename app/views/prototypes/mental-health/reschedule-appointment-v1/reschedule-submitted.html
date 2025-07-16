@@ -1,0 +1,223 @@
+{% extends 'prototypes/mental-health/mental-health-layout.html' %} {% set hub =
+"Your health" %} {% set backLink = true %} {% set pageHeading = "Reschedule
+review" %} {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    {% include "components/provider-banner/include.html" %}
+
+    <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
+
+    <!-- PANEL COMPONENT -->
+    <div class="nhsapp-panel">
+      <h1 class="nhsapp-panel__title">
+        Your request to reschedule has been submitted
+      </h1>
+    </div>
+
+      <!-- SECTION: Requested appointment dates -->
+    <div class="nhsapp-section-heading">
+      <h2 class="nhsuk-heading-s">Your requested appointment</h2>
+    </div>
+
+    <!-- Summary list: User-selected times for Monday and Tuesday -->
+    <dl class="nhsuk-summary-list">
+
+      <!-- Monday -->
+      {% if data['monday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Monday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['monday-time'] | length > 1 %}
+                {{ data['monday-time'] | join(', ') }}
+            {% else %}
+                {{ data['monday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Tuesday -->
+      {% if data['tuesday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Tuesday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['tuesday-time'] | length > 1 %}
+                {{ data['tuesday-time'] | join(', ') }}
+            {% else %}
+                {{ data['tuesday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Wednesday -->
+      {% if data['wednesday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Wednesday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['wednesday-time'] | length > 1 %}
+                {{ data['wednesday-time'] | join(', ') }}
+            {% else %}
+                {{ data['wednesday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Thursday -->
+      {% if data['thursday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Thursday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['thursday-time'] | length > 1 %}
+                {{ data['thursday-time'] | join(', ') }}
+            {% else %}
+                {{ data['thursday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Friday -->
+      {% if data['friday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Friday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['friday-time'] | length > 1 %}
+                {{ data['friday-time'] | join(', ') }}
+            {% else %}
+                {{ data['friday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+        <!-- No preference -->
+        {% if data['no-preference'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">No preference</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['no-preference'] | length > 1 %}
+                {{ data['no-preference'] | join(', ') }}
+            {% else %}
+                {{ data['no-preference'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Static fields shown again for clarity -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          Croydon University Hospital, The Willows, Croydon, RJ7
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Clinician</dt>
+        <dd class="nhsuk-summary-list__value">Dr Donald Glover</dd>
+      </div>
+    </dl>
+
+    <!-- SECTION HEADING COMPONENT -->
+    <div class="nhsapp-section-heading">
+      <h2 class="nhsuk-heading-s">What happens now</h2>
+    </div>
+
+    <!-- TEXT -->
+    <div>
+        <p>
+        You do not need to do anything else while the booking team is processing
+        your request to reschedule.
+        </p>
+        <p class="nhsuk-u-margin-bottom-3">
+        Rescheduling your appointment will take approximately 48 hours. The
+        original appointment may remain visible during that time.
+        </p>
+    </div>
+
+        {# Buttons #}
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- BUTTON COMPONENT -->
+        <div>
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="app-in-review.html">View this appointment</a>
+        </div>
+
+        <div>
+        <!-- LINK COMPONENT -->
+        <p> <a href="aggregator-with-pending.html">View all appointments</a></p>
+        </div>
+      </div>
+
+    <!-- NON-URGENT CARE CARD COMPONENT -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text"
+            ><span class="nhsuk-u-visually-hidden"></span>Contact your care
+            providers if:</span
+          >
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>Your condition has changed</li>
+          <li>You think you have a different condition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FIELDSET COMPONENTS -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h6 class="nhsuk-fieldset__heading">
+            Get help with this appointment
+          </h6>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h3 class="nhsuk-fieldset__legend">
+            Contact the booking team on <a href="">0XXXX XXX XXX</a>
+          </h3>
+        </legend>
+      </fieldset>
+    </div>
+
+    <!-- FOOTER COMPONENT-->
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Terms of use</a
+                >
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Privacy policy</a
+                >
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Cookie policy</a
+                >
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Accessibility statement</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+{% endblock %}
