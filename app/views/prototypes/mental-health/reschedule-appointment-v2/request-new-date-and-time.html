@@ -3,7 +3,7 @@
 
 {% set hub = "Services" %}
 {% set backLink =true %} 
-{% set pageHeading = "Request new date and time" %}
+{% set pageHeading = "Select your preferred days and times for the rescheduled appointment" %}
 
 {% block content %}
     <div class="nhsuk-grid-row">
@@ -24,157 +24,181 @@
             >
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
-                  Request all dates and times that you can attend
+                  Select your preferred days and times for the rescheduled appointment
                 </h1>
               </legend>
-    
-              <!-- SUB HEADING -->
-              <div>
-                <h6>Tuesday 24 September 2024</h6>
-              </div>
-    
-              <!-- CHECKBOXES -->
-              <div class="nhsuk-checkboxes">
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-1"
-                  name="select-medicines" type="checkbox" value="select-medicines-1"
-                  {{ checked('select-medicines','select-medicines-1') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-1"
-                  >
-                    Any time this day
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-2"
-                  name="select-medicines" type="checkbox" value="select-medicines-2"
-                  {{ checked('select-medicines','select-medicines-2') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-2"
-                  >
-                    12:00pm
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-3"
-                  name="select-medicines" type="checkbox" value="select-medicines-3"
-                  {{ checked('select-medicines','select-medicines-3') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-3"
-                  >
-                    12:30pm
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-4"
-                  name="select-medicines" type="checkbox" value="select-medicines-4"
-                  {{ checked('select-medicines','select-medicines-4') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-4"
-                  >
-                    1:00pm
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-5"
-                  name="select-medicines" type="checkbox" value="select-medicines-5"
-                  {{ checked('select-medicines','select-medicines-5') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-5"
-                  >
-                    1:30pm
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-    
-          <div>
-            <!-- SUB HEADING -->
-            <div>
-              <h6>Thursday 26 September 2024</h6>
-            </div>
-    
-            <!-- CHECKBOXES -->
-            <div class="nhsuk-checkboxes">
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-1"
-                name="select-medicines" type="checkbox" value="select-medicines-1"
-                {{ checked('select-medicines','select-medicines-1') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-1"
-                >
-                  Any time this day
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-2"
-                name="select-medicines" type="checkbox" value="select-medicines-2"
-                {{ checked('select-medicines','select-medicines-2') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-2"
-                >
-                  12:00pm
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-3"
-                name="select-medicines" type="checkbox" value="select-medicines-3"
-                {{ checked('select-medicines','select-medicines-3') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-3"
-                >
-                  12:30pm
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-4"
-                name="select-medicines" type="checkbox" value="select-medicines-4"
-                {{ checked('select-medicines','select-medicines-4') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-4"
-                >
-                  1:00pm
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-4">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-5"
-                name="select-medicines" type="checkbox" value="select-medicines-5"
-                {{ checked('select-medicines','select-medicines-5') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-5"
-                >
-                  1:30pm
-                </label>
-              </div>
-            </div>
-          </div>
-    
-          <!-- PAGINATION LINK COMPONENT -->
-          <div class="nhsuk-u-margin-bottom-4">
-            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
-              <span class="nhsuk-pagination__page">Load More</span>
-            </a>
-          </div>
 
+
+          {# Inset text #}
+          {{ insetText({
+            html: "<p>This does not show the clinic's schedule - it's just for sharing
+              your availability to help with rescheduling.
+            </p>"
+          }) }}
+
+    
+          {# Checkboxes #}
+          <div class="nhsuk-u-margin-bottom-3"style="display: flex; flex-direction: column; gap: 20px;">
+          {# Monday #}
+          <form method="post" novalidate>
+            {{ checkboxes({
+              idPrefix: "monday-time",
+              name: "monday-time",
+              fieldset: {
+                legend: {
+                  text: "Monday",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Morning",
+                  text: "Morning"
+                },
+                {
+                  value: "Mid day",
+                  text: "Mid day"
+                },
+                {
+                  value: "Afternoon",
+                  text: "Afternoon"
+                }
+              ]
+            }) }}
+          </form>
+
+          {# Tuesday #}
+          <form method="post" novalidate>
+            {{ checkboxes({
+              idPrefix: "tuesday-time",
+              name: "tuesday-time",
+              fieldset: {
+                legend: {
+                  text: "Tuesday",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Morning",
+                  text: "Morning"
+                },
+                {
+                  value: "Mid day",
+                  text: "Mid day"
+                },
+                {
+                  value: "Afternoon",
+                  text: "Afternoon"
+                }
+              ]
+            }) }}
+          </form>
+
+           {# Wednesday #}
+          <form method="post" novalidate>
+            {{ checkboxes({
+              idPrefix: "wednesday-time",
+              name: "wednesday-time",
+              fieldset: {
+                legend: {
+                  text: "Wednesday",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Morning",
+                  text: "Morning"
+                },
+                {
+                  value: "Mid day",
+                  text: "Mid day"
+                },
+                {
+                  value: "Afternoon",
+                  text: "Afternoon"
+                }
+              ]
+            }) }}
+          </form>
+
+           {# Thursday #}
+          <form method="post" novalidate>
+            {{ checkboxes({
+              idPrefix: "thursday-time",
+              name: "thursday-time",
+              fieldset: {
+                legend: {
+                  text: "Thursday",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Morning",
+                  text: "Morning"
+                },
+                {
+                  value: "Mid day",
+                  text: "Mid day"
+                },
+                {
+                  value: "Afternoon",
+                  text: "Afternoon"
+                }
+              ]
+            }) }}
+          </form>
+
+           {# Friday #}
+          <form method="post" novalidate>
+            {{ checkboxes({
+              idPrefix: "friday-time",
+              name: "friday-time",
+              fieldset: {
+                legend: {
+                  text: "Friday",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Morning",
+                  text: "Morning"
+                },
+                {
+                  value: "Mid day",
+                  text: "Mid day"
+                },
+                {
+                  value: "Afternoon",
+                  text: "Afternoon"
+                }
+              ]
+            }) }}
+          </form>
+
+           {# Tuesday #}
+          <form method="post" novalidate>
+            {{ checkboxes({
+              idPrefix: "no-preference",
+              name: "no-preference",
+              fieldset: {
+                legend: {
+                  text: "No preference?",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "I'm available any of these days and times",
+                  text: "I'm available any of these days and times"
+                }
+              ]
+            }) }}
+          </form>
+          <div>
 
           <!-- BUTTON COMPONENT -->
           <div>
