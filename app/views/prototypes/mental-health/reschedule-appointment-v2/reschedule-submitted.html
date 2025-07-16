@@ -19,78 +19,79 @@ review" %} {% block content %}
       <h2 class="nhsuk-heading-s">Your requested appointment</h2>
     </div>
 
-    <!-- Summary list: User-selected times for Monday and Tuesday -->
+     <!-- Summary list: User-selected times for Monday - Friday-->
     <dl class="nhsuk-summary-list">
 
       <!-- Monday -->
       {% if data['monday-time'] %}
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Monday</dt>
-            <dd class="nhsuk-summary-list__value">
-            {% if data['monday-time'] | length > 1 %}
-                {{ data['monday-time'] | join(', ') }}
-            {% else %}
-                {{ data['monday-time'] }}
-            {% endif %}
-            </dd>
-        </div>
-        {% endif %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Monday</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['monday-time'] | length > 1 %}
+            Not available: {{ data['monday-time'] | join(', ') }}
+          {% else %}
+            Not available: {{ data['monday-time'] }}
+          {% endif %}
+        </dd>
+      </div>
+    {% endif %}
+
 
       <!-- Tuesday -->
       {% if data['tuesday-time'] %}
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Tuesday</dt>
-            <dd class="nhsuk-summary-list__value">
-            {% if data['tuesday-time'] | length > 1 %}
-                {{ data['tuesday-time'] | join(', ') }}
-            {% else %}
-                {{ data['tuesday-time'] }}
-            {% endif %}
-            </dd>
-        </div>
-        {% endif %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Tuesday</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['tuesday-time'] | length > 1 %}
+            Not available: {{ data['tuesday-time'] | join(', ') }}
+          {% else %}
+            Not available: {{ data['tuesday-time'] }}
+          {% endif %}
+        </dd>
+      </div>
+    {% endif %}
 
       <!-- Wednesday -->
       {% if data['wednesday-time'] %}
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Wednesday</dt>
-            <dd class="nhsuk-summary-list__value">
-            {% if data['wednesday-time'] | length > 1 %}
-                {{ data['wednesday-time'] | join(', ') }}
-            {% else %}
-                {{ data['wednesday-time'] }}
-            {% endif %}
-            </dd>
-        </div>
-        {% endif %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Wednesday</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['wednesday-time'] | length > 1 %}
+            Not available: {{ data['wednesday-time'] | join(', ') }}
+          {% else %}
+            Not available: {{ data['wednesday-time'] }}
+          {% endif %}
+        </dd>
+      </div>
+    {% endif %}
 
       <!-- Thursday -->
       {% if data['thursday-time'] %}
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Thursday</dt>
-            <dd class="nhsuk-summary-list__value">
-            {% if data['thursday-time'] | length > 1 %}
-                {{ data['thursday-time'] | join(', ') }}
-            {% else %}
-                {{ data['thursday-time'] }}
-            {% endif %}
-            </dd>
-        </div>
-        {% endif %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Thursday</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['thursday-time'] | length > 1 %}
+            Not available: {{ data['thursday-time'] | join(', ') }}
+          {% else %}
+            Not available: {{ data['thursday-time'] }}
+          {% endif %}
+        </dd>
+      </div>
+    {% endif %}
 
       <!-- Friday -->
       {% if data['friday-time'] %}
-        <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">Friday</dt>
-            <dd class="nhsuk-summary-list__value">
-            {% if data['friday-time'] | length > 1 %}
-                {{ data['friday-time'] | join(', ') }}
-            {% else %}
-                {{ data['friday-time'] }}
-            {% endif %}
-            </dd>
-        </div>
-        {% endif %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Friday</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['friday-time'] | length > 1 %}
+            Not available: {{ data['friday-time'] | join(', ') }}
+          {% else %}
+            Not available: {{ data['friday-time'] }}
+          {% endif %}
+        </dd>
+      </div>
+    {% endif %}
 
         <!-- No preference -->
         {% if data['no-preference'] %}
