@@ -10,12 +10,6 @@
       <div class="nhsuk-grid-column-full">
         {% include "components/provider-banner/include.html" %}
     
-        <form
-          id="form"
-          method="post"
-          action="/pages/your-health/repeat-prescription/add-note"
-          novalidate="novalidate"
-        >
           <div class="nhsuk-form-group">
             <!-- HEADING -->
             <fieldset
@@ -40,7 +34,7 @@
           {# Checkboxes #}
           <div class="nhsuk-u-margin-bottom-3"style="display: flex; flex-direction: column; gap: 20px;">
           {# Monday #}
-          <form method="post" novalidate>
+          <form method="post" action="reschedule-review" novalidate>
             {{ checkboxes({
               idPrefix: "monday-time",
               name: "monday-time",
@@ -65,10 +59,8 @@
                 }
               ]
             }) }}
-          </form>
 
           {# Tuesday #}
-          <form method="post" novalidate>
             {{ checkboxes({
               idPrefix: "tuesday-time",
               name: "tuesday-time",
@@ -93,10 +85,8 @@
                 }
               ]
             }) }}
-          </form>
 
            {# Wednesday #}
-          <form method="post" novalidate>
             {{ checkboxes({
               idPrefix: "wednesday-time",
               name: "wednesday-time",
@@ -121,10 +111,8 @@
                 }
               ]
             }) }}
-          </form>
 
            {# Thursday #}
-          <form method="post" novalidate>
             {{ checkboxes({
               idPrefix: "thursday-time",
               name: "thursday-time",
@@ -149,10 +137,8 @@
                 }
               ]
             }) }}
-          </form>
 
            {# Friday #}
-          <form method="post" novalidate>
             {{ checkboxes({
               idPrefix: "friday-time",
               name: "friday-time",
@@ -177,10 +163,8 @@
                 }
               ]
             }) }}
-          </form>
 
-           {# Tuesday #}
-          <form method="post" novalidate>
+           {# No preference #}
             {{ checkboxes({
               idPrefix: "no-preference",
               name: "no-preference",
@@ -197,16 +181,18 @@
                 }
               ]
             }) }}
+
+            <!-- SUBMIT BUTTON TO POST SELECTED DATES -->
+            <div>
+              {{ button({
+                text: "Continue",
+                attributes: { type: "submit" },                 
+                classes: "nhsapp-button"
+              }) }}
+            </div>
+
           </form>
           <div>
-
-          <!-- BUTTON COMPONENT -->
-          {{ button({
-            text: "Continue",
-            type: 'submit',
-            classes: "nhsapp-button"
-          }) }}
-    
     
         <div>
           <!-- FOOTER COMPONENT-->

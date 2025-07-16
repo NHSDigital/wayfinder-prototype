@@ -32,7 +32,7 @@
             text: "Date"
           },
           value: {
-            html: "Friday 7 June 2024"
+            html: "Wednesday 1 May 2024"
           }
         },
         {
@@ -40,23 +40,15 @@
             text: "Time"
           },
           value: {
-            html: "10:30am"
+            html: "9:40am"
           }
         },
         {
             key: {
-              text: "Appointment type"
-            },
-            value: {
-              html: "Mental health service appointment"
-            }
-          },
-          {
-            key: {
               text: "Location"
             },
             value: {
-              html: "Room 1, King Street GP Practice, New Street, Sheffield, S1 1XX"
+              html: "Croydon University Hospital, The Willows, Croydon, RJ7"
             }
           },
           {
@@ -64,7 +56,7 @@
               text: "Clinician"
             },
             value: {
-              text: "Ahmet Kaya"
+              text: "Dr Donald Glover"
             }
           }
         ]
@@ -79,53 +71,100 @@
     <dl class="nhsuk-summary-list">
 
       <!-- Monday -->
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Monday 7 July 2025</dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['monday-time'] %}
+      {% if data['monday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Monday</dt>
+            <dd class="nhsuk-summary-list__value">
             {% if data['monday-time'] | length > 1 %}
-              {{ data['monday-time'] | join(', ') }}   {# Multiple selections joined #}
+                {{ data['monday-time'] | join(', ') }}
             {% else %}
-              {{ data['monday-time'] }}                 {# Single selection #}
+                {{ data['monday-time'] }}
             {% endif %}
-          {% else %}
-            No time selected for Monday                {# Fallback message #}
-          {% endif %}
-        </dd>
-      </div>
+            </dd>
+        </div>
+        {% endif %}
 
       <!-- Tuesday -->
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Tuesday 8 July 2025</dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['tuesday-time'] %}
+      {% if data['tuesday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Tuesday</dt>
+            <dd class="nhsuk-summary-list__value">
             {% if data['tuesday-time'] | length > 1 %}
-              {{ data['tuesday-time'] | join(', ') }}
+                {{ data['tuesday-time'] | join(', ') }}
             {% else %}
-              {{ data['tuesday-time'] }}
+                {{ data['tuesday-time'] }}
             {% endif %}
-          {% else %}
-            No time selected for Tuesday
-          {% endif %}
-        </dd>
-      </div>
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Wednesday -->
+      {% if data['wednesday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Wednesday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['wednesday-time'] | length > 1 %}
+                {{ data['wednesday-time'] | join(', ') }}
+            {% else %}
+                {{ data['wednesday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Thursday -->
+      {% if data['thursday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Thursday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['thursday-time'] | length > 1 %}
+                {{ data['thursday-time'] | join(', ') }}
+            {% else %}
+                {{ data['thursday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+      <!-- Friday -->
+      {% if data['friday-time'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Friday</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['friday-time'] | length > 1 %}
+                {{ data['friday-time'] | join(', ') }}
+            {% else %}
+                {{ data['friday-time'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
+
+        <!-- No preference -->
+        {% if data['no-preference'] %}
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">No preference</dt>
+            <dd class="nhsuk-summary-list__value">
+            {% if data['no-preference'] | length > 1 %}
+                {{ data['no-preference'] | join(', ') }}
+            {% else %}
+                {{ data['no-preference'] }}
+            {% endif %}
+            </dd>
+        </div>
+        {% endif %}
 
       <!-- Static fields shown again for clarity -->
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Appointment type</dt>
-        <dd class="nhsuk-summary-list__value">Asthma</dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Location</dt>
         <dd class="nhsuk-summary-list__value">
-          Northern General Hospital, Entrance G, Sheffield, S5 7AU
+          Croydon University Hospital, The Willows, Croydon, RJ7
         </dd>
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Clinician</dt>
-        <dd class="nhsuk-summary-list__value">Ahmet Kaya</dd>
+        <dd class="nhsuk-summary-list__value">Dr Donald Glover</dd>
       </div>
     </dl>
 
@@ -162,7 +201,7 @@
     </div>
 
     <!-- BUTTON COMPONENT -->
-    <div style="padding-top: 20px">
+    <div style="margin-top: 30px">
         <a class="nhsuk-button nhsapp-button" data-module="nhsuk-button" type="submit" href="reschedule-submitted.html">
             Request new appointment
         </a>
