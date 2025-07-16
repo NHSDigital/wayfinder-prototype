@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Services" %}
+{% set backLink =true %} 
+{% set pageHeading = "Select your preferred days and times for the rescheduled appointment" %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        {% include "components/provider-banner/include.html" %}
+    
+          <div class="nhsuk-form-group">
+            <!-- HEADING -->
+            <fieldset
+              class="nhsuk-fieldset"
+              aria-describedby="select-medicines-hint"
+            >
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1 class="nhsuk-fieldset__heading">
+                  Select all dates and times that you can attend
+                </h1>
+              </legend>
+
+
+          {# Inset text #}
+          {{ insetText({
+            html: "<p>This does not show the clinic's schedule - it's just for sharing
+              your availability to help with rescheduling.
+            </p>"
+          }) }}
+
+    
+          {# Checkboxes #}
+          <div class="nhsuk-u-margin-bottom-3"style="display: flex; flex-direction: column; gap: 20px;">
+          {# Tuesday #}
+          <form method="post" action="reschedule-review" novalidate>
+            {{ checkboxes({
+              idPrefix: "tuesday-time",
+              name: "tuesday-time",
+              fieldset: {
+                legend: {
+                  text: "Tuesday 24 September 2024",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Any time this day",
+                  text: "Any time this day"
+                },
+                {
+                  value: "12:00pm",
+                  text: "12:00pm"
+                },
+                {
+                  value: "12:30pm",
+                  text: "12:30pm"
+                },
+                 {
+                  value: "1:00pm",
+                  text: "1:00pm"
+                },
+                 {
+                  value: "1:30pm",
+                  text: "1:30pm"
+                }
+              ]
+            }) }}
+
+          {# Thursday #}
+            {{ checkboxes({
+              idPrefix: "thursday-time",
+              name: "thursday-time",
+              fieldset: {
+                legend: {
+                  text: "Thursday 26 September 2024",
+                  classes: "nhsuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "Any time this day",
+                  text: "Any time this day"
+                },
+                {
+                  value: "12:00pm",
+                  text: "12:00pm"
+                },
+                {
+                  value: "12:30pm",
+                  text: "12:30pm"
+                },
+                 {
+                  value: "1:00pm",
+                  text: "1:00pm"
+                },
+                 {
+                  value: "1:30pm",
+                  text: "1:30pm"
+                }
+              ]
+            }) }}
+
+           <div class="nhsuk-back-link"> 
+            <a class="nhsuk-back-link__link" href="#"> Load more </a>
+            </div>
+
+            <!-- SUBMIT BUTTON TO POST SELECTED DATES -->
+            <div>
+              {{ button({
+                text: "Continue",
+                attributes: { type: "submit" },                 
+                classes: "nhsapp-button"
+              }) }}
+            </div>
+
+          </form>
+          <div>
+    
+        <div>
+          <!-- FOOTER COMPONENT-->
+          <footer role="contentinfo">
+            <div class="nhsuk-footer-container">
+              <div class="nhsuk-width-container">
+                <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+                <div class="nhsuk-footer">
+                  <ul class="nhsuk-footer__list">
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Terms of use</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Privacy policy</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Cookie policy</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Accessibility statement</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %}
+    

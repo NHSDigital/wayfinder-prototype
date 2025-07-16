@@ -10,170 +10,45 @@
       <div class="nhsuk-grid-column-full">
         {% include "components/provider-banner/include.html" %}
     
-        <form
-          id="form"
-          method="post"
-          action="/pages/your-health/repeat-prescription/add-note"
-          novalidate="novalidate"
-        >
-          <div class="nhsuk-form-group">
-            <!-- HEADING -->
-            <fieldset
-              class="nhsuk-fieldset"
-              aria-describedby="select-medicines-hint"
-            >
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-                <h1 class="nhsuk-fieldset__heading">
-                  Request all dates and times that you can attend
-                </h1>
-              </legend>
-    
-              <!-- SUB HEADING -->
-              <div>
-                <h6>Tuesday 24 September 2024</h6>
-              </div>
-    
-              <!-- CHECKBOXES -->
-              <div class="nhsuk-checkboxes">
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-1"
-                  name="select-medicines" type="checkbox" value="select-medicines-1"
-                  {{ checked('select-medicines','select-medicines-1') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-1"
-                  >
-                    Any time this day
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-2"
-                  name="select-medicines" type="checkbox" value="select-medicines-2"
-                  {{ checked('select-medicines','select-medicines-2') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-2"
-                  >
-                    12:00pm
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-3"
-                  name="select-medicines" type="checkbox" value="select-medicines-3"
-                  {{ checked('select-medicines','select-medicines-3') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-3"
-                  >
-                    12:30pm
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-4"
-                  name="select-medicines" type="checkbox" value="select-medicines-4"
-                  {{ checked('select-medicines','select-medicines-4') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-4"
-                  >
-                    1:00pm
-                  </label>
-                </div>
-    
-                <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="select-medicines-5"
-                  name="select-medicines" type="checkbox" value="select-medicines-5"
-                  {{ checked('select-medicines','select-medicines-5') }}>
-                  <label
-                    class="nhsuk-label nhsuk-checkboxes__label"
-                    for="select-medicines-5"
-                  >
-                    1:30pm
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-    
-          <div>
-            <!-- SUB HEADING -->
-            <div>
-              <h6>Thursday 26 September 2024</h6>
-            </div>
-    
-            <!-- CHECKBOXES -->
-            <div class="nhsuk-checkboxes">
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-1"
-                name="select-medicines" type="checkbox" value="select-medicines-1"
-                {{ checked('select-medicines','select-medicines-1') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-1"
-                >
-                  Any time this day
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-2"
-                name="select-medicines" type="checkbox" value="select-medicines-2"
-                {{ checked('select-medicines','select-medicines-2') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-2"
-                >
-                  12:00pm
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-3"
-                name="select-medicines" type="checkbox" value="select-medicines-3"
-                {{ checked('select-medicines','select-medicines-3') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-3"
-                >
-                  12:30pm
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-4"
-                name="select-medicines" type="checkbox" value="select-medicines-4"
-                {{ checked('select-medicines','select-medicines-4') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-4"
-                >
-                  1:00pm
-                </label>
-              </div>
-    
-              <div class="nhsuk-checkboxes__item nhsuk-u-margin-bottom-4">
-                <input class="nhsuk-checkboxes__input" id="select-medicines-5"
-                name="select-medicines" type="checkbox" value="select-medicines-5"
-                {{ checked('select-medicines','select-medicines-5') }}>
-                <label
-                  class="nhsuk-label nhsuk-checkboxes__label"
-                  for="select-medicines-5"
-                >
-                  1:30pm
-                </label>
-              </div>
-            </div>
-          </div>
-    
-          <!-- PAGINATION LINK COMPONENT -->
-          <div class="nhsuk-u-margin-bottom-4">
-            <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
-              <span class="nhsuk-pagination__page">Load More</span>
-            </a>
-          </div>
+        <!-- MAIN FORM WRAPPING ALL CHECKBOX INPUTS -->
+    <form method="post" action="reschedule-review" novalidate>   {# Form posts to next page; triggers autoStoreData if enabled #}
+
+      {# MONDAY CHECKBOX GROUP #}
+      {{ checkboxes({
+        idPrefix: "question-0",                        
+        name: "mary-monday",                          
+        fieldset: {
+          legend: {
+            text: "Request all dates and times that you can attend", 
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        hint: {
+          text: "Monday 7 July 2025"                  
+        },
+        items: [
+          { value: "Anytime this day", text: "Anytime this day" },
+          { value: "12:30pm", text: "12:30pm" },
+          { value: "1:00pm", text: "1:00pm" },
+          { value: "1:30pm", text: "1:30pm" }
+        ]
+      }) }}
+
+      {# TUESDAY CHECKBOX GROUP #}
+      {{ checkboxes({
+        idPrefix: "question-1",
+        name: "mary-tuesday",                         
+        hint: {
+          text: "Tuesday 8 July 2025"
+        },
+        items: [
+          { value: "Anytime this day", text: "Anytime this day" },
+          { value: "12:30pm", text: "12:30pm" },
+          { value: "1:00pm", text: "1:00pm" },
+          { value: "1:30pm", text: "1:30pm" }
+        ]
+      }) }}
 
 
           <!-- BUTTON COMPONENT -->
