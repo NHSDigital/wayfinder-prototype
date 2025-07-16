@@ -18,24 +18,43 @@
         </div>
     
         <!-- SUMMARY LIST COMPONENT -->
-        {{ summaryList({ 
-          classes: "nhsuk-u-margin-bottom-4", 
-          rows: [ { 
-            key: { text:
-        "Date" }, value: { html: "Friday 7 June 2024" } }, 
-        { 
-          key: { text: "Time" },
-        value: { html: "10:30am" } }, 
-        { 
-          key: { text: "Appointment type" }, value: {
-        html: "Mental health service appointment" } }, 
-        { 
-          key: { text: "Location" },
-        value: { html: "Room 1, King Street GP Practice, New Street, Sheffield, S1
-        1XX" } }, 
-        { 
-          key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } } ] })
-        }}
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Wednesday 1 May 2024"
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:30am"
+          }
+        },
+        {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "Croydon University Hospital, The Willows, Croydon RJ7"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              text: "Dr Donald Glover"
+            }
+          }
+        ]
+      }) }}
     
         <!-- SECTION HEADING COMPONENT -->
         <div class="nhsapp-section-heading">
@@ -53,7 +72,7 @@
         </p>
     
         <!-- SECONDARY BUTTON COMPONENT -->
-        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="aggregator-with-pending-cancel.html">
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="cancellation-pending.html">
           View this appointment
         </a>
     
