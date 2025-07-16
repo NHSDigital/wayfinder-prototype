@@ -70,49 +70,64 @@
         ]
       }) }}
 
-      <!-- SECTION HEADING COMPONENT -->
-      <div class="nhsapp-section-heading">
-        <h2 class="nhsuk-heading-s">Your requested appointment</h2>
+    <!-- SECTION: Requested appointment dates -->
+    <div class="nhsapp-section-heading">
+      <h2 class="nhsuk-heading-s">Your requested appointment</h2>
+    </div>
+
+    <!-- Summary list: User-selected times for Monday and Tuesday -->
+    <dl class="nhsuk-summary-list">
+
+      <!-- Monday -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Monday 7 July 2025</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['monday-time'] %}
+            {% if data['monday-time'] | length > 1 %}
+              {{ data['monday-time'] | join(', ') }}   {# Multiple selections joined #}
+            {% else %}
+              {{ data['monday-time'] }}                 {# Single selection #}
+            {% endif %}
+          {% else %}
+            No time selected for Monday                {# Fallback message #}
+          {% endif %}
+        </dd>
       </div>
 
-      <!-- SUMMARY LIST COMPONENT -->
-      {{ summaryList({
-        classes: "nhsuk-u-margin-bottom-4",
-        rows: [
-        {
-          key: {
-            text: "Date"
-          },
-          value: {
-            html: "Wednesday 15 May 2024"
-          }
-        },
-        {
-          key: {
-            text: "Time"
-          },
-          value: {
-            html: "9:40am"
-          }
-        },
-          {
-            key: {
-              text: "Location"
-            },
-            value: {
-              html: "Croydon University Hospital, The Willows, Croydon, RJ6"
-            }
-          },
-          {
-            key: {
-              text: "Clinician"
-            },
-            value: {
-              text: "Dr Donald Glover"
-            }
-          }
-        ]
-      }) }}
+      <!-- Tuesday -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Tuesday 8 July 2025</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['tuesday-time'] %}
+            {% if data['tuesday-time'] | length > 1 %}
+              {{ data['tuesday-time'] | join(', ') }}
+            {% else %}
+              {{ data['tuesday-time'] }}
+            {% endif %}
+          {% else %}
+            No time selected for Tuesday
+          {% endif %}
+        </dd>
+      </div>
+
+      <!-- Static fields shown again for clarity -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Appointment type</dt>
+        <dd class="nhsuk-summary-list__value">Asthma</dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          Northern General Hospital, Entrance G, Sheffield, S5 7AU
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Clinician</dt>
+        <dd class="nhsuk-summary-list__value">Ahmet Kaya</dd>
+      </div>
+    </dl>
 
       <!-- RED CARE CARD COMPONENT -->
       <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">

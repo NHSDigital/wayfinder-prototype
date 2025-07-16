@@ -201,12 +201,11 @@
           <div>
 
           <!-- BUTTON COMPONENT -->
-          <div>
-            <a class="nhsuk-button nhsapp-button nhsapp-button" data-module="nhsuk-button" type="submit" href="reschedule-review.html">
-              Continue
-            </a>
-          </div>
-        </form>
+          {{ button({
+            text: "Continue",
+            type: 'submit',
+            classes: "nhsapp-button"
+          }) }}
     
     
         <div>
