@@ -56,8 +56,39 @@
       <a style="text-decoration: underline;">Map and directions</a>
     </div>
 
+    {# Things to do section #}
+    <div class="nhsuk-u-margin-bottom-6">
+      {{ nhsappSectionHeading({
+        headingText: "Things to do",
+        subheadingText: "To do"
+      }) }}
+
+<!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">To read</strong>
+              </div>
+              {% endif %}
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-3" href="letter.html" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
+                Asthma appointment letter
+              </a>
+              <div class="nhsapp-card__below">
+                  <span class= "nhsuk-u-secondary-text-color">Received 9 June 2025</span>
+                </p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+    </div>
+
     <!-- ACTION BUTTONS -->
-    <div>
+    <div >
       <!-- Reschedule Button -->
       <a
         class="nhsuk-button nhsapp-button--secondary nhsapp-button"
