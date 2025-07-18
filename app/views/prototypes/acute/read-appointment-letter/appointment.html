@@ -74,11 +74,12 @@
               </div>
               {% endif %}
               <a class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-3" href="letter.html" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
-                Asthma appointment letter
+                Asthma appointment confirmation letter
               </a>
               <div class="nhsapp-card__below">
-                  <span class= "nhsuk-u-secondary-text-color">Received 9 June 2025</span>
-                </p>
+                <p class="nhsuk-u-secondary-text-color nhsuk-u-margin-top-3">Receieved 9 June 2025</p>
+              </div>
+              <div class="nhsapp-card__below">
               </div>
             </div>
             {{ nhsappIcon('chevronRight') }}
@@ -88,22 +89,25 @@
     </div>
 
     <!-- ACTION BUTTONS -->
-    <div >
-      <!-- Reschedule Button -->
-      <a
-        class="nhsuk-button nhsapp-button--secondary nhsapp-button"
-        data-module="nhsuk-button"
-        type="submit"
-        href="#"
-      >
-        Ask to reschedule appointment
-      </a>
+    <div style="display:flex; align-items: center; flex-direction: column;">
+        <!-- Reschedule Button -->
+        <div>
+          <a
+            class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+            data-module="nhsuk-button"
+            type="submit"
+            href="#"
+          >
+            Ask to reschedule appointment
+          </a>
+      </div>
+
+      <!-- Cancel Link -->
+      <div>
+        <a href="ask-to-cancel.html">Ask to cancel appointment</a>
+      </div>
     </div>
 
-    <!-- Cancel Link -->
-    <div>
-      <a href="ask-to-cancel.html">Ask to cancel appointment</a>
-    </div>
 
     <!-- CARE CARD COMPONENT (Non-urgent advice) -->
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
