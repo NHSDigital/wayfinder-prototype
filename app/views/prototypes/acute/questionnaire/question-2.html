@@ -17,31 +17,22 @@
 
       <h1>Pre-appointment questionnaire</h1>
 
-      <!-- Form for question 1 -->
-      <form method="post" action="question-2" novalidate>
+      <!-- Form for question 2 -->
+      <form method="post" action="question-3" novalidate>
 
-        {# RADIO BUTTON COMPONENT FOR REASON OPTIONS #}
-        {{ radios({
-          idPrefix: "question-1",                    
-          name: "question-1",                          
-         fieldset: {
-            legend: {
-            text: "Do you have difficulty breathing during or after exercise?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: "true"
-            }
-        },
-        hint: {
-            text: "Question 1 of 3"
-        },
-          items: [
-            { value: "Always", text: "Always", checked: data['question-1'] == "Always" },
-            { value: "Usually", text: "Usually", checked: data['question-1'] == "Usually" },
-            { value: "Sometimes", text: "Sometimes", checked: data['question-1'] == "Sometimes" },
-            { value: "Rarely", text: "Rarely", checked: data['question-1'] == "Rarely" },
-            { value: "Never", text: "Never", checked: data['question-1'] == "Never" }
-          ]
-        }) }}
+       <div class="nhsuk-form-group">
+        <label class="nhsuk-label--l nhsuk-u-margin-bottom-2" for="question-2">
+            Describe your breathing on an average day
+        </label>
+        <div class="nhsuk-hint nhsuk-u-margin-top-2" id="question-2-hint">
+            For example, I often wheeze and cough
+        </div>
+        <div class="nhsuk-u-margin-top-3 nhsuk-hint">
+            Question 2 of 3
+        </div>
+        <textarea class="nhsuk-textarea" id="question-2" name="question-2" aria-describedby="question-2-hint">{{ data['question-2'] }}</textarea>
+      </div>
+
 
         <!-- PRIMARY SUBMIT BUTTON -->
         {{ button({

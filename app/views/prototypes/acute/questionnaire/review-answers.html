@@ -1,0 +1,111 @@
+{# Use base layout from acute prototype #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Page-level settings: hub name, show back link, page heading #}
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Review your answers" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {# Includes service/hospital banner branding component #}
+    {% include "components/provider-banner/include.html" %}
+
+    {# Title component showing page heading #}
+    {{ dynamicPageTitle({
+      title: pageHeading,
+      titleSecondary: true
+    }) }}
+
+    {# Start of summary list showing user's answers #}
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Question 1</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['question-1'] %}
+            {{ data['question-1'] }}
+          {% else %}
+            Nothing selected
+          {% endif %}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="question-1.html">Change<span class="nhsuk-u-visually-hidden"> your answer to Question 1</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Question 2</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['question-2'] %}
+            {{ data['question-2'] }}
+          {% else %}
+            No description provided
+          {% endif %}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="question-2.html">Change<span class="nhsuk-u-visually-hidden"> your answer to Question 2</span></a>
+        </dd>
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Question 3</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['question-3'] %}
+            {{ data['question-3'] }}
+          {% else %}
+            Nothing selected
+          {% endif %}
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a class="nhsuk-link" href="question-3.html">Change<span class="nhsuk-u-visually-hidden"> your answer to Question 3</span></a>
+        </dd>
+      </div>
+
+    </div>
+  </dl>
+
+
+    {# Button to continue to submission page #}
+    <div>
+      <a class="nhsuk-button"
+         data-module="nhsuk-button"
+         type="submit"
+         href="answers-submitted.html">
+         Submit answers
+      </a>
+    </div>
+
+    {# Optional support contact info section #}
+    <fieldset class="nhsuk-fieldset">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h2 class="nhsuk-fieldset__heading">Get help with this task</h2>
+      </legend>
+      <div class="nhsuk-body">
+        <p class="nhsuk-u-margin-bottom-4">
+          Contact the booking team on <a href="">0XXXX XXX XXX</a>
+        </p>
+      </div>
+    </fieldset>
+
+    {# Page footer with standard NHS links #}
+    <footer role="contentinfo" class="nhsuk-footer">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <ul class="nhsuk-footer__list">
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Terms of use</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+{% endblock %}
