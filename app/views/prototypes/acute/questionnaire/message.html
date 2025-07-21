@@ -1,0 +1,49 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Northern General Hospital" %}
+{% set pageDescription = "Sent 12 June at 9:40am" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>You have a questionnaire about your upcoming asthma appointment.</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>Complete the questionnaire by Tuesday 8 July 2025.</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>Your answers will help Dr Kaya understand your condition before your appointment.</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>There are 3 questions.</p>
+      </div>
+
+      <p><a class="nhsuk-link--no-visited-state" href="question-1.html">Complete the questionnaire</a></p>
+
+      <hr>
+
+      <a class="nhsuk-link--no-visited-state" href="#">Flag message</a>
+
+    </div>
+  </div>
+
+  {% endblock %}
