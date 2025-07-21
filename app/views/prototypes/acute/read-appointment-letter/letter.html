@@ -26,14 +26,31 @@
     </div>
 
     {# Links with icons #}
-    <div style="display: flex; align-items: center; gap: 8px;">
+    <div class="nhsuk-u-margin-bottom-4" style="display: flex; vertical-align: middle; align-items: center; gap: 8px; white-space: no-wrap;">
         <div>
             {{ nhsappIcon('download') }}
         </div>
+
         <div>
-            <a>Download</a>
+            <a class="app-link--with-icon app-link nhsuk-link--no-visited-state">Download</a>
         </div>
     </div>
+
+    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center; gap: 8px;">
+        <div>
+            {{ nhsappIcon('email') }}
+        </div>
+        
+        <div>
+            <a class="app-link--with-icon app-link">Get a copy of your document by email</a>
+        </div>
+    </div>
+
+    {{ nhsappSectionHeading({
+        headingText: "Read before your appointment"
+    }) }}
+
+
 
     <!-- HELP SECTION -->
     <h2>Get help with this task</h2>
