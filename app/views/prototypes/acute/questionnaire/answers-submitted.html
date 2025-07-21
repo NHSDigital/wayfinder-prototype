@@ -1,0 +1,147 @@
+{# Use base layout shared across acute flows #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Page-level configuration: section, navigation and heading #}
+{% set hub = "Your health" %}                            {# Breadcrumb label or category #}
+{% set backLink = true %}                                {# Enables default back link #}
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+
+<!-- GRID WRAPPER -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- PAGE HEADING AREA -->
+    <div class="nhsapp-section-heading">
+
+      {# Misplaced <title> tag inside body – should be removed #}
+      <title>Review your request</title>
+
+      {# Optional branding, trust info, or service indicator banner #}
+      {% include "components/provider-banner/include.html" %}
+    </div>
+
+    <!-- SUCCESS PANEL -->
+    <div class="nhsapp-panel nhsuk-u-margin-bottom-4">
+      <h1 class="nhsapp-panel__title">
+        Your questionnaire has been submitted
+      </h1>
+    </div>
+
+    {# Link #}
+    <!-- download link with icon -->
+    <div class="nhsuk-u-margin-bottom-4" style="display: flex; vertical-align: middle; align-items: center; gap: 8px; white-space: no-wrap;">
+        <div>{{ nhsappIcon('email') }}</div>
+        <div>
+            <a class="app-link--with-icon app-link nhsuk-link--no-visited-state" style="text-decoration: underline">Get a copy of your questionnaire by email</a>
+        </div>
+    </div>
+
+    <hr>
+
+    {# Things to do #}
+    {{ nhsappSectionHeading({
+         headingText: "Things to do",
+         subheadingText: "To do"
+    }) }}
+
+    <p>You have done everything you need to do</p>
+
+    <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--green nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Done</strong>
+              </div>
+              {% endif %}
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-3" href="#" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
+                Pre-appointment questionnaire
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-secondary-text-color nhsuk-u-margin-top-3">Completed 12 June 2025</p>
+              </div>
+              <div class="nhsapp-card__below">
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--green nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Done</strong>
+              </div>
+              {% endif %}
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-3" href="#" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
+                Asthma appointment confirmation letter
+              </a>
+              <div class="nhsapp-card__below">
+                <p class="nhsuk-u-secondary-text-color nhsuk-u-margin-top-3">Completed 9 June 2025</p>
+              </div>
+              <div class="nhsapp-card__below">
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+    <!-- VIEW APPOINTMENT BUTTON -->
+    <a class="nhsuk-button nhsapp-button--primary nhsapp-button"
+       data-module="nhsuk-button"
+       href="app-in-review.html">
+      View this appointment
+    </a>
+
+    <hr>
+
+    <!-- SUPPORT SECTION -->
+    <div class="nhsuk-u-margin-top-6">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">Get help with this task</h2>
+        </legend>
+        <div class="nhsuk-body">
+          <p>Contact the booking team on <a href="">0XXXX XXX XXX</a></p>
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- FOOTER LINKS -->
+    <footer role="contentinfo" class="nhsuk-footer">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <ul class="nhsuk-footer__list">
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+            </li>
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+            </li>
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+            </li>
+            <li class="nhsuk-footer__list-item">
+              <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+{% endblock %}
