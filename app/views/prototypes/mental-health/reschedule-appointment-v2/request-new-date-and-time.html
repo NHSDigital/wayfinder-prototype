@@ -3,7 +3,7 @@
 
 {% set hub = "Services" %}
 {% set backLink =true %} 
-{% set pageHeading = "Select your preferred days and times for the rescheduled appointment" %}
+{% set pageHeading = "Select days and times you cannot attend a new appointment" %}
 
 {% block content %}
     <div class="nhsuk-grid-row">
@@ -18,15 +18,16 @@
             >
               <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-fieldset__heading">
-                  Select your preferred days and times you cannot attend
+                  Select days and times you cannot attend a new appointment
                 </h1>
               </legend>
 
 
           {# Inset text #}
           {{ insetText({
-            html: "<p>This does not show the clinic's schedule - it's just for sharing
-              your availability to help with rescheduling.
+            html: "<p>
+              The days and times presented do not reflect appointment availability. 
+              Your selection will help us schedule your new appointment at a time that works for you.
             </p>"
           }) }}
 
@@ -40,7 +41,7 @@
               name: "monday-time",
               fieldset: {
                 legend: {
-                  text: "Monday",
+                  text: "Mondays",
                   classes: "nhsuk-fieldset__legend--l"
                 }
               },
@@ -50,12 +51,12 @@
                   text: "Morning"
                 },
                 {
-                  value: "Mid day",
-                  text: "Mid day"
+                  value: "Early afternoon",
+                  text: "Early afternoon"
                 },
                 {
-                  value: "Afternoon",
-                  text: "Afternoon"
+                  value: "Late afternoon",
+                  text: "Late afternoon"
                 }
               ]
             }) }}
@@ -66,7 +67,7 @@
               name: "tuesday-time",
               fieldset: {
                 legend: {
-                  text: "Tuesday",
+                  text: "Tuesdays",
                   classes: "nhsuk-fieldset__legend--l"
                 }
               },
@@ -76,12 +77,12 @@
                   text: "Morning"
                 },
                 {
-                  value: "Mid day",
-                  text: "Mid day"
+                  value: "Early afternoon",
+                  text: "Early afternoon"
                 },
                 {
-                  value: "Afternoon",
-                  text: "Afternoon"
+                  value: "Late afternoon",
+                  text: "Late afternoon"
                 }
               ]
             }) }}
@@ -92,7 +93,7 @@
               name: "wednesday-time",
               fieldset: {
                 legend: {
-                  text: "Wednesday",
+                  text: "Wednesdays",
                   classes: "nhsuk-fieldset__legend--l"
                 }
               },
@@ -102,12 +103,12 @@
                   text: "Morning"
                 },
                 {
-                  value: "Mid day",
-                  text: "Mid day"
+                  value: "Early afternoon",
+                  text: "Early afternoon"
                 },
                 {
-                  value: "Afternoon",
-                  text: "Afternoon"
+                  value: "Late afternoon",
+                  text: "Late afternoon"
                 }
               ]
             }) }}
@@ -118,7 +119,7 @@
               name: "thursday-time",
               fieldset: {
                 legend: {
-                  text: "Thursday",
+                  text: "Thursdays",
                   classes: "nhsuk-fieldset__legend--l"
                 }
               },
@@ -128,12 +129,12 @@
                   text: "Morning"
                 },
                 {
-                  value: "Mid day",
-                  text: "Mid day"
+                  value: "Early afternoon",
+                  text: "Early afternoon"
                 },
                 {
-                  value: "Afternoon",
-                  text: "Afternoon"
+                  value: "Late afternoon",
+                  text: "Late afternoon"
                 }
               ]
             }) }}
@@ -144,7 +145,7 @@
               name: "friday-time",
               fieldset: {
                 legend: {
-                  text: "Friday",
+                  text: "Fridays",
                   classes: "nhsuk-fieldset__legend--l"
                 }
               },
@@ -154,12 +155,12 @@
                   text: "Morning"
                 },
                 {
-                  value: "Mid day",
-                  text: "Mid day"
+                  value: "Early afternoon",
+                  text: "Early afternoon"
                 },
                 {
-                  value: "Afternoon",
-                  text: "Afternoon"
+                  value: "Late afternoon",
+                  text: "Late afternoon"
                 }
               ]
             }) }}
@@ -176,8 +177,8 @@
               },
               items: [
                 {
-                  value: "I'm available any of these days and times",
-                  text: "I'm available any of these days and times"
+                  value: "I can attend any day and time",
+                  text: "I can attend any day and time"
                 }
               ]
             }) }}
