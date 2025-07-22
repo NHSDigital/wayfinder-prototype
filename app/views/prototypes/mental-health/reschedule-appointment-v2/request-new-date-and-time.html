@@ -33,7 +33,7 @@
 
     
           {# Checkboxes #}
-          <div class="nhsuk-u-margin-bottom-3"style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="nhsuk-u-margin-bottom-6" style="display: flex; flex-direction: column; gap: 20px;">
           {# Monday #}
           <form method="post" action="reschedule-review" novalidate>
             {{ checkboxes({
@@ -184,7 +184,7 @@
             }) }}
 
             <!-- SUBMIT BUTTON TO POST SELECTED DATES -->
-            <div>
+            <div class="nhsuk-u-margin-top-6">
               {{ button({
                 text: "Continue",
                 attributes: { type: "submit" },                 
