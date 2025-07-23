@@ -1,0 +1,114 @@
+{# Extends base layout for acute prototype #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Metadata and configuration for this page #}
+{% set hub = "Your health" %}
+{% set backLink = true %} 
+{% set pageHeading = "Past appointment" %}
+{% set pageDescription = "Past appointment" %}
+
+{% block content %}
+
+<!-- PAGE WRAPPER -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- SECTION HEADING + PROVIDER BANNER -->
+    <div class="nhsapp-section-heading">
+      {% include "components/provider-banner/include.html" %}
+    </div>
+
+    <!-- MAIN APPOINTMENT TITLE -->
+    <h1 class="nhsuk-heading-l">Past appointment</h1>
+
+    <!-- SUMMARY LIST: Appointment Details -->
+    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+
+      <!-- Appointment Date -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date</dt>
+        <dd class="nhsuk-summary-list__value">Thursday 29 August 2024</dd>
+      </div>
+
+      <!-- Appointment Time -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Time</dt>
+        <dd class="nhsuk-summary-list__value">10:30am</dd>
+      </div>
+
+      <!-- Appointment Type -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Appointment type</dt>
+        <dd class="nhsuk-summary-list__value">Dermatology</dd>
+      </div>
+
+      <!-- Appointment Location -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Northern General Hospital, Entrance G, <br> Sheffield S5 7AU</p>
+        </dd>
+      </div>
+
+      <!-- Clinician Name -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Clinician</dt>
+        <dd class="nhsuk-summary-list__value">Daisy Pepman <br> Dermatologist</dd>
+      </div>
+    </dl>
+
+    <!-- CARE CARD COMPONENT (Non-urgent advice) -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+            Contact your care providers if:
+          </span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>your condition has changed</li>
+          <li>you think you have a different condition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HELP SECTION -->
+    <h2>Get help with this appointment</h2>
+    <p>
+      Contact the booking team on
+      <a style="text-decoration: underline">0XXXX XXXXXX</a>
+    </p>
+
+    <!-- FOOTER COMPONENT -->
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+{% endblock %}
