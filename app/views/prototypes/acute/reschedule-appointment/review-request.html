@@ -32,13 +32,13 @@
         { key: { text: "Date" }, value: { html: "Friday 4 July 2025" } },
         { key: { text: "Time" }, value: { html: "10:30am" } },
         { key: { text: "Appointment type" }, value: { text: "Asthma" } },
-        { key: { text: "Location" }, value: { text: "Northern General Hospital, Entrance G, Sheffield, S5 7AU" } },
+        { key: { text: "Location" }, value: { html: "Northern General Hospital, Entrance G, <br> Sheffield, S5 7AU" } },
         { key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } }
       ]
     }) }}
 
     <!-- SECTION: Requested appointment dates -->
-    <div class="nhsapp-section-heading">
+    <div class="nhsapp-section-heading nhsuk-u-margin-top-6">
       <h2 class="nhsuk-heading-s">Your requested appointment</h2>
     </div>
 
@@ -86,7 +86,7 @@
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Location</dt>
         <dd class="nhsuk-summary-list__value">
-          Northern General Hospital, Entrance G, Sheffield, S5 7AU
+          Northern General Hospital, Entrance G, <br> Sheffield, S5 7AU
         </dd>
       </div>
 
@@ -123,7 +123,7 @@
 
     <!-- SUBMIT LINK (currently not a form submit) -->
     <div>
-      <a class="nhsuk-button"
+      <a class="nhsuk-button nhsuk-u-margin-top-6"
          data-module="nhsuk-button"
          type="submit"
          href="request-submitted.html">

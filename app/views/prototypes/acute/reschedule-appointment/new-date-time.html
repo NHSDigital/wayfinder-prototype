@@ -16,7 +16,7 @@
 
     <!-- MAIN FORM WRAPPING ALL CHECKBOX INPUTS -->
     <form method="post" action="reason" novalidate>   {# Form posts to next page; triggers autoStoreData if enabled #}
-
+      <div class="nhsuk-u-margin-bottom-6">
       {# MONDAY CHECKBOX GROUP #}
       {{ checkboxes({
         idPrefix: "question-0",                        
@@ -29,7 +29,7 @@
           }
         },
         hint: {
-          text: "Monday 7 July 2025"                  
+          html: "<strong style='color:#212b32'>Monday 7 July 2025</strong>"                  
         },
         items: [
           { value: "Anytime this day", text: "Anytime this day" },
@@ -44,7 +44,7 @@
         idPrefix: "question-1",
         name: "mary-tuesday",                         
         hint: {
-          text: "Tuesday 8 July 2025"
+          html: "<strong style='color:#212b32'>Tuesday 8 July 2025 </strong>"
         },
         items: [
           { value: "Anytime this day", text: "Anytime this day" },
@@ -53,20 +53,22 @@
           { value: "1:30pm", text: "1:30pm" }
         ]
       }) }}
-
+    </div>
       <!-- PAGINATION LINK (OPTIONAL FUNCTIONALITY) -->
-      <div style="padding-bottom: 15px">
+      <div class="">
         <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="#">
-          <span class="nhsuk-pagination__page">Load More</span>
+          <span class="nhsuk-pagination__page nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">Load More</span>
         </a>
       </div>
 
       <!-- SUBMIT BUTTON TO POST SELECTED DATES -->
+       <div class="nhsuk-u-margin-top-6">
       {{ button({
         text: "Continue",
         attributes: { type: "submit" },                 
         classes: "nhsapp-button"
       }) }}
+    </div>
 
     </form>
 

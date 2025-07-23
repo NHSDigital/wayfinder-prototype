@@ -18,32 +18,35 @@
       <!-- FORM TO COLLECT RESCHEDULING REASON -->
       {# Posts to "review-request" and triggers autoStoreData if enabled #}
       <form method="post" action="review-request" novalidate>
+        <div class="nhsuk-u-margin-bottom-6">
+          {# RADIO BUTTON COMPONENT FOR REASON OPTIONS #}
+          {{ radios({
+            idPrefix: "question-3",                    
+            name: "question-3",                          
+            fieldset: {
+              legend: {
+                text: "Why do you need to reschedule?",  
+                classes: "nhsuk-fieldset__legend--l",
+                isPageHeading: true                       
+              }
+            },
+            items: [
+              { value: "I cannot attend at the scheduled time", text: "I cannot attend at the scheduled time" },
+              { value: "I have a new condition", text: "I have a new condition" },
+              { value: "This was booked by mistake", text: "This was booked by mistake" },
+              { value: "Other", text: "Other" }
+            ]
+          }) }}
+        </div>
 
-        {# RADIO BUTTON COMPONENT FOR REASON OPTIONS #}
-        {{ radios({
-          idPrefix: "question-3",                    
-          name: "question-3",                          
-          fieldset: {
-            legend: {
-              text: "Why do you need to reschedule?",  
-              classes: "nhsuk-fieldset__legend--l",
-              isPageHeading: true                       
-            }
-          },
-          items: [
-            { value: "I cannot attend at the scheduled time", text: "I cannot attend at the scheduled time" },
-            { value: "I have a new condition", text: "I have a new condition" },
-            { value: "This was booked by mistake", text: "This was booked by mistake" },
-            { value: "Other", text: "Other" }
-          ]
-        }) }}
-
-        <!-- PRIMARY SUBMIT BUTTON -->
-        {{ button({
-          text: "Continue",
-          attributes: { type: "submit" },              
-          classes: "nhsapp-button"
-        }) }}
+          <!-- PRIMARY SUBMIT BUTTON -->
+           <div class="nhsuk-u-margin-bottom-6">
+          {{ button({
+            text: "Continue",
+            attributes: { type: "submit" },              
+            classes: "nhsapp-button"
+          }) }}
+        </div>
       </form>
 
       <!-- HELP SECTION BELOW FORM -->

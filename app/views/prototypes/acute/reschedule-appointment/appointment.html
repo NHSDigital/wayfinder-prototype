@@ -40,7 +40,7 @@
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Location</dt>
         <dd class="nhsuk-summary-list__value">
-          <p>Northern General Hospital, Entrance G, Sheffield S5 7AU</p>
+          <p>Northern General Hospital, Entrance G, <br> Sheffield S5 7AU</p>
         </dd>
       </div>
 
@@ -57,22 +57,24 @@
     </div>
 
     <!-- ACTION BUTTONS -->
-    <div>
-      <!-- Reschedule Button -->
-      <a
-        class="nhsuk-button nhsapp-button--secondary nhsapp-button"
-        data-module="nhsuk-button"
-        type="submit"
-        href="ask-to-reschedule.html"
-      >
-        Ask to reschedule appointment
-      </a>
-    </div>
+     <div style="display: flex; align-items: center; flex-direction: column;">
+      <div>
+        <!-- Reschedule Button -->
+        <a
+          class="nhsuk-button nhsapp-button--secondary nhsapp-button"
+          data-module="nhsuk-button"
+          type="submit"
+          href="ask-to-reschedule.html"
+        >
+          Ask to reschedule appointment
+        </a>
+      </div>
 
-    <!-- Cancel Link -->
-    <div>
-      <a href="#">Ask to cancel appointment</a>
-    </div>
+      <!-- Cancel Link -->
+      <div>
+        <a href="#">Ask to cancel appointment</a>
+      </div>
+  </div>
 
     <!-- CARE CARD COMPONENT (Non-urgent advice) -->
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
