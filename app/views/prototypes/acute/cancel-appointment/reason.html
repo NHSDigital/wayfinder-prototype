@@ -41,15 +41,17 @@
         }) }}
 
         <!-- PRIMARY SUBMIT BUTTON -->
-        {{ button({
-          text: "Continue",
-          attributes: { type: "submit" },              
-          classes: "nhsapp-button"
-        }) }}
+        <div class="nhsuk-u-margin-top-6">
+          {{ button({
+            text: "Continue",
+            attributes: { type: "submit" },              
+            classes: "nhsapp-button"
+          }) }}
+        </div>
       </form>
 
       <!-- HELP SECTION BELOW FORM -->
-      <h2>Get help with this task</h2>
+      <h2 class="nhsuk-u-margin-top-6">Get help with this task</h2>
       <p>
         Contact the booking team on
         <a style="text-decoration: underline">0XXXX XXXXXX</a>

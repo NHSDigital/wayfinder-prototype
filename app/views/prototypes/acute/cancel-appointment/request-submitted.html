@@ -24,34 +24,31 @@
     </div>
 
     <!-- SUCCESS PANEL -->
-    <div class="nhsapp-panel">
+    <div class="nhsapp-panel nhsuk-u-margin-bottom-4">
       <h1 class="nhsapp-panel__title">
         Your request to cancel has been submitted
       </h1>
     </div>
 
-    <!-- SECTION: Requested appointment summary -->
-    <div class="nhsapp-section-heading">
-      <h2 class="nhsuk-heading-s">Your requested appointment details</h2>
+    {# Summary list of fixed appointment details (not user input) #}
+    <div class="nhsuk-u-margin-top-4">
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+          { key: { text: "Date" }, value: { html: "Friday 4 July 2025" } },
+          { key: { text: "Time" }, value: { html: "10:30am" } },
+          { key: { text: "Appointment type" }, value: { text: "Asthma" } },
+          { key: { text: "Location" }, value: { html: "Northern General Hospital, Entrance G, <br> Sheffield, S5 7AU" } },
+          { key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } }
+        ]
+      }) }}
     </div>
 
-    {# Summary list of fixed appointment details (not user input) #}
-    {{ summaryList({
-      classes: "nhsuk-u-margin-bottom-4",
-      rows: [
-        { key: { text: "Date" }, value: { html: "Friday 4 July 2025" } },
-        { key: { text: "Time" }, value: { html: "10:30am" } },
-        { key: { text: "Appointment type" }, value: { text: "Asthma" } },
-        { key: { text: "Location" }, value: { text: "Northern General Hospital, Entrance G, Sheffield, S5 7AU" } },
-        { key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } }
-      ]
-    }) }}
-
     <!-- NEXT STEPS EXPLANATION -->
-    <h3 class="nhsuk-heading-m nhsuk-u-margin-bottom-4">What happens now</h3>
+    <h3 class="nhsuk-heading-m nhsuk-u-margin-top-4">What happens now</h3>
     <p>You do not need to do anything while the booking team is processing your request to reschedule</p>
     <p class="nhsuk-u-margin-bottom-5">
-      Rescheduling your appointment will take approximately 48 hours. The original appointment may remain visible during that time.
+      Cancelling your appointment will take approximately 48 hours. The original appointment may remain visible during that time.
     </p>
 
 
@@ -70,6 +67,25 @@
           View all appointments
         </a>
       </p>
+    </div>
+
+    <!-- CARE CARD COMPONENT (Non-urgent advice) -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Non-urgent advice: </span>
+            Contact your care providers if:
+          </span>
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>your condition has changed</li>
+          <li>you think you have a different condition</li>
+        </ul>
+      </div>
     </div>
 
     <!-- SUPPORT SECTION -->
