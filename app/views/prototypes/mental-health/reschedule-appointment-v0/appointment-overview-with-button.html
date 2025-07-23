@@ -10,13 +10,6 @@
     <div class="nhsuk-grid-column-full">
       {% include "components/provider-banner/include.html" %}
 
-      <!-- TAG COMPONENT --> 
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell">
-            <span class="nhsapp-tag nhsapp-tag--yellow nhsuk-u-margin-bottom-4">Reschedule in review</span>
-        </td>
-      </tr>
-
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         title: pageHeading,
@@ -31,7 +24,7 @@
             text: "Date"
           },
           value: {
-            html: "Friday 7 June 2024"
+            html: "Wednesday 1 May 2024"
           }
         },
         {
@@ -39,23 +32,15 @@
             text: "Time"
           },
           value: {
-            html: "10:30am"
+            html: "9:40am"
           }
         },
-        {
-            key: {
-              text: "Appointment type"
-            },
-            value: {
-              html: "Mental health service appointment"
-            }
-          },
           {
             key: {
               text: "Location"
             },
             value: {
-              html: "Room 1, King Street GP Practice, New Street, Sheffield, S1 1XX"
+              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
             }
           },
           {
@@ -63,11 +48,15 @@
               text: "Clinician"
             },
             value: {
-              text: "Ahmet Kaya"
+              html: "Dr Donald Glover"
             }
           }
         ]
       }) }}
+
+      <p class="nhsuk-u-margin-bottom-4"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
+
+      <hr>
 
       <!-- RED CARE CARD COMPONENT -->
       <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
@@ -83,19 +72,33 @@
         </div>
       </div>
 
+
+      {# Buttons #}
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- BUTTON COMPONENT -->
+        <div>
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="request-to-reschedule.html">Ask to reschedule appointment</a>
+        </div>
+
+        <div>
+        <!-- LINK COMPONENT -->
+        <p><a href="#">Ask to cancel appointment</a></p>
+        </div>
+      </div>
+
+      <hr>
+
       <!-- FIELDSET COMPONENTS -->
-    <div>
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h6 class="nhsuk-fieldset__heading">
+          <h1 class="nhsuk-fieldset__heading">
             Get help with this appointment
-          </h6>
+          </h1>
         </legend>
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
         </legend>
       </fieldset>
-    </div>
 
       <!-- FOOTER COMPONENT-->
       <footer role="contentinfo">

@@ -14,19 +14,52 @@ review" %} {% block content %}
       </h1>
     </div>
 
-    <!-- SECTION HEADING COMPONENT -->
+      <!-- SECTION: Requested appointment dates -->
     <div class="nhsapp-section-heading">
       <h2 class="nhsuk-heading-s">Your requested appointment</h2>
     </div>
 
-    <!-- SUMMARY LIST COMPONENT -->
-    {{ summaryList({ classes: "nhsuk-u-margin-bottom-4", rows: [ { key: { text:
-    "Date" }, value: { html: "Friday 7 June 2024" } }, { key: { text: "Time" },
-    value: { html: "10:30am" } }, { key: { text: "Appointment type" }, value: {
-    html: "Mental health service appointment" } }, { key: { text: "Location" },
-    value: { html: "Room 1, King Street GP Practice, New Street, Sheffield, S1
-    1XX" } }, { key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } } ] })
-    }}
+    {% set appointmentDays = {
+      "tuesday-time": "Tuesday 24 September 2024",
+      "thursday-time": "Thursday 26 September 2024"
+    } %}
+
+
+    <!-- Summary list: User-selected times for Monday and Tuesday -->
+    <dl class="nhsuk-summary-list">
+  {% for key, label in appointmentDays %}
+    {% if data[key] %}
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">{{ label }}</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data[key] | length > 1 %}
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              {% for time in data[key] %}
+                <li>{{ time }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            {{ data[key] }}
+          {% endif %}
+        </dd>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <!-- Static fields -->
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Location</dt>
+    <dd class="nhsuk-summary-list__value">
+      West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ
+    </dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Clinician</dt>
+    <dd class="nhsuk-summary-list__value">Dr Donald Glover</dd>
+  </div>
+</dl>
+
 
     <!-- SECTION HEADING COMPONENT -->
     <div class="nhsapp-section-heading">
@@ -34,29 +67,29 @@ review" %} {% block content %}
     </div>
 
     <!-- TEXT -->
-    <p>
-      You do not need to do anything else while the booking team is processing
-      your request to reschedule.
-    </p>
-    <p>
-      Rescheduling your appointment will take approximately 48 hours. The
-      original appointment may remain visible during that time.
-    </p>
+    <div>
+        <p>
+        You do not need to do anything else while the booking team is processing
+        your request to reschedule.
+        </p>
+        <p class="nhsuk-u-margin-bottom-3">
+        Rescheduling your appointment will take approximately 48 hours. The
+        original appointment may remain visible during that time.
+        </p>
+    </div>
 
-    <!-- SECONDARY BUTTON COMPONENT -->
-    <a
-      class="nhsuk-button nhsapp-button--secondary nhsapp-button"
-      data-module="nhsuk-button"
-      type="submit"
-      href="aggregator-with-pending.html"
-    >
-      View this appointment
-    </a>
+        {# Buttons #}
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- BUTTON COMPONENT -->
+        <div>
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="app-in-review.html">View this appointment</a>
+        </div>
 
-    <!-- LINK COMPONENT -->
-    <p style="text-align: center">
-      <a href="hospital-appointments.html">View all appointments</a>
-    </p>
+        <div>
+        <!-- LINK COMPONENT -->
+        <p> <a href="aggregator-with-pending.html">View all appointments</a></p>
+        </div>
+      </div>
 
     <!-- NON-URGENT CARE CARD COMPONENT -->
     <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">

@@ -18,24 +18,43 @@
         </div>
     
         <!-- SUMMARY LIST COMPONENT -->
-        {{ summaryList({ 
-          classes: "nhsuk-u-margin-bottom-4", 
-          rows: [ { 
-            key: { text:
-        "Date" }, value: { html: "Friday 7 June 2024" } }, 
-        { 
-          key: { text: "Time" },
-        value: { html: "10:30am" } }, 
-        { 
-          key: { text: "Appointment type" }, value: {
-        html: "Mental health service appointment" } }, 
-        { 
-          key: { text: "Location" },
-        value: { html: "Room 1, King Street GP Practice, New Street, Sheffield, S1
-        1XX" } }, 
-        { 
-          key: { text: "Clinician" }, value: { text: "Ahmet Kaya" } } ] })
-        }}
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Wednesday 1 May 2024"
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:30am"
+          }
+        },
+        {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              text: "Dr Donald Glover"
+            }
+          }
+        ]
+      }) }}
     
         <!-- SECTION HEADING COMPONENT -->
         <div class="nhsapp-section-heading">
@@ -51,14 +70,19 @@
           Cancelling your appointment will take approximately 48 hours. The
           cancelled appointment will remain visible during that time.
         </p>
-    
-        <!-- SECONDARY BUTTON COMPONENT -->
-        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" data-module="nhsuk-button" type="submit" href="aggregator-with-pending-cancel.html">
-          View this appointment
-        </a>
-    
+
+        {# Buttons #}
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- BUTTON COMPONENT -->
+        <div>
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="cancellation-pending.html">View this appointment</a>
+        </div>
+
+        <div>
         <!-- LINK COMPONENT -->
-        <p style="text-align: center"><a href="aggregator-with-pending-cancel.html" style="text-align: center">View all appointments</a></p>
+        <p> <a href="aggregator-with-pending-cancel.html">View all appointments</a></p>
+        </div>
+      </div>
     
         <!-- NON-URGENT CARE CARD COMPONENT -->
         <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">

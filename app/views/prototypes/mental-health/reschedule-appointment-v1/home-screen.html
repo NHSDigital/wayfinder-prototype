@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-{% extends "../community-health/layout/clch-app-layout.html" %}
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
 
 {% set hub = "Home" %}
 {% set backLink = true %}
-{% set backLinkURL = "/prototypes/" %}
+{% set backLinkURL = "/prototypes/mental-health/" %}
 {% set pageHeading = "Home" %}
 
 {% block content %}
@@ -61,7 +61,7 @@
           },
           {
             title: "Upcoming and past appointments",
-            href: "#"
+            href: "upcoming-and-past-appointments.html"
           }
         ]
       }) }}
@@ -71,15 +71,13 @@
         headingText: "Messages"
       }) }}
 
-      {% set data = { 'messages': 2 } %} <!-- Set the message count to 2 -->
-
       {% if data['messages'] > 0 %}
         {{ nhsappCardGroup({
           stacked: true,
           cards: [
             {
               title: 'View your messages',
-              href: 'messages/messages.html',
+              href: '#',
               prefixIcon: 'messagesUnread',
               linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
               badgeLarge: {
@@ -133,37 +131,6 @@
           </a>
         </p>
       </div>
-
-      <!-- SECTION - Journeys -->
-      {{ nhsappSectionHeading({
-        headingText: "Journeys"
-      }) }}
-
-      {{ nhsappCardGroup({
-        stacked: true,
-        cards: [
-          {
-            title: "Flow 1 - View appointment via message (No reschedule or cancel buttons)",
-            href: "flow-1/lockscreen.html"
-          },
-          {
-            title: "Flow 2 - View appointment via home screen (No reschedule or cancel buttons)",
-            href: "flow-2/home-screen.html"
-          },
-          {
-            title: "Flow 3 - View appointment via message",
-            href: "flow-3/lockscreen.html"
-          },
-          {
-            title: "Flow 4 - View appointment from home screen/reschedule (V0)",
-            href: "flow-4/home-screen.html"
-          },
-          {
-            title: "Flow 5 - View appointment from home screen/cancel",
-            href: "flow-5/home-screen.html"
-          }
-        ]
-      }) }}
 
     </div>
   </div>

@@ -3,13 +3,14 @@
 
 {% set hub = "Your health" %}
 {% set backLink = true %}
-{% set pageHeading = "Ask to cancel your appointment" %}
+{% set pageHeading = "Ask to reschedule your appointment" %}
 
 {% block content %}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-      {% include "components/provider-banner/include.html" %}
 
+      {% include "components/provider-banner/include.html" %}
 
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
@@ -29,14 +30,6 @@
           }
         },
         {
-            key: {
-              text: "Appointment type:"
-            },
-            value: {
-              html: "Mental health service appointment"
-            }
-          },
-        {
           key: {
             text: "Time"
           },
@@ -49,7 +42,7 @@
               text: "Location"
             },
             value: {
-              html: "Croydon University Hospital, The Willows, Croydon, RJ6"
+              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
             }
           },
           {
@@ -63,39 +56,24 @@
         ]
       }) }}
 
-      <p class="nhsuk-u-margin-bottom-4"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
-
-      <hr>
-
-    <!-- WARNING CALLOUT COMPONENT -->
-    <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label"> <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important </span>
-            Important
-          </span> </h3>
-        <p>Cancelling this appointment may remove you from the waiting list for care.</p>
-        <p>You should attend your mental health appointments if you can.</p>
-        <p>If you cannot attend this appointment but still need this care you can <a href="#">change it instead</a>.</p>
-      </div>
-
-      <!-- FIELDSET COMPONENTS -->
+    <!-- FIELDSET COMPONENTS -->
     <div >
-      <fieldset class="nhsuk-fieldset">
+      <fieldset class="nhsuk-fieldset nhsuk-u-margin-top-4">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h1 class="nhsuk-fieldset__heading">
             How a request works
           </h1>
         </legend>
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h3 class="nhsuk-fieldset__legend">Your request to cancel will be reviewed by your care provider who might contact you to talk about it.</h3>
-            <h3 class="nhsuk-fieldset__legend">Your request will then be processed by the booking team. This will take approximately 48 hours.</h3>
-            <h3 class="nhsuk-fieldset__legend">The cancelled appointment will remain visible during that time.</h3>
+            <h3 class="nhsuk-fieldset__legend nhsuk-u-margin-bottom-3">The booking team will process your request to reschedule. 
+                This process will take approximately 48 hours.</h3>
+            <h3 class="nhsuk-fieldset__legend">The original appointment may remain visible during that time</h3>
         </legend>
     </fieldset>
         {{ button({
           text: "Start",
           classes: "nhsapp-button",
-          href: "cancellation-review.html"
+          href: "request-new-date-and-time.html"
         }) }}
     </div>  
 

@@ -1,0 +1,99 @@
+{# Extend acute layout for consistent header, footer, and navigation #}
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{# Metadata used in layout and dynamic title #}
+{% set hub = "Your health" %}                      {# Category or breadcrumb hub label #}
+{% set backLink = true %}                          {# Enables back button in the layout #}
+{% set pageHeading = "Hospital and specialist appointments" %}  {# Used in title component #}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}  {# Subtitle shown below pageHeading #}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {# Optional branding component, like trust or hospital name #}
+    {% include "components/provider-banner/include.html" %}
+
+    <!-- STATUS TAG ABOVE TITLE -->
+    <span class="nhsapp-tag nhsapp-tag--yellow">Reschedule in review</span>
+
+    <!-- PAGE TITLE WRAPPER -->
+    <div class="nhsapp-section-heading" style="padding-top: 15px;">
+      {# NOTE: <title> should not appear here — remove this from body #}
+      <title>Change in review</title>
+    </div>
+
+    <!-- MAIN PAGE HEADING -->
+    <h1 class="nhsuk-heading-l">Mental health service appointment</h1>
+
+     <!-- SUMMARY LIST: Appointment Details -->
+    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+
+      <!-- Appointment Date -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Date</dt>
+        <dd class="nhsuk-summary-list__value">Wednesday 1 May 2024</dd>
+      </div>
+
+      <!-- Appointment Time -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Time</dt>
+        <dd class="nhsuk-summary-list__value">9:40am</dd>
+      </div>
+
+      <!-- Appointment Location -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Location</dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ</p>
+        </dd>
+      </div>
+
+      <!-- Clinician Name -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Clinician</dt>
+        <dd class="nhsuk-summary-list__value">Dr Donald Glover</dd>
+      </div>
+    </dl>
+
+          <!-- RED CARE CARD COMPONENT -->
+      <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
+        <div class="nhsuk-card--care__heading-container">
+          <h2 class="nhsuk-card--care__heading"> <span role="text"><span class="nhsuk-u-visually-hidden">Urgent advice: </span>If you need help now</span> </h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-card__content">
+          <ul>
+            <li>If you are in danger, call <a href="">999</a> or go to A&E now</li>
+            <li>If you need urgent help for your mental health, <a href="">get help from NHS 111 online or call 111</a></li>
+          </ul>
+          <p>Your mental health is as important as your physical health. You will not be wasting anyone's time.</p>
+        </div>
+      </div>
+
+
+    <!-- SUPPORT SECTION -->
+    <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-0">Get help with this appointment</h3>
+    <p class="nhsuk-u-margin-bottom-5">
+      Contact the booking team on <a style="text-decoration: underline;">0XXXX XXXXXX</a>
+    </p>
+
+    <!-- FOOTER: Standard NHS links -->
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li><a class="nhsuk-footer__list-item-link" href="#">Terms of use</a></li>
+              <li><a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a></li>
+              <li><a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a></li>
+              <li><a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+{% endblock %}

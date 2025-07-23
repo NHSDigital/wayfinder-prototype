@@ -8,17 +8,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-
       {% include "components/provider-banner/include.html" %}
-
-      <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
-
-      <!-- TAG COMPONENT -->
-      <tr class="nhsuk-table__row">
-        <td class="nhsuk-table__cell">
-            <span class="nhsapp-tag nhsapp-tag--grey">Cancelled</span>
-        </td>
-      </tr>
 
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
@@ -50,7 +40,7 @@
               text: "Location"
             },
             value: {
-              html: "Croydon University Hospital, The Willows, Croydon, RJ6"
+              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
             }
           },
           {
@@ -58,11 +48,15 @@
               text: "Clinician"
             },
             value: {
-              text: "Dr Donald Glover"
+              html: "Dr Donald Glover"
             }
           }
         ]
       }) }}
+
+      <p class="nhsuk-u-margin-bottom-4"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
+
+      <hr>
 
       <!-- RED CARE CARD COMPONENT -->
       <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
@@ -78,6 +72,22 @@
         </div>
       </div>
 
+
+      {# Buttons #}
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- BUTTON COMPONENT -->
+        <div>
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="request-to-reschedule.html">Ask to reschedule appointment</a>
+        </div>
+
+        <div>
+        <!-- LINK COMPONENT -->
+        <p><a href="#">Ask to cancel appointment</a></p>
+        </div>
+      </div>
+
+      <hr>
+
       <!-- FIELDSET COMPONENTS -->
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -88,7 +98,7 @@
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
         </legend>
-    </fieldset>
+      </fieldset>
 
       <!-- FOOTER COMPONENT-->
       <footer role="contentinfo">

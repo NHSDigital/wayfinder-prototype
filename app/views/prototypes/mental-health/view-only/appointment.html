@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Mental health service appointment" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {% include "components/provider-banner/include.html" %}
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Wednesday 1 May 2024"
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:40am"
+          }
+        },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              html: "Dr Donald Glover"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="nhsuk-u-margin-bottom-4"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
+
+      <hr>
+
+      <!-- RED CARE CARD COMPONENT -->
+      <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
+        <div class="nhsuk-card--care__heading-container">
+          <h2 class="nhsuk-card--care__heading"> <span role="text"><span class="nhsuk-u-visually-hidden">Urgent advice: </span>If you need help now</span> </h2> <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+        </div>
+        <div class="nhsuk-card__content">
+          <ul>
+            <li>If you are in danger, call <a href="">999</a> or go to A&E now</li>
+            <li>If you need urgent help for your mental health, <a href="">get help from NHS 111 online or call 111</a></li>
+          </ul>
+          <p>Your mental health is as important as your physical health. You will not be wasting anyone's time.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- FIELDSET COMPONENTS -->
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with this appointment
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+        </legend>
+      </fieldset>
+
+      <!-- FOOTER COMPONENT-->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  {% endblock %}
