@@ -24,7 +24,10 @@
     <div class="nhsuk-summary-list">
 
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Question 1</dt>
+        <dt class="nhsuk-summary-list__key">
+          <strong>Question 1</strong><br>
+          <span style="font-weight: normal;">Do you have difficulty breathing during or after exercise?</span>  
+        </dt>
         <dd class="nhsuk-summary-list__value">
           {% if data['question-1'] %}
             {{ data['question-1'] }}
@@ -38,7 +41,10 @@
       </div>
 
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Question 2</dt>
+        <dt class="nhsuk-summary-list__key">
+          <strong>Question 2</strong><br>
+          <span style="font-weight: normal;">Describe your breathing on an average day</span>  
+        </dt>
         <dd class="nhsuk-summary-list__value">
           {% if data['question-2'] %}
             {{ data['question-2'] }}
@@ -52,7 +58,10 @@
       </div>
 
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Question 3</dt>
+        <dt class="nhsuk-summary-list__key">
+          <strong>Question 3</strong><br>
+          <span style="font-weight: normal;">How long have you had difficulty breathing?</span>    
+        </dt>
         <dd class="nhsuk-summary-list__value">
           {% if data['question-3'] %}
             {{ data['question-3'] }}
@@ -86,7 +95,7 @@
       </legend>
       <div class="nhsuk-body">
         <p class="nhsuk-u-margin-bottom-4">
-          Contact the booking team on <a href="">0XXXX XXX XXX</a>
+          Contact the clinic on <a href="">0XXXX XXX XXX</a>
         </p>
       </div>
     </fieldset>
