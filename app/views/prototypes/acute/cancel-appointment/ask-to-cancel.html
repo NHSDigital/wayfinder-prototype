@@ -1,0 +1,113 @@
+{# Extends the base acute layout template #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Set metadata and page-level configuration #}
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Ask to cancel your appointment" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    {# Provider banner shown at top of content (optional branding/support info) #}
+    {% include "components/provider-banner/include.html" %}
+
+    <!-- Dynamic page title (e.g. heading, breadcrumb, optional subheading) -->
+    {{ dynamicPageTitle({
+      title: pageHeading,
+      titleSecondary: true
+    })}}
+
+    <!-- Summary list showing appointment details to confirm context -->
+    {{ summaryList({
+      classes: "nhsuk-u-margin-bottom-4",
+      rows: [
+        {
+          key: { text: "Date" },
+          value: { html: "Friday 4 July 2025" }
+        },
+        {
+          key: { text: "Time" },
+          value: { html: "10:30am" }
+        },
+        {
+          key: { text: "Location" },
+          value: { html: "Northern General Hospital, Entrance G, <br> Sheffield, S5 7AU" }
+        },
+        {
+          key: { text: "Clinician" },
+          value: { text: "Ahmet Kaya" }
+        }
+      ]
+    }) }}
+
+    <!-- Informational section explaining what a reschedule request does -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading" style="margin-top: 20px;">How a request works</h1>
+        </legend>
+
+        {# Advisory text explaining the process to users #}
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h3 class="nhsuk-fieldset__legend nhsuk-u-margin-bottom-4">
+            The booking team will review and process your request to reschedule.
+            This process will take approximately 48 hours.
+          </h3>
+          <h3 class="nhsuk-fieldset__legend">
+            The original appointment may remain visible during that time
+          </h3>
+        </legend>
+      </fieldset>
+
+      <!-- Call-to-action button to start the rescheduling flow -->
+      {{ button({
+        text: "Start",
+        classes: "nhsapp-button",
+        href: "reason.html"
+      }) }}
+    </div>
+
+    <!-- Contact information if users need help with the task -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">Get help with this task</h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h3 class="nhsuk-fieldset__legend">
+            Contact the booking team on <a href="">0XXXX XXX XXX</a>
+          </h3>
+        </legend>
+      </fieldset>
+    </div>
+
+    <!-- Standard NHS UK footer with accessibility and policy links -->
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+{% endblock %}

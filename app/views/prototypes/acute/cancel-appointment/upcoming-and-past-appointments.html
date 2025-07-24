@@ -1,0 +1,105 @@
+{# Extend base layout for acute section #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Set metadata used for navigation context and page title #}
+{% set hub = "Your health" %}                         {# Breadcrumb section label #}
+{% set backLink = true %}                             {# Enables default back link #}
+{% set pageHeading = "Upcoming and past appointments" %}         {# Main heading displayed #}
+{% set pageDescription = "View or manage upcoming and past appointments, referrals and waiting lists" %} {# Subtitle or description #}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- TITLE COMPONENT: Renders heading and optional description -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <!-- STACKED CARD LIST FOR APPOINTMENT CATEGORIES -->
+      <ul class="nhsapp-cards nhsapp-cards--stacked">
+
+        <!-- CARD: GP Surgery Appointments -->
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                GP surgery appointments
+              </a>
+            </div>
+
+            {# Placeholder for unread notification logic (currently unused) #}
+            {% if data['appointment-letter'] != "read" %}
+            {% endif %}
+
+            <!-- Chevron icon for visual navigation hint -->
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+        <!-- CARD: Referrals -->
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                Referrals
+              </a>
+            </div>
+
+            {# Placeholder for future notification logic #}
+            {% if data['appointment-letter'] != "read" %}
+            {% endif %}
+
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+        <!-- CARD: Hospital Appointments -->
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="hospital-appointments.html" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                Hospital appointments
+              </a>
+            </div>
+
+            <!-- CONDITIONAL BADGE: Displayed if appointment letter hasn't been read -->
+            {% if data['appointment-letter'] != "read" %}
+              <p class="nhsapp-badge" aria-hidden="true">
+                <span class="nhsuk-u-visually-hidden">You have</span>
+                1
+                <span class="nhsuk-u-visually-hidden">notifications</span> 
+              </p>
+            {% endif %}
+
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+        <!-- CARD: Waiting Lists -->
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a href="#" class="nhsapp-card__link nhsuk-link--no-visited-state">
+                Waiting lists
+              </a>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+      <!-- RELATED CONTENT CARD: Linking to services -->
+      {{ relatedContentCard({
+        icon: "cross",                             
+        title: "Access services",                    
+        description: "Find available GP appointments and other available services",
+        URL: "#",
+        linkText: "Explore services"
+      })}}
+
+    </div>
+  </div>
+{% endblock %}

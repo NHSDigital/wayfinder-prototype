@@ -1,0 +1,115 @@
+{# Extend the acute layout used for hospital and specialist appointments #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Define page-level variables used by layout and components #}
+{% set hub = "Your health" %}                        {# Sets breadcrumb or category label #}
+{% set backLink = true %}                            {# Enables default NHS-style back link #}
+{% set pageHeading = "Hospital and specialist appointments" %}  {# Main page heading #}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}  {# Subheading #}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- PAGE TITLE WITH HEADING + DESCRIPTION -->
+    {{ dynamicPageTitle({
+      title: pageHeading,
+      titleSecondary: true,
+      description: pageDescription
+    })}}
+
+    <!-- ALERT BOX: Information about appointment visibility -->
+    {{ insetText({
+      HTML: "<p>Some of your appointment information may not be visible in the app. Find out more by selecting the help section at the top of the screen.</p>",
+      classes: "nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5"
+    }) }}
+
+    <!-- UPCOMING APPOINTMENTS SECTION HEADING -->
+    {{ nhsappSectionHeading({
+      headingText: "Upcoming appointments",
+      subheadingText: "1 upcoming appointment"
+    })}}
+
+    <!-- APPOINTMENT CARD LIST -->
+    <ul class="nhsapp-cards">
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container">
+
+          <!-- CARD CONTENT: Appointment title and details -->
+          <div class="nhsapp-card__content">
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state"
+               href="consent-screen.html"
+               aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+              Asthma appointment
+            </a>
+
+            <!-- VISUAL DETAILS UNDERNEATH LINK -->
+            <div class="nhsapp-card__below">
+              <p class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3" aria-hidden="true">
+                Friday 4 July 2025 <br> 10:30am
+              </p>
+              <p class="nhsuk-u-margin-bottom-3">
+                Northern General Hospital, Entrance G, Sheffield, S5 7AU
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT CHEVRON ICON FOR VISUAL NAVIGATION -->
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </li>
+    </ul>
+
+    <!-- SECTION DIVIDER -->
+    <hr class="nhsuk-section-break--l">
+
+    <!-- PAST APPOINTMENTS SECTION HEADING -->
+    {{ nhsappSectionHeading({
+      headingText: "Past appointments",
+      subheadingText: "Showing 1 of 6"
+    })}}
+
+    <!-- PAST APPOINTMENT CARD -->
+    <ul class="nhsapp-cards">
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state"
+               href="past-appointment.html"
+               aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+              Dermatology appointment
+            </a>
+
+            <div class="nhsapp-card__below">
+              <p class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3" aria-hidden="true">
+                Thursday 29 August 2024 <br> 10:30am
+              </p>
+              <p class="nhsuk-u-margin-bottom-3">
+                Northern General Hospital, Entrance G, Sheffield, S5 7AU
+              </p>
+            </div>
+          </div>
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </li>
+    </ul>
+
+    <!-- VIEW MORE LINK CARD -->
+    <ul class="nhsapp-cards">
+      <li class="nhsapp-card">
+        <div class="nhsapp-card__container">
+          <div class="nhsapp-card__content">
+            <a class="nhsapp-card__link nhsuk-link--no-visited-state"
+               href="#"
+               aria-label="Community medicine appointment on Monday 3 June 2024 at 9:40am">
+              View more past appointments
+            </a>
+          </div>
+          {{ nhsappIcon('chevronRight') }}
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

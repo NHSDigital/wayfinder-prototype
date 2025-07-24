@@ -1,0 +1,88 @@
+{# Extend acute layout template shared across the health prototype #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# Page metadata and header context #}
+{% set hub = "Your health" %}                          {# Breadcrumb section label #}
+{% set backLink = true %}                              {# Enables default back link #}
+{% set pageHeading = "Why do you need to reschedule?" %} {# Main heading shown in dynamic page title #}
+
+{% block content %}
+
+  <!-- NHS grid system layout -->
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {# Include provider banner if applicable (hospital name or NHS trust info) #}
+      {% include "components/provider-banner/include.html" %}
+
+      <!-- FORM TO COLLECT RESCHEDULING REASON -->
+      {# Posts to "review-request" and triggers autoStoreData if enabled #}
+      <form method="post" action="review-request" novalidate>
+
+        {# RADIO BUTTON COMPONENT FOR REASON OPTIONS #}
+        {{ radios({
+          idPrefix: "reason-question",                    
+          name: "reason-question",                          
+          fieldset: {
+            legend: {
+              text: "Why do you need to cancel?",  
+              classes: "nhsuk-fieldset__legend--l",
+              isPageHeading: true                       
+            }
+          },
+          items: [
+            { value: "I cannot attend at the scheduled time", text: "I cannot attend at the scheduled time" },
+            { value: "I have already used this service", text: "I have already used this service" },
+            { value: "I need a different service", text: "I need a different service" },
+            { value: "I do not need care anymore", text: "I do not need care anymore" },
+            { value: "This was booked by mistake", text: "This was booked by mistake" },
+            { value: "Other", text: "Other" }
+          ]
+        }) }}
+
+        <!-- PRIMARY SUBMIT BUTTON -->
+        <div class="nhsuk-u-margin-top-6">
+          {{ button({
+            text: "Continue",
+            attributes: { type: "submit" },              
+            classes: "nhsapp-button"
+          }) }}
+        </div>
+      </form>
+
+      <!-- HELP SECTION BELOW FORM -->
+      <h2 class="nhsuk-u-margin-top-6">Get help with this task</h2>
+      <p>
+        Contact the booking team on
+        <a style="text-decoration: underline">0XXXX XXXXXX</a>
+      </p>
+
+      <!-- FOOTER SECTION FOR SUPPORT LINKS AND POLICIES -->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+{% endblock %}

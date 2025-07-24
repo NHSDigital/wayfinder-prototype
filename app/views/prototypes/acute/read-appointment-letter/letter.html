@@ -1,0 +1,102 @@
+{# extends the acute layout for consistent structure #}
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{# sets metadata for navigation and page title #}
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Asthma appointment confirmation letter" %}
+
+{% block content %}
+
+<!-- page layout starts -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- provider banner component -->
+    <div class="nhsapp-section-heading">
+      {% include "components/provider-banner/include.html" %}
+    </div>
+
+    <!-- main page heading -->
+    <h1 class="nhsuk-heading-l">Asthma appointment confirmation letter</h1>
+
+    <!-- image showing the appointment letter -->
+    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center;">
+        <img src="/images/letter.png" alt="Appointment confirmation letter">
+    </div>
+
+    <!-- download link with icon -->
+    <div class="nhsuk-u-margin-bottom-4" style="display: flex; vertical-align: middle; align-items: center; gap: 8px; white-space: no-wrap;">
+        <div>{{ nhsappIcon('download') }}</div>
+        <div>
+            <a class="app-link--with-icon app-link nhsuk-link--no-visited-state" style="text-decoration: underline">
+              Download</a>
+        </div>
+    </div>
+
+    <!-- email link with icon -->
+    <div class="nhsuk-u-margin-bottom-4" style="display: flex; align-items: center; gap: 8px;">
+        <div>{{ nhsappIcon('email') }}</div>
+        <div>
+            <a class="app-link--with-icon app-link" style="text-decoration: underline">
+              Get a copy of your document by email</a>
+        </div>
+    </div>
+
+    <!-- section heading for pre-appointment info -->
+    {{ nhsappSectionHeading({
+        headingText: "Read before your appointment"
+    }) }}
+
+    <!-- links to additional documents -->
+    <div class="nhsuk-u-margin-bottom-7" style="display: flex; flex-direction: column; gap: 20px;">
+      <a class="app-link" style="text-decoration: underline">Covid-19 restrictions.pdf</a>
+      <a class="app-link" style="text-decoration: underline">Car parking instructions</a>
+      <a class="app-link" style="text-decoration: underline">Pre-appointment guidance</a>
+    </div>
+
+    <!-- call-to-action button -->
+    {{ button({
+      text: "View this appointment",
+      href: "appointment-green-tag.html",
+      classes: "nhsapp-button"
+    }) }}
+
+    <!-- horizontal divider -->
+    <hr>
+
+    <!-- support section with contact info -->
+    <h2>Get help with this task</h2>
+    <p class="nhsuk-u-margin-bottom-4">
+      Contact the booking team on <a style="text-decoration: underline">0XXXX XXXXXX</a>
+    </p>
+
+    <!-- footer with standard links -->
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+{% endblock %}

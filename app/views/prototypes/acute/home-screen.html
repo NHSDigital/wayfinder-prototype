@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+{% extends "../acute/acute-layout.html" %}
+
+{# Page configuration variables used throughout the layout and components #}
+{% set hub = "Home" %}
+{% set backLink = true %}
+{% set backLinkURL = "/prototypes/" %}
+{% set pageHeading = "Home" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {# Dynamic title at the top of the page, using data passed through autoStoreData #}
+      {{ dynamicPageTitle({
+        logo: data['web'] !== "yes",
+        greetingName: data['userFirstName'] + " " + data['userLastName'],
+        nhsNumber: data['nhsNumber']
+      })}}
+
+      <!-- SECTION: Services -->
+      {# Display section heading with "View all" link #}
+      {{ nhsappSectionHeading({
+        headingText: "Services",
+        linkText: "View all",
+        linkUrl: "#",
+        linkAriaLabel: "View all services"
+      }) }}
+
+      {# Card group for service-related actions #}
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Request repeat medicines",
+            href: "#"
+          },
+          {
+            title: "Check if you need urgent medical help using 111 online",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <!-- SECTION: Your Health -->
+      {# Section for health-related features #}
+      {{ nhsappSectionHeading({
+        headingText: "Your health",
+        linkText: "View all",
+        linkUrl: "#",
+        linkAriaLabel: "View all your health"
+      }) }}
+
+      {# Card group for health record and prescription info #}
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "GP health record",
+            href: "#"
+          },
+          {
+            title: "View and manage prescriptions",
+            href: "#"
+          },
+          {
+            title: "Upcoming and past appointments",
+            href: "#"
+          }
+        ]
+      }) }}
+
+
+      <!-- SECTION: Messages -->
+      {# Message section, shows unread count conditionally #}
+      {{ nhsappSectionHeading({
+        headingText: "Messages"
+      }) }}
+
+      {% set data = { 'messages': 2 } %} {# Set message count for demonstration #}
+
+      {% if data['messages'] > 0 %}
+        {# Show message card with unread badge #}
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'View your messages',
+              href: '#',
+              prefixIcon: 'messagesUnread',
+              linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
+              badgeLarge: {
+                count: data['messages'],
+                label: 'unread messages',
+                ariaHidden: true
+              }
+            }
+          ]
+        }) }}
+      {% else %}
+        {# Fallback card when no messages are unread #}
+        {{ nhsappCardGroup({
+          stacked: true,
+          cards: [
+            {
+              title: 'View your messages',
+              href: '#',
+              prefixIcon: 'messages'
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      <!-- SECTION: Switch Profiles -->
+      {{ nhsappSectionHeading({
+        headingText: "Manage services for another person"
+      }) }}
+
+      {# Card to switch NHS App profiles #}
+      {{ nhsappCard({
+        title: 'Switch profiles',
+        href: '#',
+        prefixIcon: 'switchProfile'
+      }) }}
+
+      <!-- FLU VACCINE PROMO CARD -->
+      {# Blue promo card encouraging booking a flu vaccine #}
+      <div class="nhsuk-card app-card--blue">
+        <div class="nhsuk-card__content app-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-padding-top-2">Book a free flu vaccine</h2>
+          <p class="nhsuk-card__description">Check if you are eligible and book an appointment</p>
+          <a class="nhsuk-button nhsuk-button--reverse nhsapp-button" href="#">Find out more</a>
+        </div>
+      </div>
+
+
+      <!-- SUPPORT LINK -->
+      {# Inline link to help section with icon #}
+      <div>
+        <p>
+          <a href="#" class="app-link--with-icon nhsuk-link--no-visited-state">
+            {{ nhsappIcon('help') }}
+            Get help with using the NHS App
+          </a>
+        </p>
+      </div>
+
+      <!-- SECTION: Journeys -->
+      {{ nhsappSectionHeading({
+        headingText: "Journeys"
+      }) }}
+
+      {# Card group for appointment-related user flows #}
+      {{ nhsappCardGroup({
+        stacked: true,
+        cards: [
+          {
+            title: "Flow 1 - Reschedule appointment",
+            href: "reschedule-appointment/home-screen.html"
+          },
+          {
+            title: "Flow 2 - Cancel appointment",
+            href: "cancel-appointment/home-screen.html"
+          },
+          {
+            title: "Flow 3 - Read appointment letter",
+            href: "read-appointment-letter/lockscreen.html"
+          },
+          {
+            title: "Flow 4 - Complete questionnaire",
+            href: "#"
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

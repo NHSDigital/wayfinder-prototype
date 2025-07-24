@@ -1,0 +1,53 @@
+{% extends "prototypes/acute/acute-layout.html" %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Northern General Hospital" %}
+{% set pageDescription = "Sent 9 June at 9:40am" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>You have a new asthma appointment.</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>Tuesday 8 July 2025 <br> 10:30am</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>Dr Ahmet Kaya <br> Northern General Hospital</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>Dr Kaya will send you a letter with information about your appointment</p>
+      </div>
+
+      <div class="nhsuk-u-margin-bottom-5">
+        <p>The letter tells you how to prepare for and attend the appointment</p>
+      </div>
+
+      <p><a class="nhsuk-link--no-visited-state" href="appointment.html">View the asthma appointment</a></p>
+
+      <hr>
+
+      <a class="nhsuk-link--no-visited-state" href="#">Flag message</a>
+
+    </div>
+  </div>
+
+  {% endblock %}
