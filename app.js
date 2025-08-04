@@ -231,6 +231,11 @@ app.post(/^([^.]+)$/, (req, res) => {
   res.redirect(`${req.params[0]}`);
 });
 
+// Make sure continue button works for requesting new date and time
+app.post('/prototypes/mental-health/reschedule-appointment-v3/reschedule-review.html', function(req, res) {
+  res.render('prototypes/mental-health/reschedule-appointment-v3/reschedule-review.html');
+});
+
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
   const err = new Error(`Page not found: ${req.path}`);

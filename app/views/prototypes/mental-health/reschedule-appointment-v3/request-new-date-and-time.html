@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Services" %}
+{% set backLink =true %} 
+{% set pageHeading = "Select your preferred days and times for the rescheduled appointment" %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        {% include "components/provider-banner/include.html" %}
+
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                What is your availability for your new appointment?
+              </h1>
+            </legend>
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>We will not be able to give you a date and time for your new appointment right now.
+                Your selection will help us reschedule your new appointment at a time that works for you. 
+              </p>
+            </div>
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="answer-1" name="example" type="radio" value="Any day and time">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                  Any day and time
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="answer-2" name="example" type="radio" value="Choose preferred days and times">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                  Choose preferred days and times
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+       {{ button({
+          text: "Continue",
+          classes: "nhsapp-button",
+          href: "request-new-date-time-2.html"
+        }) }}
+    
+        <div>
+          <!-- FOOTER COMPONENT-->
+          <footer role="contentinfo">
+            <div class="nhsuk-footer-container">
+              <div class="nhsuk-width-container">
+                <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+                <div class="nhsuk-footer">
+                  <ul class="nhsuk-footer__list">
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Terms of use</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Privacy policy</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Cookie policy</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Accessibility statement</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %}
+    
