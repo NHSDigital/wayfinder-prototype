@@ -15,15 +15,21 @@
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">
-                What is your availability for your new appointment?
+                Select your availability for a new appointment
               </h1>
             </legend>
+
             <div class="nhsuk-inset-text">
               <span class="nhsuk-u-visually-hidden">Information: </span>
-              <p>We will not be able to give you a date and time for your new appointment right now.
-                Your selection will help us reschedule your new appointment at a time that works for you. 
+              <p>We will not be able to give you a date and time for your new appointment right now.</p>
+            </div>
+
+            <div>
+              <p class="nhsuk-u-margin-bottom-6">The more flexible you are with your availability, the more likely we are to find 
+                a new appointment that works for you.
               </p>
             </div>
+
             <div class="nhsuk-radios">
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="answer-1" name="example" type="radio" value="Any day and time">
@@ -44,20 +50,6 @@
         <form method="post" action="/prototypes/mental-health/reschedule-appointment-v3/reschedule-review.html" novalidate>
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h1 class="nhsuk-fieldset__heading">
-                Select preferred days and times for your new appointment
-              </h1>
-            </legend>
-
-            <div class="nhsuk-inset-text">
-              <span class="nhsuk-u-visually-hidden">Information: </span>
-              <p>
-                The days and times presented do not reflect your appointment availability. 
-                Your selection will help us schedule your new appointment at a time that works for you. 
-              </p>
-            </div>
-
             <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
               {% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] %}
                 <div class="nhsuk-checkboxes__item">
