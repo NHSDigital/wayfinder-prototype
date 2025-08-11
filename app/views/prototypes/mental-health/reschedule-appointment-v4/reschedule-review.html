@@ -60,52 +60,48 @@
         ]
       }) }}
 
-    <!-- SECTION: Requested appointment dates -->
+    <!-- SECTION: Requested appointment details -->
     <div class="nhsapp-section-heading">
-      <h2 class="nhsuk-heading-s">Your requested appointment</h2>
+      <h2 class="nhsuk-heading-s">Your requested details</h2>
     </div>
 
-    <!-- Summary list: User-selected times for Monday and Tuesday -->
-      <dl class="nhsuk-summary-list">
-        {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
-          {% set times = data[day ~ '-times'] %}
-          {% if times and times | length > 0 %}
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">{{ day | capitalize }}</dt>
-              <dd class="nhsuk-summary-list__value">
-                {% if times | length > 1 %}
-                  <ul class="nhsuk-list nhsuk-list--bullet">
-                    {% for time in times %}
-                      <li>
-                        {% if time == "morning" %}Morning (8am – 12pm){% endif %}
-                        {% if time == "early-afternoon" %}Early afternoon (12pm – 2pm){% endif %}
-                        {% if time == "late-afternoon" %}Late afternoon (2pm – 5pm){% endif %}
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% else %}
-                  {% if times[0] == "morning" %}Morning (8am – 12pm){% endif %}
-                  {% if times[0] == "early-afternoon" %}Early afternoon (12pm – 2pm){% endif %}
-                  {% if times[0] == "late-afternoon" %}Late afternoon (2pm – 5pm){% endif %}
-                {% endif %}
-              </dd>
-            </div>
+    <dl class="nhsuk-summary-list">
+      <!-- Availability summary -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Availability</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% set availability = [] %}
+          {% if data['preferred-days'] %}
+            {% for day in data['preferred-days'] %}
+              {% set _ = availability.append(day | capitalize) %}
+            {% endfor %}
           {% endif %}
-        {% endfor %}
+          {% if data['preferred-times'] %}
+            {% for time in data['preferred-times'] %}
+              {% set _ = availability.append(time | lower) %}
+            {% endfor %}
+          {% endif %}
+          {% if availability|length > 0 %}
+            {{ availability | join(', ') }}
+          {% else %}
+            Not specified
+          {% endif %}
+        </dd>
+      </div>
 
-        <!-- Static fields -->
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Location</dt>
-          <dd class="nhsuk-summary-list__value">
-            West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ
-          </dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Clinician</dt>
-          <dd class="nhsuk-summary-list__value">Dr Donald Glover</dd>
-        </div>
-      </dl>
-
+      <!-- Best time to call summary -->
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">When is the best time to call?</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['best-time'] %}
+            {{ data['best-time'] }}
+          {% else %}
+            Not specified
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+    
       <!-- RED CARE CARD COMPONENT -->
       <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
         <div class="nhsuk-card--care__heading-container">
