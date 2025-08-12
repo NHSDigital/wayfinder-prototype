@@ -3,96 +3,95 @@
 
 {% set hub = "Services" %}
 {% set backLink = true %}
-{% set pageHeading = "When is the best time to call you?" %}
-
-<style>
-  .preferred-checkboxes-group {
-    margin-left: 2rem;
-    margin-top: 2.5rem;
-  }
-  .nhsuk-checkboxes__item {
-    margin-bottom: 2rem; /* Increase spacing between checkboxes */
-  }
-  .nhsuk-checkboxes__hint {
-    display: block;
-    margin-left: 2.2em; /* Align hint under label */
-    color: #505a5f;
-    font-size: 1rem;
-    margin-top: 0.2em;
-  }
-</style>
+{% set pageHeading = "Choose the best time for us to call you" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-
     {% include "components/provider-banner/include.html" %}
 
-    <div class="nhsuk-form-group">
-      <form method="post" action="reschedule-review" novalidate>
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h1 class="nhsuk-fieldset__heading">
-              When is the best time to call you?
-            </h1>
-          </legend>
+    <form method="post" action="reschedule-review" novalidate>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading">
+            When is the best time for us to call you?
+          </h1>
+        </legend>
 
-          <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>The booking team will call you to confirm a new appointment date and time.</p>
-          </div>
+        {{ insetText({
+          html: "<p>We’ll try to call you at a time that works best for you. If we can’t reach you, we’ll leave a message or try again later.</p>"
+        }) }}
 
-          <p class="nhsuk-u-margin-bottom-6">
-            It can take up to 48 hours for the booking team to contact you with the new appointment options.
-          </p>
-
-          <!-- Anytime radio button -->
-          <div class="nhsuk-radios nhsuk-u-margin-bottom-3">
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="anytime" name="best-time" type="radio" value="Anytime"
-                {% if data['best-time'] == 'Anytime' %}checked{% endif %}>
-              <label class="nhsuk-label nhsuk-radios__label" for="anytime">
-                Anytime
-              </label>
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="call-time-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h2 class="nhsuk-fieldset__heading">
+                Select your preferred time
+              </h2>
+            </legend>
+            <div class="nhsuk-hint" id="call-time-hint">
+              Choose one option or tick all that apply
             </div>
-          </div>
 
-          <p class="nhsuk-body nhsuk-u-margin-bottom-2"><strong>or</strong></p>
-
-          <!-- Preferred checkboxes -->
-          <div class="nhsuk-form-group preferred-checkboxes-group">
-            <div class="nhsuk-checkboxes">
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="monday" name="preferred-days[]" type="checkbox" value="Monday"
-                  {% if 'Monday' in (data['preferred-days'] or []) %}checked{% endif %}>
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="monday">
-                  Monday
+            <!-- Radio for "Any time" -->
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="preferred-anytime" name="preferred-call-choice" type="radio" value="Any time">
+                <label class="nhsuk-label nhsuk-radios__label" for="preferred-anytime">
+                  Any time
                 </label>
-                <span class="nhsuk-checkboxes__hint">8:00am – 12:00pm</span>
-              </div>
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="early-afternoon" name="preferred-times[]" type="checkbox" value="Early afternoon"
-                  {% if 'Early afternoon' in (data['preferred-times'] or []) %}checked{% endif %}>
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="early-afternoon">
-                  Early afternoon
-                </label>
-                <span class="nhsuk-checkboxes__hint">12:00pm – 3:00pm</span>
-              </div>
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="late-afternoon" name="preferred-times[]" type="checkbox" value="Late afternoon"
-                  {% if 'Late afternoon' in (data['preferred-times'] or []) %}checked{% endif %}>
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="late-afternoon">
-                  Late afternoon
-                </label>
-                <span class="nhsuk-checkboxes__hint">3:00pm – 6:00pm</span>
               </div>
             </div>
-          </div>
 
-        </fieldset>
+            <p class="nhsuk-body nhsuk-u-margin-top-3">or</p>
 
-        <button type="submit" class="nhsuk-button nhsapp-button">Continue</button>
-      </form>
+            <!-- Checkboxes for specific times -->
+            <div class="nhsuk-checkboxes nhsuk-u-margin-top-4">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="preferred-morning" name="preferred-call-times[]" type="checkbox" value="Morning">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="preferred-morning">
+                  Morning <span class="nhsuk-hint">8:00am – 12:00pm</span>
+                </label>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="preferred-afternoon" name="preferred-call-times[]" type="checkbox" value="Afternoon">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="preferred-afternoon">
+                  Afternoon <span class="nhsuk-hint">12:00pm – 6:00pm</span>
+                </label>
+              </div>
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="preferred-evening" name="preferred-call-times[]" type="checkbox" value="Evening">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="preferred-evening">
+                  Evening <span class="nhsuk-hint">6:00pm – 8:00pm</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-u-margin-top-6">
+          {{ button({
+            text: "Continue",
+            attributes: { type: "submit" },
+            classes: "nhsapp-button"
+          }) }}
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="nhsuk-u-margin-top-6">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">
+            Get help with rescheduling your appointment
+          </h2>
+        </legend>
+        <p class="nhsuk-body">
+          Contact the booking team on <a href="tel:0XXXXXXX">0XXXX XXX XXX</a>
+        </p>
+      </fieldset>
     </div>
 
     <footer role="contentinfo">
@@ -101,16 +100,23 @@
           <h2 class="nhsuk-u-visually-hidden">Support links</h2>
           <div class="nhsuk-footer">
             <ul class="nhsuk-footer__list">
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Terms of use</a></li>
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a></li>
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a></li>
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a></li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
-
   </div>
 </div>
 {% endblock %}

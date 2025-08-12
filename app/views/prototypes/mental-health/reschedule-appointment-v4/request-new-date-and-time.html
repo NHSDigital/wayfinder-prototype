@@ -1,201 +1,155 @@
 <!DOCTYPE html>
 {% extends 'prototypes/mental-health/mental-health-layout.html' %}
 
-{# Page metadata and layout variables #}
 {% set hub = "Services" %}
 {% set backLink = true %}
-{% set pageHeading = "Select your preferred days and times for the rescheduled appointment" %}
-
-{# Custom styles for indentation and layout #}
-<style>
-  #preferred-days-container {
-    display: none;
-    margin-left: 2rem;
-  }
-  .preferred-checkboxes-group {
-    margin-left: 2rem;
-  }
-  .preferred-checkboxes-group .nhsuk-checkboxes {
-    margin-left: 2rem;
-  }
-  .nhsuk-checkboxes__conditional {
-    margin-left: 2rem;
-  }
-</style>
+{% set pageHeading = "Select days and times you cannot attend a new appointment" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-
-    {# Provider banner component #}
     {% include "components/provider-banner/include.html" %}
 
-    {# Appointment availability form #}
-    <div class="nhsuk-form-group">
+    <form method="post" action="best-time-to-call" novalidate>
       <fieldset class="nhsuk-fieldset">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
           <h1 class="nhsuk-fieldset__heading">
             Select your availability for a new appointment
           </h1>
-          </h1>
         </legend>
 
-        {# Informational message #}
-        <div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>We will not be able to give you a date and time for your new appointment right now.</p>
-        </div>
+        {{ insetText({
+          html: "<p>We will not be able to give you a new date and time for your appointment right now.</p>"
+        }) }}
 
-        <p class="nhsuk-u-margin-bottom-6">
+        <p>
           The more flexible you are with your availability, the more likely we are to find 
           a new appointment that works for you.
         </p>
 
-        {# Radio buttons for availability options #}
-        <div class="nhsuk-radios">
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="answer-1" name="example" type="radio" value="Any day and time">
-            <label class="nhsuk-label nhsuk-radios__label" for="answer-1">
-              Any day and time
-            </label>
+        <fieldset class="nhsuk-fieldset" aria-describedby="unavailable-hint">
+          <div class="nhsuk-hint" id="unavailable-hint">
+            Select one option
           </div>
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="answer-2" name="example" type="radio" value="Choose preferred days and times">
-            <label class="nhsuk-label nhsuk-radios__label" for="answer-2">
-              Choose preferred days and times
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
 
-    {# Conditional container for preferred days and times #}
-    <div id="preferred-days-container">
-      <p class="nhsuk-hint" style="margin-bottom: 1rem;">
-        Select all days and times you may be able to attend
-      </p>
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="unavailable-no" name="unavailable-choice" type="radio" value="none" aria-controls="conditional-unavailable-no" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="unavailable-no">
+                Any day and time
+              </label>
+            </div>
 
-      <form method="post" action="best-time-to-call" novalidate>
-        <div class="nhsuk-form-group preferred-checkboxes-group">
-          <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-            <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="unavailable-yes" name="unavailable-choice" type="radio" value="select" aria-controls="conditional-unavailable-yes" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="unavailable-yes">
+                Choose preferred days and times 
+              </label>
+            </div>
 
-              {# Loop through weekdays to generate day checkboxes and conditional time slots #}
-              {% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] %}
-              <div class="nhsuk-checkboxes__item">
-                <input 
-                  class="nhsuk-checkboxes__input" 
-                  id="day-{{ day | lower }}" 
-                  name="preferred-days[]" 
-                  type="checkbox" 
-                  value="{{ day | lower }}" 
-                  aria-controls="conditional-day-{{ day | lower }}" 
-                  aria-expanded="false"
-                >
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="day-{{ day | lower }}">
-                  {{ day }}
-                </label>
-              </div>
-
-              {# Conditional time slot section for each day #}
-              <div 
-                class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" 
-                id="conditional-day-{{ day | lower }}"
-              >
-                <fieldset class="nhsuk-fieldset">
-
-                  {# Time slot checkboxes #}
-                  <div class="nhsuk-checkboxes">
-                    <div class="nhsuk-checkboxes__item">
-                      <input 
-                        class="nhsuk-checkboxes__input" 
-                        id="{{ day | lower }}-morning" 
-                        name="{{ day | lower }}-times[]" 
-                        type="checkbox" 
-                        value="morning"
-                      >
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-morning">
-                        Morning
-                        <span class="nhsuk-hint">8:00am – 12:00pm</span>
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input 
-                        class="nhsuk-checkboxes__input" 
-                        id="{{ day | lower }}-early" 
-                        name="{{ day | lower }}-times[]" 
-                        type="checkbox" 
-                        value="early-afternoon"
-                      >
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-early">
-                        Early afternoon
-                        <span class="nhsuk-hint">12:00pm – 2:00pm</span>
-                      </label>
-                    </div>
-
-                    <div class="nhsuk-checkboxes__item">
-                      <input 
-                        class="nhsuk-checkboxes__input" 
-                        id="{{ day | lower }}-late" 
-                        name="{{ day | lower }}-times[]" 
-                        type="checkbox" 
-                        value="late-afternoon"
-                      >
-                      <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-late">
-                        Late afternoon
-                        <span class="nhsuk-hint">2:00pm – 6:00pm</span>
-                      </label>
-                    </div>
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-unavailable-yes">
+              <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="unavailable-days-hint">
+                  <div class="nhsuk-hint" id="unavailable-days-hint">
+                    Select all options that are relevant to you
+                  </div>
+                  <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+                    {% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] %}
+                      <div class="nhsuk-checkboxes__item">
+                        <input class="nhsuk-checkboxes__input"
+                          id="{{ day | lower }}"
+                          name="unavailable-days[]"
+                          type="checkbox"
+                          value="{{ day }}"
+                          aria-controls="conditional-{{ day | lower }}"
+                          aria-expanded="false">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}">
+                          {{ day }}
+                        </label>
+                      </div>
+                      <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-{{ day | lower }}">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset">
+                            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                              <span class="nhsuk-fieldset__heading">Which times on {{ day }}?</span>
+                            </legend>
+                            <div class="nhsuk-checkboxes">
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="{{ day | lower }}-morning" name="{{ day | lower }}-times[]" type="checkbox" value="Morning">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-morning">
+                                  Morning <span class="nhsuk-hint">8:00am – 12:00pm</span>
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="{{ day | lower }}-early" name="{{ day | lower }}-times[]" type="checkbox" value="Early afternoon">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-early">
+                                  Early afternoon <span class="nhsuk-hint">12:00pm – 2:00pm</span>
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="{{ day | lower }}-late" name="{{ day | lower }}-times[]" type="checkbox" value="Late afternoon">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-late">
+                                  Late afternoon <span class="nhsuk-hint">2:00pm – 6:00pm</span>
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                    {% endfor %}
                   </div>
                 </fieldset>
               </div>
-              {% endfor %}
             </div>
-          </fieldset>
-        </div>
+          </div>
+        </fieldset>
 
-        {# Submit button #}
-        <button type="submit" class="nhsuk-button nhsapp-button">Continue</button>
-      </form>
+        <div class="nhsuk-u-margin-top-6">
+          {{ button({
+            text: "Continue",
+            attributes: { type: "submit" },
+            classes: "nhsapp-button"
+          }) }}
+        </div>
+      </fieldset>
+    </form>
+
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with rescheduling your appointment
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+        </legend>
+      </fieldset>
     </div>
 
-    {# Footer component #}
     <footer role="contentinfo">
       <div class="nhsuk-footer-container">
         <div class="nhsuk-width-container">
           <h2 class="nhsuk-u-visually-hidden">Support links</h2>
           <div class="nhsuk-footer">
             <ul class="nhsuk-footer__list">
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Terms of use</a></li>
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a></li>
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a></li>
-              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a></li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
-
-    {# JavaScript to toggle preferred days container based on radio selection #}
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const preferredDaysContainer = document.getElementById('preferred-days-container');
-        const radios = document.getElementsByName('example');
-
-        function togglePreferredDays() {
-          preferredDaysContainer.style.display = document.getElementById('answer-2').checked ? 'block' : 'none';
-        }
-
-        radios.forEach(radio => {
-          radio.addEventListener('change', togglePreferredDays);
-        });
-
-        // Ensure correct visibility on page load (e.g. after back navigation)
-        togglePreferredDays();
-      });
-    </script>
-
   </div>
 </div>
 {% endblock %}

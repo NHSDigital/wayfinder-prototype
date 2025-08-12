@@ -62,41 +62,60 @@ review" %} {% block content %}
       <h2 class="nhsuk-heading-s">Your requested details</h2>
     </div>
 
+    <!-- Summary list: User-selected times for Monday - Friday-->
     <dl class="nhsuk-summary-list">
-      <!-- Availability summary -->
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">Availability</dt>
         <dd class="nhsuk-summary-list__value">
-          {% set availability = [] %}
-          {% if data['preferred-days'] %}
-            {% for day in data['preferred-days'] %}
-              {% set _ = availability.append(day | capitalize) %}
-            {% endfor %}
-          {% endif %}
-          {% if data['preferred-times'] %}
-            {% for time in data['preferred-times'] %}
-              {% set _ = availability.append(time | lower) %}
-            {% endfor %}
-          {% endif %}
-          {% if availability|length > 0 %}
-            {{ availability | join(', ') }}
+          {% if data['unavailable-choice'] == "none" %}
+            No – I can attend most days and times
+          {% elif data['unavailable-days'] %}
+            <ul>
+              {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
+                {% if day | capitalize in data['unavailable-days'] %}
+                  {% set times = data[day ~ '-times'] %}
+                  {% if times and times | length > 0 %}
+                    {% for time in times %}
+                      <li>
+                        {{ day | capitalize }}
+                        {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
+                        {% if time == "Early afternoon" %}early afternoon (12:00pm–2:00pm){% endif %}
+                        {% if time == "Late afternoon" %}late afternoon (2:00pm–6:00pm){% endif %}
+                      </li>
+                    {% endfor %}
+                  {% else %}
+                    <li>{{ day | capitalize }}</li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
           {% else %}
             Not specified
           {% endif %}
         </dd>
       </div>
 
-      <!-- Best time to call summary -->
+
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">When is the best time to call?</dt>
         <dd class="nhsuk-summary-list__value">
-          {% if data['best-time'] %}
-            {{ data['best-time'] }}
+          {% if data['preferred-call-choice'] == "Any time" %}
+            Any time
+          {% elif data['preferred-call-times'] %}
+            <ul>
+              {% for time in data['preferred-call-times'] %}
+                <li>
+                  {% if time == "Morning" %}Morning (8:00am – 12:00pm){% endif %}
+                  {% if time == "Afternoon" %}Afternoon (12:00pm – 6:00pm){% endif %}
+                  {% if time == "Evening" %}Evening (6:00pm – 8:00pm){% endif %}
+                </li>
+              {% endfor %}
+            </ul>
           {% else %}
             Not specified
           {% endif %}
         </dd>
-      </div>
+      </div>      
     </dl>
 
     <!-- SECTION HEADING COMPONENT -->
