@@ -70,7 +70,7 @@
     <!-- Summary list: User-selected times for Monday - Friday-->
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Are there any dates and times you cannot attend?</dt>
+        <dt class="nhsuk-summary-list__key">Are there any days and times you cannot attend?</dt>
         <dd class="nhsuk-summary-list__value">
           {% if data['unavailable-choice'] == "none" %}
             No – I can attend most days and times
@@ -99,6 +99,28 @@
           {% endif %}
         </dd>
       </div>
+
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">When is the best time to call?</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['preferred-call-choice'] == "Any time" %}
+            Any time
+          {% elif data['preferred-call-times'] %}
+            <ul>
+              {% for time in data['preferred-call-times'] %}
+                <li>
+                  {% if time == "Morning" %}Morning (8:00am – 12:00pm){% endif %}
+                  {% if time == "Afternoon" %}Afternoon (12:00pm – 6:00pm){% endif %}
+                  {% if time == "Evening" %}Evening (6:00pm – 8:00pm){% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            Not specified
+          {% endif %}
+        </dd>
+      </div>      
     </dl>
 
       <!-- RED CARE CARD COMPONENT -->
