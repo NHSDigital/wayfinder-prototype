@@ -3,11 +3,13 @@
 
 {% set hub = "Your health" %}
 {% set backLink = true %}
-{% set pageHeading = "Asthma appointment" %}
+{% set pageHeading = "Ask to reschedule your appointment" %}
 
 {% block content %}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
+
       {% include "components/provider-banner/include.html" %}
 
       <!-- DYNAMIC PAGE TITLE -->
@@ -48,43 +50,52 @@
               text: "Clinician"
             },
             value: {
-              html: "Dr Donald Glover"
+              text: "Dr Donald Glover"
             }
           }
         ]
       }) }}
 
-      <p class="nhsuk-u-margin-bottom-4"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
-
-      <hr>
-
-
-      {# Buttons #}
-      <div style="display: flex; flex-direction: column; align-items: center;">
-        <!-- BUTTON COMPONENT -->
-        <div>
-        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="request-to-reschedule.html">Ask to reschedule appointment</a>
-        </div>
-
-        <div>
-        <!-- LINK COMPONENT -->
-        <p><a href="#">Ask to cancel appointment</a></p>
-        </div>
-      </div>
-
-      <hr>
+    <!-- FIELDSET COMPONENTS -->
+    <div >
+      <fieldset class="nhsuk-fieldset nhsuk-u-margin-top-4">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            How a request works
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend nhsuk-u-margin-bottom-6">
+              Select yout availability for a new appoingment and submit your request. The booking team will
+              then contact you with date and time options. You can choose to confirm a new appointment or keep 
+              your original appointment.
+            </h3>
+            <h3 class="nhsuk-fieldset__legend">It can take up to 48 hours for the booking team to contact you.
+              If you miss the call, they will call again at the next opportunity. Your original appointment will 
+              stay booked and visible until your new appointment has been confirmed.
+            </h3>
+        </legend>
+    </fieldset>
+        {{ button({
+          text: "Start",
+          classes: "nhsapp-button",
+          href: "availability-for-new-app.html"
+        }) }}
+    </div>  
 
       <!-- FIELDSET COMPONENTS -->
+    <div>
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h1 class="nhsuk-fieldset__heading">
-            Get help with this appointment
+            Get help with this task
           </h1>
         </legend>
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
         </legend>
       </fieldset>
+    </div>
 
       <!-- FOOTER COMPONENT-->
       <footer role="contentinfo">
