@@ -19,19 +19,13 @@
         </legend>
 
         {{ insetText({
-          html: "<p>We’ll try to call you at a time that works best for you. If we can’t reach you, we’ll leave a message or try again later.</p>"
+          html: "<p>The booking team will call you to confirm a new appointment date and time.</p>"
         }) }}
+
+        <p class="nhsuk-u-margin-bottom-6">It can take up to 48 hours for the booking team to contact you with new appointment options.</p>
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" aria-describedby="call-time-hint">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h2 class="nhsuk-fieldset__heading">
-                Select your preferred time
-              </h2>
-            </legend>
-            <div class="nhsuk-hint" id="call-time-hint">
-              Choose one option or tick all that apply
-            </div>
 
             <!-- Radio for "Any time" -->
             <div class="nhsuk-radios">
@@ -41,9 +35,10 @@
                   Any time
                 </label>
               </div>
+              
             </div>
 
-            <p class="nhsuk-body nhsuk-u-margin-top-3">or</p>
+            <p class="nhsuk-body nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">or</p>
 
             <!-- Checkboxes for specific times -->
             <div class="nhsuk-checkboxes nhsuk-u-margin-top-4">
@@ -85,7 +80,7 @@
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h2 class="nhsuk-fieldset__heading">
-            Get help with rescheduling your appointment
+            Get help with this task
           </h2>
         </legend>
         <p class="nhsuk-body">

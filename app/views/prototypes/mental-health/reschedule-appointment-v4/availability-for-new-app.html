@@ -3,7 +3,7 @@
 
 {% set hub = "Services" %}
 {% set backLink = true %}
-{% set pageHeading = "Select days and times you cannot attend a new appointment" %}
+{% set pageHeading = "Select your availability for a new appointment" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
@@ -28,11 +28,8 @@
         </p>
 
         <fieldset class="nhsuk-fieldset" aria-describedby="unavailable-hint">
-          <div class="nhsuk-hint" id="unavailable-hint">
-            Select one option
-          </div>
 
-          <div class="nhsuk-radios nhsuk-radios--conditional">
+          <div class="nhsuk-radios nhsuk-radios--conditional nhsuk-u-margin-top-3">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="unavailable-no" name="unavailable-choice" type="radio" value="none" aria-controls="conditional-unavailable-no" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="unavailable-no">
@@ -118,7 +115,7 @@
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h1 class="nhsuk-fieldset__heading">
-            Get help with rescheduling your appointment
+            Get help with this task
           </h1>
         </legend>
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">

@@ -44,13 +44,6 @@
               <div class="nhsapp-card__below">
                 <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Monday 16 September 2024 <br> 9:40am</p>
                 <p class="nhsuk-u-margin-bottom-3">West Park Cafe, Leeds</p>
-                <p class="nhsapp-badge-small nhsapp-badge-small--red nhsuk-body-s nhsuk-u-secondary-text-color">
-                  {% if data['appointment-letter'] != "read" %}
-                  <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
-                  <span class="nhsuk-u-visually-hidden">New</span>
-                  {% endif %}
-                  <span>Document(s) and questionaire(s) attached</span>
-                </p>
               </div>
             </div>
             {{ nhsappIcon('chevronRight') }}
