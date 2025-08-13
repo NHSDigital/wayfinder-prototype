@@ -3,7 +3,7 @@
 
 {% set hub = "Services" %}
 {% set backLink = true %}
-{% set pageHeading = "Choose the best time for us to call you" %}
+{% set pageHeading = "Choose the best time to call you" %}
 
 {% block content %}
 <div class="nhsuk-grid-row">
@@ -14,12 +14,12 @@
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
           <h1 class="nhsuk-fieldset__heading">
-            When is the best time for us to call you?
+            When is the best time to call you?
           </h1>
         </legend>
 
         {{ insetText({
-          html: "<p>We’ll try to call you at a time that works best for you. If we can’t reach you, we’ll leave a message or try again later.</p>"
+          html: "<p>The booking team will call you to confirm a new appointment date and time.</p>"
         }) }}
 
         
@@ -29,14 +29,6 @@
 
         <div class="nhsuk-form-group">
           <fieldset class="nhsuk-fieldset" aria-describedby="call-time-hint">
-            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-              <h2 class="nhsuk-fieldset__heading">
-                Select your preferred time
-              </h2>
-            </legend>
-            <div class="nhsuk-hint" id="call-time-hint">
-              Choose one option or tick all that apply
-            </div>
 
             <!-- Radio for "Any time" -->
             <div class="nhsuk-radios">
