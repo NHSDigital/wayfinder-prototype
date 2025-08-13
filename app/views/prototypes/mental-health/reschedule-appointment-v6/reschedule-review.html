@@ -108,7 +108,20 @@
           {% elif data['specific-unavailable'] %}
             <ul>
               {% for day in data['specific-unavailable'] %}
-                <li>{{ day }}</li>
+                {% set key = day | lower | replace(" ", "-") %}
+                {% set times = data[key ~ '-times'] %}
+                {% if times and times | length > 0 %}
+                  {% for time in times %}
+                    <li>
+                      {{ day }}
+                      {% if time == "Morning" %}– morning (8:00am–12:00pm){% endif %}
+                      {% if time == "Early afternoon" %}– early afternoon (12:00pm–2:00pm){% endif %}
+                      {% if time == "Late afternoon" %}– late afternoon (2:00pm–6:00pm){% endif %}
+                    </li>
+                  {% endfor %}
+                {% else %}
+                  <li>{{ day }}</li>
+                {% endif %}
               {% endfor %}
             </ul>
           {% else %}
@@ -116,6 +129,7 @@
           {% endif %}
         </dd>
       </div>
+
       
 
 

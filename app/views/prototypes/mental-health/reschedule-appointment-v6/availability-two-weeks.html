@@ -28,7 +28,7 @@
         </p>
 
         <div class="nhsapp-section-heading">
-          <h2 class="nhsuk-heading-s nhsuk-u-margin-top-4">Select any specific dates you cannot attend an appointment</h2>
+          <h2 class="nhsuk-heading-s nhsuk-u-margin-top-4">Select any specific dates and times you cannot attend an appointment</h2>
         </div>  
 
         <div class="nhsuk-hint" id="contact-hint">
@@ -56,24 +56,58 @@
 
           <!-- Day checkboxes -->
           <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-specific-unavailable-yes">
-            <fieldset class="nhsuk-fieldset">
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-                <span class="nhsuk-fieldset__heading">Select all days you cannot attend</span>
-              </legend>
+  <fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+      <span class="nhsuk-fieldset__heading">Select all days and times you cannot attend</span>
+    </legend>
 
-              <div class="nhsuk-checkboxes">
-                {% for day in ["Monday 6 May", "Tuesday 7 May", "Wednesday 8 May", "Thursday 9 May", "Friday 10 May"] %}
-                  <div class="nhsuk-checkboxes__item">
-                    <input class="nhsuk-checkboxes__input" id="{{ day | lower | replace(" ", "-") }}" name="specific-unavailable[]" type="checkbox" value="{{ day }}">
-                    <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower | replace(" ", "-") }}">
-                      {{ day }}
-                    </label>
-                  </div>
-                {% endfor %}
-              </div>
-            </fieldset>
-          </div>
+    <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+      {% for day in ["Monday 6 May", "Tuesday 7 May", "Wednesday 8 May", "Thursday 9 May", "Friday 10 May"] %}
+        <div class="nhsuk-checkboxes__item">
+          <input class="nhsuk-checkboxes__input"
+            id="{{ day | lower | replace(" ", "-") }}"
+            name="specific-unavailable[]" 
+            type="checkbox" 
+            value="{{ day }}"
+            aria-controls="conditional-{{ day | lower | replace(" ", "-") }}"
+            aria-expanded="false">
+          <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower | replace(" ", "-") }}">
+            {{ day }}
+          </label>
         </div>
+
+        <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-{{ day | lower | replace(" ", "-") }}">
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xs">
+              <span class="nhsuk-fieldset__heading">Which times on {{ day }}?</span>
+            </legend>
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="{{ day | lower | replace(" ", "-") }}-morning" name="{{ day | lower | replace(" ", "-") }}-times[]" type="checkbox" value="Morning">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower | replace(" ", "-") }}-morning">
+                  Morning <span class="nhsuk-hint">8:00am – 12:00pm</span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="{{ day | lower | replace(" ", "-") }}-early" name="{{ day | lower | replace(" ", "-") }}-times[]" type="checkbox" value="Early afternoon">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower | replace(" ", "-") }}-early">
+                  Early afternoon <span class="nhsuk-hint">12:00pm – 3:00pm</span>
+                </label>
+              </div>
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="{{ day | lower | replace(" ", "-") }}-late" name="{{ day | lower | replace(" ", "-") }}-times[]" type="checkbox" value="Late afternoon">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower | replace(" ", "-") }}-late">
+                  Late afternoon <span class="nhsuk-hint">3:00pm – 6:00pm</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      {% endfor %}
+    </div>
+  </fieldset>
+</div>
+
 
         <div class="nhsuk-u-margin-top-6">
           {{ button({
