@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Services" %}
+{% set backLink = true %}
+{% set pageHeading = "Select days you cannot attend a new appointment" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    {% include "components/provider-banner/include.html" %}
+
+    <form method="post" action="best-time-to-call" novalidate>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading">
+            Availability over the next 2 weeks
+          </h1>
+        </legend>
+
+        {{ insetText({
+          html: "<p>We will not be able to give you a new date and time for your appointment right now.</p>"
+        }) }}
+
+        <p>
+          The more flexible you are with your availability, the more likely we are to find 
+          a new appointment that works for you.
+        </p>
+
+        <div class="nhsapp-section-heading">
+          <h2 class="nhsuk-heading-s">Select any specific dates you cannot attend an appointment</h2>
+        </div>  
+
+        <div class="nhsuk-hint" id="contact-hint">
+          Select your availability for the next two weeks after your original appointment date.
+        </div>        
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+          <!-- Flexible option -->
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="specific-unavailable-no" name="specific-unavailable-choice" type="radio" value="none" aria-controls="conditional-specific-unavailable-no" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="specific-unavailable-no">
+              None – I can be flexible
+            </label>
+          </div>
+
+          <p class="nhsuk-body nhsuk-u-margin-top-4">or</p>
+
+          <!-- Select days option -->
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="specific-unavailable-yes" name="specific-unavailable-choice" type="radio" value="select" aria-controls="conditional-specific-unavailable-yes" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="specific-unavailable-yes">
+              Yes – select days to avoid
+            </label>
+          </div>
+
+          <!-- Day checkboxes -->
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-specific-unavailable-yes">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                <span class="nhsuk-fieldset__heading">Select all days you cannot attend</span>
+              </legend>
+
+              <div class="nhsuk-checkboxes">
+                {% for day in ["Monday 6 May", "Tuesday 7 May", "Wednesday 8 May", "Thursday 9 May", "Friday 10 May"] %}
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="{{ day | lower | replace(" ", "-") }}" name="specific-unavailable[]" type="checkbox" value="{{ day }}">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower | replace(" ", "-") }}">
+                      {{ day }}
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="nhsuk-u-margin-top-6">
+          {{ button({
+            text: "Continue",
+            attributes: { type: "submit" },
+            classes: "nhsapp-button"
+          }) }}
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="nhsuk-u-margin-top-6">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with rescheduling your appointment
+          </h1>
+        </legend>
+        <p>Contact the booking team on <a href="">0XXXX XXX XXX</a></p>
+      </fieldset>
+    </div>
+
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Terms of use</a></li>
+              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a></li>
+              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a></li>
+              <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+{% endblock %}

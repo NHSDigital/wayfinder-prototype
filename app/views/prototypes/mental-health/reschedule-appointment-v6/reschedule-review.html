@@ -70,7 +70,7 @@
     <!-- Summary list: User-selected times for Monday - Friday-->
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Are there any days and times you cannot attend?</dt>
+        <dt class="nhsuk-summary-list__key">Days and times you are regularly unavailable</dt>
         <dd class="nhsuk-summary-list__value">
           {% if data['unavailable-choice'] == "none" %}
             No – I can attend most days and times
@@ -99,6 +99,24 @@
           {% endif %}
         </dd>
       </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Specific dates you are unavailable</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['specific-unavailable-choice'] == "none" %}
+            None – I can be flexible
+          {% elif data['specific-unavailable'] %}
+            <ul>
+              {% for day in data['specific-unavailable'] %}
+                <li>{{ day }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            Not specified
+          {% endif %}
+        </dd>
+      </div>
+      
 
 
       <div class="nhsuk-summary-list__row">
