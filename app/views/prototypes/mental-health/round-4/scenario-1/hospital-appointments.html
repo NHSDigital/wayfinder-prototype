@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Hospital and specialist appointments" %}
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {{ insetText({
+        HTML: "<p>Some of your appointment information may not be visible in the app. Find out more by selecting the help section at the top of the screen.</p>",
+        classes: "nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5"
+      }) }}
+
+      <!-- SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Upcoming appointments",
+        subheadingText: "1 upcoming appointment"
+      })}}
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="legal-notice.html" aria-label="Orthopaedic appointment on Monday 3 June 2024 at 9:40am">
+                Asthma appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Monday 16 September 2024 <br> 10:30am</p>
+                <p class="nhsuk-u-margin-bottom-3">West Park Cafe, Leeds</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break--l">
+
+      <!-- SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Past appointments",
+        subheadingText: "Showing 1 of 6"
+      })}}
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Rheumatology appointment on Tuesday 18 February 2024 at 3:20pm">
+                Rheumatology appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Friday 3 January 2024<br>3:00pm</p>
+                <p class="nhsuk-u-margin-bottom-3">The Willows, Croydon University Hospital</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#">
+                View more past appointments
+              </a>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+
+  {% endblock %}
