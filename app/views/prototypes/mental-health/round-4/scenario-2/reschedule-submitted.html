@@ -74,7 +74,7 @@ review" %} {% block content %}
           I’m available most days and times
         {% elif data['available-days'] %}
           <ul>
-            {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
+            {% for day in ["mondays", "tuesdays", "wednesdays", "thursdays", "fridays"] %}
               {% if day | capitalize in data['available-days'] %}
                 {% set times = data[day ~ '-times'] %}
                 {% if times and times | length > 0 %}
