@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Your health" %}
+{% set backLink = true %}
+{% set pageHeading = "Ask to reschedule your appointment" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      {% include "components/provider-banner/include.html" %}
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Wednesday 1 May 2024"
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:40am"
+          }
+        },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              text: "Dr Donald Glover"
+            }
+          }
+        ]
+      }) }}
+
+    <!-- FIELDSET COMPONENTS -->
+    <div >
+      <fieldset class="nhsuk-fieldset nhsuk-u-margin-top-4">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-3">
+            How a request works
+          </h1>
+        </legend>
+
+        {% from "nhsapp/components/timeline/macro.njk" import nhsappTimeline %}
+
+        {{ nhsappTimeline({
+          items: [
+            {
+              headingText: "Submit your request",
+              text: "This lets the clinic know that you would like to reschedule your appointment.",
+              active: true
+            },
+            {
+              headingText: "Get a new appointment options",
+              text: "The booking team will call you - this can take up to 48 hours. If you miss the call, they will call again 
+              or leave a message."
+            },
+            {
+              headingText: "Confirm new appointment",
+              text: "You can choose to confirma  new date and time or keep your original appointment."
+            }            
+          ]
+        }) }}
+    </fieldset>
+        {{ button({
+          text: "Start",
+          classes: "nhsapp-button",
+          href: "availability-for-new-app.html"
+        }) }}
+    </div>  
+
+      <!-- FIELDSET COMPONENTS -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with this task
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+        </legend>
+      </fieldset>
+    </div>
+
+      <!-- FOOTER COMPONENT-->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  {% endblock %}
