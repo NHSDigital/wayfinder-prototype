@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Services" %}
+{% set backLink = true %}
+{% set pageHeading = "Choose the best time for us to call you" %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    {% include "components/provider-banner/include.html" %}
+
+    <form method="post" action="reschedule-review" novalidate>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading">
+            When is the best time to call you?
+          </h1>
+        </legend>
+
+        {{ insetText({
+          html: "<p>The more flexible you are, the more likely we are to find a new appointment that works for you.</p>"
+        }) }}
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="call-time-hint">
+
+            {# Conditional section that appears if "Choose preferred days and times" is selected #}
+            <div class="nhsuk-radios" id="conditional-unavailable-yes">
+              <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="unavailable-days-hint">
+
+                  {# Loop through weekdays to create checkboxes for each day #}
+                  <div class="nhsuk-checkboxes nhsuk-checkboxes--conditional">
+                    {% for day in ["Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays"] %}
+                      <div class="nhsuk-checkboxes__item">
+                        {# Checkbox for the day. 'name="unavailable-days[]"' collects multiple days as a list #}
+                        <input class="nhsuk-checkboxes__input"
+                          id="{{ day | lower }}"
+                          name="unavailable-days[]"
+                          type="checkbox"
+                          value="{{ day }}"
+                          aria-controls="conditional-{{ day | lower }}"
+                          aria-expanded="false">
+                        <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}">
+                          {{ day }}
+                        </label>
+                      </div>
+
+                      {# Conditional section for time slots on that day #}
+                      <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-{{ day | lower }}">
+                        <div class="nhsuk-form-group">
+                          <fieldset class="nhsuk-fieldset">
+
+                            {# Time slot checkboxes for that day. 'name="{{ day }}-times[]"' collects multiple times #}
+                            <div class="nhsuk-checkboxes">
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="{{ day | lower }}-morning" name="{{ day | lower }}-times[]" type="checkbox" value="Morning">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-morning">
+                                  Any time
+                                </label>
+                              </div>                              
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="{{ day | lower }}-morning" name="{{ day | lower }}-times[]" type="checkbox" value="Morning">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-morning">
+                                  Morning <span class="nhsuk-hint">8:00am – 12:00pm</span>
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="{{ day | lower }}-early" name="{{ day | lower }}-times[]" type="checkbox" value="Early afternoon">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-early">
+                                  Early afternoon <span class="nhsuk-hint">12:00pm – 3:00pm</span>
+                                </label>
+                              </div>
+                              <div class="nhsuk-checkboxes__item">
+                                <input class="nhsuk-checkboxes__input" id="{{ day | lower }}-late" name="{{ day | lower }}-times[]" type="checkbox" value="Late afternoon">
+                                <label class="nhsuk-label nhsuk-checkboxes__label" for="{{ day | lower }}-late">
+                                  Late afternoon <span class="nhsuk-hint">3:00pm – 6:00pm</span>
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="nhsuk-u-margin-top-6">
+          {{ button({
+            text: "Continue",
+            attributes: { type: "submit" },
+            classes: "nhsapp-button"
+          }) }}
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="nhsuk-u-margin-top-6">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">
+            Get help with this task
+          </h2>
+        </legend>
+        <p class="nhsuk-body">
+          Contact the booking team on <a href="tel:0XXXXXXX">0XXXX XXX XXX</a>
+        </p>
+      </fieldset>
+    </div>
+
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+{% endblock %}
