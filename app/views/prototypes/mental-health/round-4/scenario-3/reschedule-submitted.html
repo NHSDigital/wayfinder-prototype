@@ -1,0 +1,212 @@
+{% extends 'prototypes/mental-health/mental-health-layout.html' %} {% set hub =
+"Your health" %} {% set backLink = true %} {% set pageHeading = "Reschedule
+review" %} {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    {% include "components/provider-banner/include.html" %}
+
+    <!--<strong class="nhsapp-tag nhsapp-tag--red nhsuk-u-static-margin-bottom-2">Action needed</strong>-->
+
+    <!-- PANEL COMPONENT -->
+    <div class="nhsapp-panel">
+      <h1 class="nhsapp-panel__title">
+        Your request to reschedule has been submitted
+      </h1>
+    </div>
+
+    <!-- SECTION HEADING COMPONENT -->
+        <div class="nhsapp-section-heading">
+          <h2 class="nhsuk-heading-s">Your original appointment details</h2>
+        </div>
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Wednesday 1 May 2024"
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "9:40am"
+          }
+        },
+        {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "West Park Cafe, 255 Otley Road, Leeds, LS16 5LQ"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              text: "Dr Donald Glover",
+              attributes: {
+                "aria-label": "Clinician: Doctor Donald Glover"
+              }
+            }
+          }
+        ]
+      }) }}
+
+    <!-- SECTION: Requested appointment details -->
+    <div class="nhsapp-section-heading">
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-top-4">Your request details</h2>
+    </div>
+
+    <!-- Summary list: User-selected times for Monday - Friday-->
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">Preferred days and times</dt>
+        <dd class="nhsuk-summary-list__value">
+          {% if data['unavailable-choice'] == "none" %}
+            No – I can attend most days and times
+          {% elif data['unavailable-days'] %}
+            <ul>
+              {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
+                {% if day | capitalize in data['unavailable-days'] %}
+                  {% set times = data[day ~ '-times'] %}
+                  {% if times and times | length > 0 %}
+                    {% for time in times %}
+                      <li>
+                        {{ day | capitalize }}
+                        {% if time == "Any time" %}any time{% endif %}
+                        {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
+                        {% if time == "Early afternoon" %}early afternoon (12:00pm–2:00pm){% endif %}
+                        {% if time == "Late afternoon" %}late afternoon (2:00pm–6:00pm){% endif %}
+                      </li>
+                    {% endfor %}
+                  {% else %}
+                    <li>{{ day | capitalize }}</li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% else %}
+            Not specified
+          {% endif %}
+        </dd>
+      </div>
+    </dl>
+
+    <!-- SECTION HEADING COMPONENT -->
+    <div class="nhsapp-section-heading">
+      <h2 class="nhsuk-heading-s">What happens now</h2>
+    </div>
+
+    <!-- Timeline -->
+        {{ nhsappTimeline({
+          items: [
+            {
+              headingText: "Submit your request",
+              isPastItem: true,
+              text: "This lets the clinic know that you would like to reschedule your appointment."
+            },
+            {
+              headingText: "Get a new appointment options",
+              text: "The booking team will call you - this can take up to 48 hours. If you miss the call, they will call again 
+              or leave a message.",
+              active: true
+            },
+            {
+              headingText: "Confirm new appointment",
+              text: "You can choose to confirma  new date and time or keep your original appointment."
+            }            
+          ]
+        }) }}
+
+        {# Buttons #}
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <!-- BUTTON COMPONENT -->
+        <div>
+        <a class="nhsuk-button nhsapp-button--secondary nhsapp-button" href="app-in-review.html">View this appointment</a>
+        </div>
+
+        <div>
+        <!-- LINK COMPONENT -->
+        <p> <a href="aggregator-with-pending.html">View all appointments</a></p>
+        </div>
+      </div>
+
+    <!-- NON-URGENT CARE CARD COMPONENT -->
+    <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--non-urgent">
+      <div class="nhsuk-card--care__heading-container">
+        <h2 class="nhsuk-card--care__heading">
+          <span role="text"
+            ><span class="nhsuk-u-visually-hidden"></span>Contact your care
+            providers if:</span
+          >
+        </h2>
+        <span class="nhsuk-card--care__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-card__content">
+        <ul>
+          <li>Your condition has changed</li>
+          <li>You think you have a different condition</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FIELDSET COMPONENTS -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h6 class="nhsuk-fieldset__heading">
+            Get help with this appointment
+          </h6>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h3 class="nhsuk-fieldset__legend">
+            Contact the booking team on <a href="">0XXXX XXX XXX</a>
+          </h3>
+        </legend>
+      </fieldset>
+    </div>
+
+    <!-- FOOTER COMPONENT-->
+    <footer role="contentinfo">
+      <div class="nhsuk-footer-container">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <div class="nhsuk-footer">
+            <ul class="nhsuk-footer__list">
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Terms of use</a
+                >
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Privacy policy</a
+                >
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Cookie policy</a
+                >
+              </li>
+              <li class="nhsuk-footer__list-item">
+                <a class="nhsuk-footer__list-item-link" href="#"
+                  >Accessibility statement</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+{% endblock %}
