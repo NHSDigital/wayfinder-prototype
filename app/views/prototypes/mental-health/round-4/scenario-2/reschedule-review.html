@@ -69,39 +69,40 @@
     </div>
 
     <!-- Summary list: User-selected times for Monday - Friday-->
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Preferred days and times</dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['unavailable-choice'] == "none" %}
-            No – I can attend most days and times
-          {% elif data['unavailable-days'] %}
-            <ul>
-              {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
-                {% if day | capitalize in data['unavailable-days'] %}
-                  {% set times = data[day ~ '-times'] %}
-                  {% if times and times | length > 0 %}
-                    {% for time in times %}
-                      <li>
-                        {{ day | capitalize }}
-                        {% if time == "Any time" %}any time{% endif %}
-                        {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
-                        {% if time == "Early afternoon" %}early afternoon (12:00pm–2:00pm){% endif %}
-                        {% if time == "Late afternoon" %}late afternoon (2:00pm–6:00pm){% endif %}
-                      </li>
-                    {% endfor %}
-                  {% else %}
-                    <li>{{ day | capitalize }}</li>
-                  {% endif %}
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Preferred days and times</dt>
+      <dd class="nhsuk-summary-list__value">
+        {% if data['available-choice'] == "any" %}
+          I’m available most days and times
+        {% elif data['available-days'] %}
+          <ul>
+            {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
+              {% if day | capitalize in data['available-days'] %}
+                {% set times = data[day ~ '-times'] %}
+                {% if times and times | length > 0 %}
+                  {% for time in times %}
+                    <li>
+                      {{ day | capitalize }}
+                      {% if time == "Any time" %}any time{% endif %}
+                      {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
+                      {% if time == "Early afternoon" %}early afternoon (12:00pm–3:00pm){% endif %}
+                      {% if time == "Late afternoon" %}late afternoon (3:00pm–6:00pm){% endif %}
+                    </li>
+                  {% endfor %}
+                {% else %}
+                  <li>{{ day | capitalize }}</li>
                 {% endif %}
-              {% endfor %}
-            </ul>
-          {% else %}
-            Not specified
-          {% endif %}
-        </dd>
-      </div>
-    </dl>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% else %}
+          Not specified
+        {% endif %}
+      </dd>
+    </div>
+  </dl>
+
     
     <!-- RED CARE CARD COMPONENT -->
     <!-- <div class="nhsuk-card nhsuk-card--care nhsuk-card--care--urgent">
