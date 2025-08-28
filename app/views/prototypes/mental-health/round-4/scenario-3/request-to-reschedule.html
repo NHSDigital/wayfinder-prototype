@@ -12,11 +12,18 @@
 
       {% include "components/provider-banner/include.html" %}
 
+
+
       <!-- DYNAMIC PAGE TITLE -->
       {{ dynamicPageTitle({
         title: pageHeading,
         titleSecondary: true
       })}}
+
+        <!-- SECTION HEADING COMPONENT -->
+        <div class="nhsapp-section-heading">
+          <h2 class="nhsuk-heading-s">Your original appointment details</h2>
+        </div>
 
       {{ summaryList({
         classes: "nhsuk-u-margin-bottom-4",
