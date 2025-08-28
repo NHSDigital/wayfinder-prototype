@@ -40,7 +40,7 @@
             text: "Time"
           },
           value: {
-            html: "9:40am"
+            html: "10:30am"
           }
         },
         {
@@ -56,7 +56,7 @@
               text: "Clinician"
             },
             value: {
-              text: "Doctor Donald Glover",
+              text: "Dr Donald Glover",
               attributes: {
                 "aria-label": "Clinician: Doctor Donald Glover"
               }
@@ -71,60 +71,39 @@
     </div>
 
     <!-- Summary list: User-selected times for Monday - Friday-->
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Availability</dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['unavailable-choice'] == "none" %}
-            No – I can attend most days and times
-          {% elif data['unavailable-days'] %}
-            <ul>
-              {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
-                {% if day | capitalize in data['unavailable-days'] %}
-                  {% set times = data[day ~ '-times'] %}
-                  {% if times and times | length > 0 %}
-                    {% for time in times %}
-                      <li>
-                        {{ day | capitalize }}
-                        {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
-                        {% if time == "Early afternoon" %}early afternoon (12:00pm–2:00pm){% endif %}
-                        {% if time == "Late afternoon" %}late afternoon (2:00pm–6:00pm){% endif %}
-                      </li>
-                    {% endfor %}
-                  {% else %}
-                    <li>{{ day | capitalize }}</li>
-                  {% endif %}
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Preferred days and times</dt>
+      <dd class="nhsuk-summary-list__value">
+        {% if data['available-choice'] == "any" %}
+          I’m available most days and times
+        {% elif data['available-days'] %}
+          <ul>
+            {% for day in ["mondays", "tuesdays", "wednesdays", "thursdays", "fridays"] %}
+              {% if day | capitalize in data['available-days'] %}
+                {% set times = data[day ~ '-times'] %}
+                {% if times and times | length > 0 %}
+                  {% for time in times %}
+                    <li>
+                      {{ day | capitalize }}
+                      {% if time == "Any time" %}any time{% endif %}
+                      {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
+                      {% if time == "Early afternoon" %}early afternoon (12:00pm–3:00pm){% endif %}
+                      {% if time == "Late afternoon" %}late afternoon (3:00pm–6:00pm){% endif %}
+                    </li>
+                  {% endfor %}
+                {% else %}
+                  <li>{{ day | capitalize }}</li>
                 {% endif %}
-              {% endfor %}
-            </ul>
-          {% else %}
-            Not specified
-          {% endif %}
-        </dd>
-      </div>
-
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">When is the best time to call?</dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['preferred-call-choice'] == "Any time" %}
-            Any time
-          {% elif data['preferred-call-times'] %}
-            <ul>
-              {% for time in data['preferred-call-times'] %}
-                <li>
-                  {% if time == "Morning" %}Morning (8:00am – 12:00pm){% endif %}
-                  {% if time == "Afternoon" %}Afternoon (12:00pm – 6:00pm){% endif %}
-                  {% if time == "Evening" %}Evening (6:00pm – 8:00pm){% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            Not specified
-          {% endif %}
-        </dd>
-      </div>      
-    </dl>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% else %}
+          Not specified
+        {% endif %}
+      </dd>
+    </div>
+  </dl>
 
       <!-- CHECKBOX COMPONENT -->
       <div class="nhsuk-form-group">

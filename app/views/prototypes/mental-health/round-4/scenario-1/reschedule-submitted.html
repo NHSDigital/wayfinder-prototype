@@ -35,7 +35,7 @@ review" %} {% block content %}
             text: "Time"
           },
           value: {
-            html: "9:40am"
+            html: "10:30am"
           }
         },
         {
@@ -51,7 +51,7 @@ review" %} {% block content %}
               text: "Clinician"
             },
             value: {
-              text: "Doctor Donald Glover",
+              text: "Dr Donald Glover",
               attributes: {
                 "aria-label": "Clinician: Doctor Donald Glover"
               }
@@ -66,79 +66,65 @@ review" %} {% block content %}
     </div>
 
     <!-- Summary list: User-selected times for Monday - Friday-->
-    <dl class="nhsuk-summary-list">
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">Availability</dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['unavailable-choice'] == "none" %}
-            No – I can attend most days and times
-          {% elif data['unavailable-days'] %}
-            <ul>
-              {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
-                {% if day | capitalize in data['unavailable-days'] %}
-                  {% set times = data[day ~ '-times'] %}
-                  {% if times and times | length > 0 %}
-                    {% for time in times %}
-                      <li>
-                        {{ day | capitalize }}
-                        {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
-                        {% if time == "Early afternoon" %}early afternoon (12:00pm–2:00pm){% endif %}
-                        {% if time == "Late afternoon" %}late afternoon (2:00pm–6:00pm){% endif %}
-                      </li>
-                    {% endfor %}
-                  {% else %}
-                    <li>{{ day | capitalize }}</li>
-                  {% endif %}
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">Preferred days and times</dt>
+      <dd class="nhsuk-summary-list__value">
+        {% if data['available-choice'] == "any" %}
+          I’m available most days and times
+        {% elif data['available-days'] %}
+          <ul>
+            {% for day in ["mondays", "tuesdays", "wednesdays", "thursdays", "fridays"] %}
+              {% if day | capitalize in data['available-days'] %}
+                {% set times = data[day ~ '-times'] %}
+                {% if times and times | length > 0 %}
+                  {% for time in times %}
+                    <li>
+                      {{ day | capitalize }}
+                      {% if time == "Any time" %}any time{% endif %}
+                      {% if time == "Morning" %}morning (8:00am–12:00pm){% endif %}
+                      {% if time == "Early afternoon" %}early afternoon (12:00pm–3:00pm){% endif %}
+                      {% if time == "Late afternoon" %}late afternoon (3:00pm–6:00pm){% endif %}
+                    </li>
+                  {% endfor %}
+                {% else %}
+                  <li>{{ day | capitalize }}</li>
                 {% endif %}
-              {% endfor %}
-            </ul>
-          {% else %}
-            Not specified
-          {% endif %}
-        </dd>
-      </div>
-
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">When is the best time to call?</dt>
-        <dd class="nhsuk-summary-list__value">
-          {% if data['preferred-call-choice'] == "Any time" %}
-            Any time
-          {% elif data['preferred-call-times'] %}
-            <ul>
-              {% for time in data['preferred-call-times'] %}
-                <li>
-                  {% if time == "Morning" %}Morning (8:00am – 12:00pm){% endif %}
-                  {% if time == "Afternoon" %}Afternoon (12:00pm – 6:00pm){% endif %}
-                  {% if time == "Evening" %}Evening (6:00pm – 8:00pm){% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            Not specified
-          {% endif %}
-        </dd>
-      </div>      
-    </dl>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% else %}
+          Not specified
+        {% endif %}
+      </dd>
+    </div>
+  </dl>
 
     <!-- SECTION HEADING COMPONENT -->
     <div class="nhsapp-section-heading">
       <h2 class="nhsuk-heading-s">What happens now</h2>
     </div>
 
-    <!-- TEXT -->
-    <div>
-        <p class="nhsuk-u-margin-bottom-4">
-        You do not need to do anything else right now. The booking team will process your request
-        then contact you with date and time options. You can choose to confirm a new appointment or keep
-        your original appointment.
-        </p>
-        <p class="nhsuk-u-margin-bottom-6">
-        It can take up to 48 hours for the booking team to contact you. If you miss the call, 
-        they will call again at the next opportunity. Your original appointment will stay booked and visible
-        in the NHS app until your new appointment has been confirmed.
-        </p>
-    </div>
+    <!-- Timeline -->
+        {{ nhsappTimeline({
+          items: [
+            {
+              headingText: "Submit your request",
+              isPastItem: true,
+              text: "This lets the clinic know that you would like to reschedule your appointment."
+            },
+            {
+              headingText: "Get new appointment options",
+              text: "The booking team will call you - this can take up to 48 hours. If you miss the call, they will call again 
+              or leave a message.",
+              active: true
+            },
+            {
+              headingText: "Confirm new appointment",
+              text: "You can choose to confirm a  new date and time or keep your original appointment."
+            }            
+          ]
+        }) }}
 
         {# Buttons #}
       <div style="display: flex; flex-direction: column; align-items: center;">
