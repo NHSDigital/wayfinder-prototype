@@ -14,49 +14,43 @@
     {% include "components/provider-banner/include.html" %}
 
     {# Start the form. 'method="post"' sends data, 'action' is the next page, 'novalidate' skips browser validation #}
-<form method="post" action="select-day-time" novalidate>
-  <fieldset class="nhsuk-fieldset">
-    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
-      <h1 class="nhsuk-fieldset__heading">
-        Select preferred days and times for your new appointment
-      </h1>
-    </legend>
+    <form method="post" action="select-day-time" novalidate>
 
-    {{ insetText({
-      html: "<p>The more flexible you are with your availability, the more likely we are to find a new appointment that works for you.</p>"
-    }) }}
+      {# Group the form content using a fieldset #}
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading">
+            Select preferred days and times for your new appointment
+          </h1>
+        </legend>
 
-    <fieldset class="nhsuk-fieldset">
-      <div class="nhsuk-u-margin-top-3">
+        {# Message shown in an inset box #}
+        {{ insetText({
+          html: "<p> The more flexible you are with your availability, the more likely we are to find 
+          a new appointment that works for you.</p>"
+        }) }}
 
-        <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input"
-                 id="unavailable-no"
-                 name="unavailable-choice"
-                 type="radio"
-                 value="none"
-                 onclick="window.location.href='availability-for-new-app-any-time.html'">
-          <label class="nhsuk-label nhsuk-radios__label" for="unavailable-no">
-            Any day and time
-          </label>
-        </div>
+        {# Start the conditional radio button section #}
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-u-margin-top-3">
 
-        <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input"
-                 id="unavailable-yes"
-                 name="unavailable-choice"
-                 type="radio"
-                 value="select"
-                 onclick="window.location.href='availability-for-new-app-choose-day.html'">
-          <label class="nhsuk-label nhsuk-radios__label" for="unavailable-yes">
-            Choose preferred days and times
-          </label>
-        </div>
+            {# Option 1: User is available any time #}
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="unavailable-no" name="unavailable-choice" type="radio" value="none" aria-controls="conditional-unavailable-no" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="unavailable-no">
+                Any day and time
+              </label>
+            </div>
 
-      </div>
-    </fieldset>
-  </fieldset>
-</form>
+            {# Option 2: User wants to choose specific days and times #}
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="unavailable-yes" name="unavailable-choice" type="radio" value="select" aria-controls="conditional-unavailable-yes" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="unavailable-yes">
+                Choose preferred days and times 
+              </label>
+            </div>
+          </div>
+        </fieldset>
 
         {# Submit button to continue to the next page #}
         <div class="nhsuk-u-margin-top-6">
@@ -66,6 +60,8 @@
             classes: "nhsapp-button"
           }) }}
         </div>
+      </fieldset>
+    </form>
 
     {# Help section with contact info #}
     <div>

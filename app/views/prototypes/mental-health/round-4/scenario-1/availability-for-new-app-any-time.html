@@ -14,7 +14,8 @@
     {% include "components/provider-banner/include.html" %}
 
     {# Start the form. 'method="post"' sends data, 'action' is the next page, 'novalidate' skips browser validation #}
-<form method="post" action="select-day-time" novalidate>
+<form method="post" action="reschedule-review-any-time" novalidate>
+
   <fieldset class="nhsuk-fieldset">
     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
       <h1 class="nhsuk-fieldset__heading">
@@ -29,25 +30,30 @@
     <fieldset class="nhsuk-fieldset">
       <div class="nhsuk-u-margin-top-3">
 
+        {# Option 1: User is available any time (pre-selected) #}
         <div class="nhsuk-radios__item">
           <input class="nhsuk-radios__input"
                  id="unavailable-no"
                  name="unavailable-choice"
                  type="radio"
                  value="none"
-                 onclick="window.location.href='availability-for-new-app-any-time.html'">
+                 aria-controls="conditional-unavailable-no"
+                 aria-expanded="false"
+                 checked>
           <label class="nhsuk-label nhsuk-radios__label" for="unavailable-no">
             Any day and time
           </label>
         </div>
 
+        {# Option 2: User wants to choose specific days and times #}
         <div class="nhsuk-radios__item">
           <input class="nhsuk-radios__input"
                  id="unavailable-yes"
                  name="unavailable-choice"
                  type="radio"
                  value="select"
-                 onclick="window.location.href='availability-for-new-app-choose-day.html'">
+                 aria-controls="conditional-unavailable-yes"
+                 aria-expanded="false">
           <label class="nhsuk-label nhsuk-radios__label" for="unavailable-yes">
             Choose preferred days and times
           </label>
@@ -55,17 +61,17 @@
 
       </div>
     </fieldset>
+
+    <div class="nhsuk-u-margin-top-6">
+      {{ button({
+        text: "Continue",
+        attributes: { type: "submit" },
+        classes: "nhsapp-button"
+      }) }}
+    </div>
   </fieldset>
 </form>
 
-        {# Submit button to continue to the next page #}
-        <div class="nhsuk-u-margin-top-6">
-          {{ button({
-            text: "Continue",
-            attributes: { type: "submit" },
-            classes: "nhsapp-button"
-          }) }}
-        </div>
 
     {# Help section with contact info #}
     <div>
