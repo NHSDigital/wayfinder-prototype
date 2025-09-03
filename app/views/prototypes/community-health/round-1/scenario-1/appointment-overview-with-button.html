@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% extends "prototypes/community-health/community-health-layout.html" %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Cardiology appointment" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {% include "components/provider-banner/include.html" %}
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+      {{ summaryList({
+        classes: "nhsuk-u-margin-bottom-4",
+        rows: [
+        {
+          key: {
+            text: "Date"
+          },
+          value: {
+            html: "Friday 7 June 2024"
+          }
+        },
+        {
+          key: {
+            text: "Time"
+          },
+          value: {
+            html: "10:30am"
+          }
+        },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "Northern General Hospital, Entrance G, <br> Sheffield, S5 7AU"
+            }
+          },
+          {
+            key: {
+              text: "Clinician"
+            },
+            value: {
+              html: "Ahmet Kaya <br> Cardiologist"
+            }
+          }
+        ]
+      }) }}
+
+      <p class="nhsuk-u-margin-bottom-4"><a href="#" class="nhsuk-link nhsuk-link--no-visited-state">Map and directions</a></p>
+
+      <hr>
+
+
+      <!-- Buttons -->
+      <div class="nhsapp-button-group"> 
+        <a
+          class="nhsuk-button nhsapp-button--secondary nhsapp-button" 
+          data-module="nhsuk-button"
+          type="submit"  
+          href="ask-to-reschedule"
+        >
+          Ask to reschedule appointment 
+      </a>
+      <a href="ask-to-cancel" class="nhsuk-link">Ask to cancel appointment</a> </div>
+
+      <hr>
+      
+      <!-- Card -->
+      {{ card({
+        "type": "non-urgent",
+        "heading": "Contact your care provider if:",
+        "descriptionHtml": "
+        <ul>
+          <li>your condition has changed</li>
+          <li>you think you have a different condition</li>
+        </ul>
+        "
+      }) }}
+
+      <!-- Get help with this ... -->
+      {{ nhsappSectionHeading({
+        headingText: "Get help with this task",
+        subheadingText: "Contact the booking team on <a>0XXXX</a>>"
+      }) }}
+
+      <!-- FOOTER COMPONENT-->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  {% endblock %}
