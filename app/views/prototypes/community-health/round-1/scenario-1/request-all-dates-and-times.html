@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Services" %}
+{% set backLink =true %} 
+{% set pageHeading = "Select preferred days and times for your new appointment" %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        {% include "components/provider-banner/include.html" %}
+        
+        <form action="why-do-you-need-to-reschedule" method="post">
+        {{ checkboxes({
+            idPrefix: "appointment-slots",
+            name: "appointment-slots",
+            fieldset: {
+            legend: {
+                text: "Request all dates and times you can attend",
+                classes: "nhsuk-fieldset__legend--l",
+                isPageHeading: true
+            }
+            },
+            hint: {
+            text: "Select all dates and times that work for you"
+            },
+            items: [
+            { divider: "Monday 15 June 2024" },
+            { value: "Monday 15 June 2024 - Any time", text: "Any time this day" },
+            { value: "Monday 15 June 2024 - 12:30pm", text: "12:30pm" },
+            { value: "Monday 15 June 2024 - 1:00pm", text: "1:00pm" },
+            { value: "Monday 15 June 2024 - 1:30pm", text: "1:30pm" },
+            { divider: "Thursday 18 June 2024" },
+            { value: "Thursday 18 June 2024 - Any time", text: "Any time this day" },
+            { value: "Thursday 18 June 2024 - 12:00pm", text: "12:00pm" },
+            { value: "Thursday 18 June 2024 - 12:30pm", text: "12:30pm" },
+            { value: "Thursday 18 June 2024 - 1:00pm", text: "1:00pm" }
+            ]
+        }) }}
+
+        <button class="nhsuk-button nhsapp-button" type="submit">Continue</button>
+        </form>
+        
+        
+
+      <div>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Get help with rescheduling your appointment 
+            </h1>
+          </legend>
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+          </legend>
+        </fieldset>
+      </div>
+    
+        <div>
+          <!-- FOOTER COMPONENT-->
+          <footer role="contentinfo">
+            <div class="nhsuk-footer-container">
+              <div class="nhsuk-width-container">
+                <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+                <div class="nhsuk-footer">
+                  <ul class="nhsuk-footer__list">
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Terms of use</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Privacy policy</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Cookie policy</a
+                      >
+                    </li>
+                    <li class="nhsuk-footer__list-item">
+                      <a class="nhsuk-footer__list-item-link" href="#"
+                        >Accessibility statement</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %}
+    

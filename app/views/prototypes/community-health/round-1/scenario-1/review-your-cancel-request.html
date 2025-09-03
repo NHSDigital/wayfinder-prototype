@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Ask to cancel your appointment" %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {% include "components/provider-banner/include.html" %}
+
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true
+      })}}
+
+        <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Date</dt>
+            <dd class="nhsuk-summary-list__value">Friday 7 June 2024</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Time</dt>
+            <dd class="nhsuk-summary-list__value">10:30am</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Appointment type</dt>
+            <dd class="nhsuk-summary-list__value">Cardiology</dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Location</dt>
+            <dd class="nhsuk-summary-list__value">
+            Northern General Hospital, Entrance G, <br> Sheffield, S5 7AU
+            </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Clinician</dt>
+            <dd class="nhsuk-summary-list__value">Ahmet Kaya <br> Cardiologist</dd>
+        </div>
+    </dl>
+
+    <h2>Reason</h2>
+    <p class="nhsuk-u-margin-bottom-6">{{ data['cancel-reason'] }}</p>
+
+        <form action="/cancellation-confirmed" method="post">
+        {% from "checkboxes/macro.njk" import checkboxes %}
+
+        {{ checkboxes({
+            idPrefix: "confirm-cancel",
+            name: "confirm-cancel",
+            fieldset: {
+                legend: {
+                text: "Confirm",
+                classes: "nhsuk-fieldset__legend--l",
+                isPageHeading: true
+                }
+            },
+            items: [
+            {
+                value: "yes",
+                text: "I understand that I am asking to cancel my appointment"
+            }
+            ]
+        }) }}
+
+        <button class="nhsuk-button nhsapp-button nhsuk-u-margin-bottom-6" type="submit">
+            Request cancellation
+        </button>
+        </form>
+
+      <!-- FIELDSET COMPONENTS -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with this task
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+        </legend>
+      </fieldset>
+    </div>
+
+      <!-- FOOTER COMPONENT-->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  {% endblock %}

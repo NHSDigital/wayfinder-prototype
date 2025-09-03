@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% extends 'prototypes/mental-health/mental-health-layout.html' %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Ask to cancel your appointment" %}
+
+{% block content %}
+
+ <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {% include "components/provider-banner/include.html" %}
+
+            <form action="review-your-cancel-request.html"post">
+
+            {% from "radios/macro.njk" import radios %}
+
+            {{ radios({
+                idPrefix: "cancel-reason",
+                name: "cancel-reason",
+                fieldset: {
+                legend: {
+                    text: "Why do you need to cancel?",
+                    classes: "nhsuk-fieldset__legend--l",
+                    isPageHeading: true
+                }
+                },
+                items: [
+                { value: "I cannot attend at the scheduled time", text: "I cannot attend at the scheduled time" },
+                { value: "I have already used the service", text: "I have already used the service" },
+                { value: "I need a different service", text: "I need a different service" },
+                { value: "I do not need care anymore", text: "I do not need care anymore" },
+                { value: "This was booked by mistake", text: "This was booked by mistake" },
+                { value: "Other", text: "Other" }
+                ]
+            }) }}
+
+            <button class="nhsuk-button" type="submit">Continue</button>
+
+            </form>
+
+      <!-- FIELDSET COMPONENTS -->
+    <div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Get help with this task
+          </h1>
+        </legend>
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h3 class="nhsuk-fieldset__legend">Contact the booking team on <a href="">0XXXX XXX XXX</a></h3>
+        </legend>
+      </fieldset>
+    </div>
+
+      <!-- FOOTER COMPONENT-->
+      <footer role="contentinfo">
+        <div class="nhsuk-footer-container">
+          <div class="nhsuk-width-container">
+            <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+            <div class="nhsuk-footer">
+              <ul class="nhsuk-footer__list">
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Terms of use</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Privacy policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Cookie policy</a>
+                </li>
+                <li class="nhsuk-footer__list-item">
+                  <a class="nhsuk-footer__list-item-link" href="#">Accessibility statement</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+        </div>
+    </div>
+
+{% endblock %}
