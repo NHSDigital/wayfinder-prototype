@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% extends "prototypes/community-health/community-health-layout.html" %}
+
+{% set hub = "Your health" %}
+
+{% set backLink = true %}
+
+{% set pageHeading = "Hospital and specialist appointments" %}
+
+{% set pageDescription = "View and manage your upcoming and past hospital appointments." %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      {{ insetText({
+        HTML: "<p>Some of your appointment information may not be visible in the app. Find out more by selecting the help section at the top of the screen.</p>",
+        classes: "nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5"
+      }) }}
+
+      <!-- SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Upcoming appointments",
+        subheadingText: "2 upcoming appointments"
+      })}}
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              {% if data['appointment-letter'] != "read" %}
+              <div class="nhsapp-card__above">
+                <strong class="nhsapp-tag nhsapp-tag--yellow nhsuk-u-display-inline-block nhsuk-u-static-margin-bottom-3">Cancellation in review</strong>
+              </div>
+              {% endif %}
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="legal-notice.html" aria-label="Cardiology appointment Friday 7 June 2024 at 10:30am">
+                Cardiology appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Friday 7 June 2024 <br> 10:30am</p>
+                <p class="nhsuk-u-margin-bottom-3">Northern General Hospital, Sheffield</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+         <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Orthopaedic appointment Thursday 28 July 2024 at 10:30am">
+                Orthopaedic appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Thursday 28 July <br> 10:30am</p>
+                <p class="nhsuk-u-margin-bottom-3">Northern General Hospital, Sheffield</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+      </ul>
+
+      <hr class="nhsuk-section-break--l">
+
+      <!-- SECTION -->
+      {{ nhsappSectionHeading({
+        headingText: "Past appointments",
+        subheadingText: "Showing 1 of 6"
+      })}}
+
+      <!-- CARDS -->
+      <ul class="nhsapp-cards">
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#" aria-label="Dermatology appointment Thursday 29 August 2023 at 10:30am">
+                Dermatology appointment
+              </a>
+              <div class="nhsapp-card__below">
+                <p aria-hidden="true" class="nhsuk-u-font-weight-bold nhsuk-u-margin-bottom-3">Thursday 29 August 2023 <br> 10:30am</p>
+                <p class="nhsuk-u-margin-bottom-3">Northern General Hospital, Sheffield</p>
+              </div>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+        <li class="nhsapp-card">
+          <div class="nhsapp-card__container">
+            <div class="nhsapp-card__content">
+              <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="#">
+                View more past appointments
+              </a>
+            </div>
+            {{ nhsappIcon('chevronRight') }}
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+
+  {% endblock %}

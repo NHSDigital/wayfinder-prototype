@@ -13,11 +13,12 @@
       {% include "components/provider-banner/include.html" %}
 
 
-      <!-- DYNAMIC PAGE TITLE -->
-      {{ dynamicPageTitle({
-        title: pageHeading,
-        titleSecondary: true
-      })}}
+        <!-- PANEL COMPONENT -->
+        <div class="nhsapp-panel">
+          <h1 class="nhsapp-panel__title">
+            Your request to cancel has been submitted
+          </h1>
+        </div>
 
         <dl class="nhsuk-summary-list">
         <div class="nhsuk-summary-list__row">
@@ -44,34 +45,42 @@
         </div>
     </dl>
 
-    <h2>Reason</h2>
-    <p class="nhsuk-u-margin-bottom-6">{{ data['cancel-reason'] }}</p>
+    <h2>What happens now</h2>
+    <p class="nhsuk-u-margin-bottom-6">You do not need to do anything else while the booking team is processing your request to cancel
+        <br>
+        <br>
+        Cancelling your appointment will take approximately 48 hours. The cancelled appointment will remain visible during that time. 
+    </p>
 
-        <form action="cancellation-submitted" method="post">
-        {% from "checkboxes/macro.njk" import checkboxes %}
 
-        {{ checkboxes({
-            idPrefix: "confirm-cancel",
-            name: "confirm-cancel",
-            fieldset: {
-                legend: {
-                text: "Confirm",
-                classes: "nhsuk-fieldset__legend--l",
-                isPageHeading: true
-                }
-            },
-            items: [
-            {
-                value: "yes",
-                text: "I understand that I am asking to cancel my appointment"
-            }
-            ]
-        }) }}
 
-        <button class="nhsuk-button nhsapp-button nhsuk-u-margin-bottom-6" type="submit">
-            Request cancellation
-        </button>
-        </form>
+      <!-- Buttons -->
+      <div class="nhsapp-button-group"> 
+        <a
+          class="nhsuk-button nhsapp-button--secondary nhsapp-button" 
+          role="button"
+          data-module="nhsuk-button"
+          type="submit"  
+          href="cancellation-pending"
+        >
+          View this appointment
+        </a>
+        <a href="cancellation-hospital-appointments" class="nhsuk-link">View all appointments</a> 
+      </div>
+
+    
+      <!-- Card -->
+      {{ card({
+        "type": "non-urgent",
+        "heading": "Contact your care provider if:",
+        "descriptionHtml": "
+        <ul>
+          <li>your condition has changed</li>
+          <li>you think you have a different condition</li>
+        </ul>
+        "
+      }) }}
+
 
       <!-- FIELDSET COMPONENTS -->
     <div>
