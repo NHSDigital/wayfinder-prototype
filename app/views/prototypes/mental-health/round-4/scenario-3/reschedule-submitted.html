@@ -65,26 +65,22 @@ review" %} {% block content %}
       <h2 class="nhsuk-heading-s nhsuk-u-margin-top-4">What happens now</h2>
     </div>
 
-    <!-- Timeline -->
-        {{ nhsappTimeline({
-          items: [
-            {
-              headingText: "Request submitted",
-              isPastItem: true,
-              text: "This lets the clinic know that you would like to reschedule your appointment."
-            },
-            {
-              headingText: "Get new appointment options",
-              text: "The booking team will call you - this can take up to 48 hours. If you miss the call, they will call again 
-              or leave a message.",
-              active: true
-            },
-            {
-              headingText: "Confirm new appointment",
-              text: "You can choose to confirm a  new date and time or keep your original appointment."
-            }            
-          ]
-        }) }}
+        <p>The booking team will process your request and call you with appointment options. This can take up to 48 hours.
+          <br><br>
+          Your original appointment will stay booked  until you confirm a new appointment with the booking team. Your appointment details will then update in the app.  
+        </p>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What happens if I miss the call?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>The booking team will try again or leave a message asking you to call them back.</p>
+            <p>You can call the booking team on <a>XXXXX XXXXXX</a></p>
+          </div>
+        </details>
 
         {# Buttons #}
       <div style="display: flex; flex-direction: column; align-items: center;">
