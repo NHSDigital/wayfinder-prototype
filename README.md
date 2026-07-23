@@ -1,3 +1,5 @@
+This repo has now been archived, it is replaced by https://github.com/NHSDigital/wayfinder-demos
+
 # NHS App prototype
 
 ## About the NHS App prototype
